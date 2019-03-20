@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Classroom extends Model
 {
     //prova1
+    //provadopopush
 }
