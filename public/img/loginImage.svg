@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="255px" viewBox="0 0 1024 255" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M27.8023612,252 C319.291018,208.251157 553.708109,187.546332 731.053635,189.885525 C908.399162,192.224719 1015.77061,172.913417 1053.16797,131.951619 L1053.16797,3.36166557 L0,0 L0,235.599736 L27.8023612,252 Z" id="path-1"></path>
+        <filter x="-0.9%" y="-3.2%" width="101.9%" height="107.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0412137681 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="LOGIN" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop">
+            <g id="Group" transform="translate(-29.000000, -5.000000)">
+                <g id="Path-2-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#D1031D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Page-1" transform="translate(96.000000, 74.000000)" stroke="#FFFFFF" stroke-width="8">
+                    <polyline id="LOGO" points="108.811908 73.8136155 58.8428238 0 0 96 155 96"></polyline>
+                </g>
+                <text id="ARBEL" font-family=".AppleSystemUIFont" font-size="18" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="193" y="196">ARBEL</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cavolo', function () {
+    return view('loginArbel');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
