@@ -10661,6 +10661,15 @@ a.text-dark:focus {
 
 #footer {
   width: 100%;
-  height: 20%;
+}
+
+#contLogin {
+  margin-top: -5%;
+}
+
+#smartphone {
+  width: 30%;
+  height: 30%;
+  margin-left: 20%;
 }
 

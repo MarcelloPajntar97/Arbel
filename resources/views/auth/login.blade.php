@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" id="login">
-  <div class="row justify-content-center">
+<div class="container-fluid" id="contLogin">
+  <div class="row">
+    <img src="{{ asset('/img/loginImage.svg')}}" alt="" id="footer">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
 
-    <div class="col-md-8">
-    <!-- <div class="col-md-8"> -->
-      <!-- <div class="card">
-        <div class="card-header">{{ __('Login') }}</div> -->
+  </div>
+  <div class="col-md-6">
 
-        <!-- <div class="card-body"> -->
           <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -71,5 +73,5 @@
       <!-- </div>-->
     </div>
   </div>
-</div>
+
 @endsection

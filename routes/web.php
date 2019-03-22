@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
-Route::get('/cavolo', function () {
-    return view('loginArbel');
-});
+// Route::get('/cavolo', function () {
+//     return view('loginArbel');
+// });
 
 Auth::routes();
 
