@@ -21,9 +21,8 @@ class CreateStudentsTable extends Migration
             $table->date('birthday');
             $table->string('sex');
             $table->string('address');
+            $table->longText('details');
             $table->string('course');
-            $table->integer('courseYear');
-            $table->string('courseSection');
             $table->timestamps();
         });
     }
