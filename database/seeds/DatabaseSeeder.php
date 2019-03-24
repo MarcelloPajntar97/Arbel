@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+      //send data
         DB::table('users')->delete();
         $this->call(UsersTableSeeder::class);
     }
