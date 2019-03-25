@@ -5,7 +5,7 @@
   <div class="row">
     <img src="{{ asset('/img/loginImage.svg')}}" alt="" id="footer">
   </div>
-</div>
+</div
 <div class="row">
   <div class="col-md-6">
 
@@ -69,6 +69,8 @@
               </div>
             </div>
           </form>
+        <!-- </div>-->
+      <!-- </div>-->
     </div>
   </div>
 
