@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
+  <div class="container-fluid" id="contLogin">
+    <div class="row">
+      <img src="{{ asset('/img/loginImage.svg')}}" alt="" id="footer">
+    </div>
+  </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

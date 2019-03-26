@@ -15,10 +15,14 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-// Route::get('/cavolo', function () {
-//     return view('loginArbel');
-// });
-
 Auth::routes();
 
+ Route::get('/nav', function () {
+     return view('elements/nav');
+ });
+
+ // Route::get('/calendar', function () {
+ //     return view('calendar');
+ // });
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/calendar', 'CalendarController@index');
