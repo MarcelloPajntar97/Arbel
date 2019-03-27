@@ -4,8 +4,8 @@
   background-color: #e3342f !important;
 }
 
-.dropdown-item {
-  background-color: white;
+.nav-link {
+  color: white !important;
 }
 
 /*!

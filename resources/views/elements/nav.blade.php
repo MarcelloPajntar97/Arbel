@@ -13,16 +13,16 @@
     <!-- Left Side Of Navbar -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/calendar') }}">Calendario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">I miei corsi</a>
+        <a class="nav-link" href="{{ url('/courses') }}">I miei corsi</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contatta</a>
+        <a class="nav-link" href="{{ url('/contact') }}">Contatta</a>
       </li>
     </ul>
 
