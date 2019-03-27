@@ -21,8 +21,8 @@ Auth::routes();
      return view('elements/nav');
  });
 
- // Route::get('/calendar', function () {
- //     return view('calendar');
- // });
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/calendar', 'CalendarController@index');
+Route::get('/courses', 'CourseController@index');
+Route::get('/contact', 'ContactsController@index');

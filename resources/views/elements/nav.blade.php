@@ -19,7 +19,10 @@
         <a class="nav-link" href="{{ url('/calendar') }}">Calendario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">I miei corsi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contatta</a>
       </li>
     </ul>
 
