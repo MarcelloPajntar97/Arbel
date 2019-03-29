@@ -27,7 +27,7 @@ class HomeController extends Controller
         return view('home');
       }
       elseif (auth()->user()->isAdmin == 1) {
-        return view('admin');
+        return view('auth.register');
       }
     }
 }
