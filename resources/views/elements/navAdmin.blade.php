@@ -15,6 +15,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="{{ url('/home') }}">Dashboard segreteria <span class="sr-only"></span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/register') }}">Add User <span class="sr-only"></span></a>
+      </li>
 
     </ul>
 

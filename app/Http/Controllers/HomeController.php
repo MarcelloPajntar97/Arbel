@@ -23,11 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+
       if (auth()->user()->isAdmin == 0) {
         return view('home');
+        //return redirect('/home');
       }
       elseif (auth()->user()->isAdmin == 1) {
-        return view('auth.register');
+        return view('admin');
+        //return redirect('/homeAdmin');
+
       }
     }
 }
