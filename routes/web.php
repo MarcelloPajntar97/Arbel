@@ -20,16 +20,9 @@ Auth::routes();
  Route::get('/nav', function () {
      return view('elements/nav');
  });
-
+Route::resource('/home', 'SecretaryController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/calendar', 'CalendarController@index');
 Route::get('/courses', 'CourseController@index');
 Route::get('/contact', 'ContactsController@index');
 Route::get('/routes/admin', 'HomeController@index');
-//
-// if (auth()->user()->isAdmin == 0) {
-//   return view('home');
-// }
-// elseif (auth()->user()->isAdmin == 1) {
-//   return view('auth.register');
-// }

@@ -79,6 +79,8 @@ class SecretaryController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $teacher = \App\User::find($id);
+      $teacher->delete();
+      return redirect('/home');
     }
 }
