@@ -22,7 +22,6 @@ class CreateStudentsTable extends Migration
             $table->string('sex');
             $table->string('address');
             $table->longText('details');
-            $table->string('course');
             $table->timestamps();
         });
     }
