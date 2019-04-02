@@ -1,17 +1,18 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container-fluid" id="contLogin">
+
+
+<div class="container-fluid">
   <div class="row">
-    <img src="{{asset('/img/loginImage.png')}}" class="Max-width 100%" alt="Responsive image" id="footer">
+    <img class = "lineLogin" src="{{asset('/img/linelogin.svg')}}" alt="Responsive image" id="footer">
   </div>
 </div>
-<div class="row">
+<div class="row allElelement">
   <div class="col-md-6">
-    <img src="{{asset('/img/imageapp.png')}}" class="rounded mx-auto d-block" alt="" id="imageapp">
+    <img class = "myPhone" src="{{asset('/img/phone.png')}}">
   </div>
   <div class="col-md-6">
-
+    <div class = "containerForm">
           <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -49,20 +50,20 @@
                   <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                   <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
+                    {{ __('Ricordami') }}
                   </label>
                 </div>
               </div>
             </div>
 
-            <div class="form-group row mb-0">
+            <div class="form-group row">
               <div class="col-md-8 offset-md-4">
-                <button  type="submit" class="btn btn-lg btn-danger btn-block" id="login">
+                <button  type="submit" class="btn loginButton" id="login">
                   {{ __('Accedi') }}
                 </button>
                 <div class="col-md-8 offset-md-4 ">
                 @if (Route::has('password.request'))
-                <a class="btn btn-link text-dark" href="{{ route('password.request') }}">
+                <a class="btn btn-link text-dark passwordHelp" href="{{ route('password.request') }}">
                   {{ __('Hai dimenticato la Password?') }}
                 </a>
                 @endif
@@ -71,7 +72,7 @@
             </div>
           </form>
         <!-- </div>-->
-      <!-- </div>-->
+    </div>
     </div>
   </div>
 
