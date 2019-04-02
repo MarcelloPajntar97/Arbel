@@ -4,17 +4,24 @@
 
 <div class="container-fluid">
   <div class="row">
-    <img class = "lineLogin" src="{{asset('/img/linelogin.svg')}}" alt="Responsive image" id="footer">
+    <img class = "lineLogin" src="{{asset('/img/lineLogin1.svg')}}" alt="Responsive image" id="footer">
   </div>
 </div>
 <div class="row allElelement">
+
   <div class="col-md-6">
-    <img class = "myPhone" src="{{asset('/img/phone.png')}}">
+    <img class = "myPhone" src="{{asset('/img/phone3.png')}}">
   </div>
+
   <div class="col-md-6">
     <div class = "containerForm">
+
+
           <form method="POST" action="{{ route('login') }}">
             @csrf
+
+            <div class="loginText">{{ __('Benvenuto,') }}</div><br>
+              <div class="arbelText">{{ __('per proseguire inserisci i tuoi dati') }}</div>
 
             <div class="form-group row">
               <label for="email" class="col-md-6 col-form-label"></label>
@@ -74,6 +81,7 @@
         <!-- </div>-->
     </div>
     </div>
+
   </div>
 
 @endsection
