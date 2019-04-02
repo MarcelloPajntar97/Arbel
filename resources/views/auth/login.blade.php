@@ -3,12 +3,12 @@
 @section('content')
 <div class="container-fluid" id="contLogin">
   <div class="row">
-    <img src="{{ asset('/img/loginImage.svg')}}" alt="" id="footer">
+    <img src="{{asset('/img/loginImage.png')}}" class="Max-width 100%" alt="Responsive image" id="footer">
   </div>
 </div>
 <div class="row">
   <div class="col-md-6">
-
+    <img src="{{asset('/img/imageapp.png')}}" class="rounded mx-auto d-block" alt="" id="imageapp">
   </div>
   <div class="col-md-6">
 
@@ -19,7 +19,7 @@
               <label for="email" class="col-md-6 col-form-label"></label>
 
               <div class="col-md-6 offset-md-4">
-                <input id="email" placeholder="E-mail" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" placeholder="E-mail" type="email" class=" form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                 @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
               </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row ">
               <label for="password" class="col-md-4 col-form-label text-md-right"></label>
 
               <div class="col-md-6">
@@ -57,15 +57,16 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                  {{ __('Login') }}
+                <button  type="submit" class="btn btn-lg btn-danger btn-block" id="login">
+                  {{ __('Accedi') }}
                 </button>
-
+                <div class="col-md-8 offset-md-4 ">
                 @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                  {{ __('Forgot Your Password?') }}
+                <a class="btn btn-link text-dark" href="{{ route('password.request') }}">
+                  {{ __('Hai dimenticato la Password?') }}
                 </a>
                 @endif
+                </div>
               </div>
             </div>
           </form>

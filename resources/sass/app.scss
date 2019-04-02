@@ -6,20 +6,28 @@
 @import 'variables';
 @import 'navbar';
 
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 
 #login {
-  margin-top: 10%;
+  width: 75%;
+  border-radius: 40px;
 }
-#footer {
-  width: 100%;
+
+#imageapp {
+  width: auto;
+  height: auto;
+}
+
+#email,#password,{
+  border-radius: 20px;
 }
 
 #contLogin {
   margin-top: -5%;
-  width: 100%;
+  width: 130%;
 }
 
 #smartphone {
@@ -28,6 +36,6 @@
   margin-left: 20%;
 }
 
-#primaFascia, #secondaFascia, #terzaFascia, #quartaFascia {
+#primaFascia, #secondaFascia, #terzaFascia, #quartaFascia, #corsi{
   margin: 5%;
 }

@@ -10664,16 +10664,23 @@ a.text-dark:focus {
 }
 
 #login {
-  margin-top: 10%;
+  width: 75%;
+  border-radius: 40px;
 }
 
-#footer {
-  width: 100%;
+#imageapp {
+  width: auto;
+  height: auto;
+}
+
+#email,
+#password {
+  border-radius: 20px;
 }
 
 #contLogin {
   margin-top: -5%;
-  width: 100%;
+  width: 130%;
 }
 
 #smartphone {
@@ -10685,7 +10692,8 @@ a.text-dark:focus {
 #primaFascia,
 #secondaFascia,
 #terzaFascia,
-#quartaFascia {
+#quartaFascia,
+#corsi {
   margin: 5%;
 }
 
