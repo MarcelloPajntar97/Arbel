@@ -15,6 +15,8 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('sub_id');
+            $table->foreign('sub_id')->references('id')->on('classes');
             $table->integer('badgeNumber');
             $table->string('name');
             $table->string('surname');
