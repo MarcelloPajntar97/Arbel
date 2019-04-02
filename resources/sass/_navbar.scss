@@ -1,6 +1,50 @@
 #navbar {
-  background-color: $red !important;
+  background-color: none !important;
+  // color: white !important;
 }
+
+#navbarContainer{
+  min-width: 100%;
+}
+
+
 .nav-link {
-  color: white !important;
+  // color: alpha($white);
+  color: transparentize($black, 0.3) !important;
+  font-weight: bold !important;
+}
+
+.nav-link:hover{
+  // color: alpha($white);
+  transition: all 0.3s;
+  color: transparentize($black, 0) !important;
+  font-weight: bold !important;
+}
+
+.arbelLogo {
+  width: 70% !important;
+  margin-left: 5% !important;
+  margin-top: 2% !important;
+}
+
+.navVoice{
+  margin-left: 80% !important;
+}
+
+.logoutButton{
+  // background-color: $redArbel !important;
+  background-image: linear-gradient(to right, $redArbel 0%, #EF2252 100%);
+  font-weight: bold !important;
+  color: $white !important;
+  margin-left: 2% !important;
+  border-radius: 25px !important;
+  // height: 30px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.logoutButton:hover{
+  transition: all 0.3s;
+  background-color: #BD0118 !important;
+  color: $white !important;
 }
