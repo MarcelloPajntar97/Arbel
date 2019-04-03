@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="337px" height="97px" viewBox="0 0 337 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="327" height="87" rx="15"></rect>
+        <filter x="-2.6%" y="-7.5%" width="105.2%" height="119.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.218834918 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="49.9999996%" y1="5.83833188e-05%" x2="49.9999996%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#1A6DFF" offset="0%"></stop>
+            <stop stop-color="#C822FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#6DC7FF" offset="0%"></stop>
+            <stop stop-color="#E6ABFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(5.000000, 3.000000)">
+            <g id="Rectangle" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+            <g id="icons8-google-play" transform="translate(28.000000, 18.000000)">
+                <path d="M43.7,24 C42.75,23.5 33.87,18.46 33.78,18.4 L3.69,1.42 C2.78,0.91 1.8,0.86 1.07,1.29 C0.39,1.69 0,2.44 0,3.34 L0,48.91 C0,49.72 0.35,50.38 0.96,50.74 C1.26,50.91 1.59,51 1.94,51 C2.36,51 2.8,50.88 3.23,50.63 L43.66,27.82 C44.84,27.15 45.01,26.3 45,25.85 C44.99,25.11 44.52,24.43 43.7,24 Z M31.59,19.46 L26.41,24.49 L6.82,5.48 L31.59,19.46 Z M2,48.2 L2,3.6 L24.98,25.89 L2,48.2 Z M6.81,46.31 L26.41,27.28 L31.61,32.32 L6.81,46.31 Z M42.67,26.08 L33.43,31.3 L27.85,25.89 L33.41,20.49 C35.45,21.65 41.93,25.33 42.77,25.77 C42.85,25.81 42.91,25.85 42.95,25.89 C42.89,25.94 42.81,26 42.67,26.08 Z" id="Shape" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+                <polygon id="Path" fill="url(#linearGradient-4)" points="22.11 25.89 4 43.47 4 8.33"></polygon>
+            </g>
+            <g id="Group-2" transform="translate(91.000000, 14.000000)" fill="#4A4A4A" font-weight="bold">
+                <text id="Disponibile-su" opacity="0.8" font-family="SFProText-Bold, SF Pro Text" font-size="12">
+                    <tspan x="1" y="11">Disponibile su</tspan>
+                </text>
+                <text id="Google-Play" font-family="SanFranciscoDisplay-Bold, San Francisco Display" font-size="34">
+                    <tspan x="0" y="46">Google Play</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

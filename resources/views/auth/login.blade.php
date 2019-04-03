@@ -83,5 +83,27 @@
     </div>
 
   </div>
+  <div class="row downloadBadge">
+    <div class="col-md-3">
+      <a href="{{ url('https://www.google.it/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjw5LbQwrPhAhXNb1AKHSNqA4UQjRx6BAgBEAU&url=http%3A%2F%2Fwww.pictame.com%2Fuser%2Fman_back_%2F1480975863%2F1837584870757217247_1480975863&psig=AOvVaw3qkwKMjzdZ6DvbSi6hB83K&ust=1554367049985373') }}">
+        <img class = "AppStore" src="{{asset('/img/AppStoreBadge.svg')}}">
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a  href="{{ url(' ') }}">
+        <img class = "GoogleStore" src="{{asset('/img/GooglePlayBadge.svg')}}">
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+<footer class="page-footer font-small">
+
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    Arbel, a university project</a>
+  </div>
+
+</footer>
 
 @endsection

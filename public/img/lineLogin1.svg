@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1440px" height="406px" viewBox="0 0 1440 406" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1448px" height="412px" viewBox="0 0 1448 412" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
     <title>lineLogin</title>
     <desc>Created with Sketch.</desc>
@@ -8,16 +8,28 @@
             <stop stop-color="#EA073E" offset="0.0135476879%"></stop>
             <stop stop-color="#D1031D" offset="100%"></stop>
         </linearGradient>
+        <path d="M1,406 C220.093418,258 439.637371,184 747.397634,184 C1055.1579,184 1243.47442,136.680992 1441,0 L1,0 L1,406 Z" id="path-2"></path>
+        <filter x="-1.1%" y="-3.9%" width="102.2%" height="107.9%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="13" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="6" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.292459239 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="lineLogin">
+        <g id="lineLogin" transform="translate(2.000000, 1.000000)">
             <g id="Group">
-                <path d="M-1.13686838e-13,406 C219.093418,258 467.89263,184 746.397634,184 C1024.90264,184 1256.10343,92.194041 1440,0 L-1.13686838e-13,0 L-1.13686838e-13,406 Z" id="Path" fill="url(#linearGradient-1)"></path>
-                <g id="Page-1" transform="translate(60.000000, 55.000000)" stroke="#FFFFFF" stroke-width="6">
+                <path d="M1,407 C220.093418,259 439.637371,185 747.397634,185 C1055.1579,185 1243.47442,137.680992 1441,1 C847.780499,45.5826892 549.481322,68.3503581 546.10247,69.3030068 C229.481322,158.57258 47.780499,271.138245 1,407 Z" id="Path" stroke="#FFFFFF" stroke-width="2.5"></path>
+                <g id="Path">
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                </g>
+                <path d="M1,407 C1,396.794504 -0.629091923,393.474362 3.21588861,385.979687 C143.659451,112.225655 387.499981,149.855053 685.26628,124.137129 C996.504377,97.255652 1208.29864,68.6116401 1441,-2.84217094e-14 L1,-2.84217094e-14 L1,407 Z" id="Path-Copy" fill="url(#linearGradient-1)"></path>
+                <g id="Page-1" transform="translate(61.000000, 55.000000)" stroke="#FFFFFF" stroke-width="6">
                     <polyline id="LOGO" points="52.6509233 36.1379159 28.4723341 0 0 47 75 47"></polyline>
                 </g>
             </g>
-            <g id="Group-11" opacity="0.5" transform="translate(103.000000, 109.000000)" fill="#FFFFFF">
+            <g id="Group-11" opacity="0.5" transform="translate(104.000000, 109.000000)" fill="#FFFFFF">
                 <path d="M4.27545368,0 L0,9 L1.4043935,9 L2.36714422,6.94300692 L6.0660936,6.94300692 L6.9730659,9 L8.4,9 L4.27545368,0 Z M4.25291309,2.86271737 L5.53467049,5.74228305 L2.91002866,5.74228305 L4.25291309,2.86271737 Z" id="Fill-1" fill-rule="nonzero"></path>
                 <g id="Group-10" transform="translate(9.000000, 0.000000)">
                     <path d="M1.5853125,4.2138 L1.9918125,4.2138 C3.2038125,4.2138 3.8101875,3.73053913 3.8101875,2.76362609 C3.8101875,1.85775652 3.2203125,1.40501739 2.0413125,1.40501739 L1.5853125,1.40501739 L1.5853125,4.2138 Z M3.1783125,5.22845218 L5.8040625,8.99984346 L4.2384375,8.99984346 L1.8159375,5.37753913 L1.5853125,5.37753913 L1.5853125,8.99984346 L0.3054375,8.99984346 L0.3054375,0.149713043 L1.8050625,0.149713043 C2.9255625,0.149713043 3.7348125,0.369626087 4.2331875,0.809060868 C4.7821875,1.2981913 5.0570625,1.94384348 5.0570625,2.7464087 C5.0570625,3.37327826 4.8849375,3.91210435 4.5406875,4.36288696 C4.1964375,4.81366957 3.7423125,5.10245218 3.1783125,5.22845218 Z" id="Fill-2" fill-rule="nonzero"></path>

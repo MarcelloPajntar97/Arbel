@@ -10841,7 +10841,7 @@ body {
 .lineLogin {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -0.5% !important;
   min-width: 100%;
   min-height: auto !important;
   margin-top: -1.5% !important;
@@ -10853,5 +10853,95 @@ body {
 #quartaFascia,
 #corsi {
   margin: 5%;
+}
+
+.page-footer {
+  bottom: 0 !important;
+  float: right !important;
+  margin-right: 4%;
+  margin-bottom: 1%;
+  color: #626262 !important;
+  position: fixed;
+  right: 0;
+}
+
+.downloadBadge {
+  margin-top: 1% !important;
+}
+
+.AppStore,
+.GoogleStore {
+  width: 50% !important;
+}
+
+.AppStore {
+  float: right !important;
+  margin-right: 7% !important;
+}
+
+.GoogleStore {
+  float: left !important;
+  margin-left: -12% !important;
+}
+
+.navVoice {
+  margin-left: -10% !important;
+}
+
+.profileVoice {
+  color: #F2001E !important;
+  text-align: right !important;
+  padding-right: 8% !important;
+  padding-top: 3% !important;
+  padding-bottom: 3% !important;
+  color: #4A4A4A !important;
+}
+
+.item {
+  color: #4A4A4A !important;
+}
+
+.item:hover {
+  transition: all 0.3s;
+  text-decoration: none !important;
+  color: #F2001E !important;
+}
+
+.dropdown-menu > li > a {
+  color: #428bca;
+}
+
+.dropdown ul.dropdown-menu {
+  border-radius: 4px;
+  box-shadow: none;
+  margin-top: 20px;
+  margin-left: -50px !important;
+  width: 100px;
+}
+
+.dropdown ul.dropdown-menu:before {
+  content: "";
+  border-bottom: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  z-index: 10;
+}
+
+.dropdown ul.dropdown-menu:after {
+  content: "";
+  border-bottom: 12px solid #ccc;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  z-index: 9;
+}
+
+.imageProfile {
+  width: 8% !important;
 }
 

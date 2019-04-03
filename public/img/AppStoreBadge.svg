@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="337px" height="97px" viewBox="0 0 337 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="327" height="87" rx="15"></rect>
+        <filter x="-2.6%" y="-7.5%" width="105.2%" height="119.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.22 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50.001561%" y1="4.48692308%" x2="50.001561%" y2="421.250769%" id="linearGradient-3">
+            <stop stop-color="#1A6DFF" offset="0%"></stop>
+            <stop stop-color="#C822FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9999367%" y1="-36.0580602%" x2="49.9999367%" y2="99.4138974%" id="linearGradient-4">
+            <stop stop-color="#1A6DFF" offset="0%"></stop>
+            <stop stop-color="#C822FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9965738%" y1="0.000771426367%" x2="49.9965738%" y2="100.001543%" id="linearGradient-5">
+            <stop stop-color="#6DC7FF" offset="0%"></stop>
+            <stop stop-color="#E6ABFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" transform="translate(5.000000, 3.000000)">
+            <g id="Rectangle-Copy" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+            <g id="icons8-apple-logo" transform="translate(26.000000, 15.000000)">
+                <path d="M32.932,2.399 C32.607,4.75 31.227,6.658 30.531,7.491 C29.159,9.139 27.096,10.362 25.053,10.812 C25.301,8.915 26.396,7.055 27.53,5.769 C28.853,4.275 30.917,3.019 32.932,2.399 Z M34.891,0 C31.787,0.199 28.154,2.048 26.033,4.442 C24.11,6.623 22.515,9.862 23.136,12.996 C23.222,12.999 23.308,13 23.395,13 C26.703,13 30.084,11.153 32.068,8.771 C33.972,6.493 35.416,3.276 34.891,0 Z" id="Shape" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+                <path d="M35.168,17.004 C37.612,17.004 40.15,18.023 42.273,19.803 C38.968,22.326 37,26.228 37,30.5 C37,35.574 39.827,40.139 44.216,42.443 C43.511,43.939 42.693,45.372 41.775,46.719 C39.785,49.629 37.112,52.972 34.073,52.997 L33.994,52.997 C32.76,52.997 31.95,52.685 30.827,52.253 C29.392,51.701 27.606,51.014 24.655,50.999 L24.486,51.002 L24.325,51 C21.393,51.014 19.607,51.702 18.173,52.254 C17.051,52.686 16.24,52.998 15.006,52.998 L14.922,52.998 C11.888,52.973 9.215,49.63 7.227,46.722 C0.923,37.47 0.917,27.448 4.114,22.713 C6.449,19.246 10.264,17.005 13.834,17.005 C15.753,17.005 17.314,17.482 18.968,17.987 C20.598,18.485 22.286,19 24.25,19 L24.5,19 L24.75,19 C26.714,19 28.402,18.485 30.034,17.986 C31.687,17.481 33.249,17.004 35.168,17.004 Z M35.168,15.004 C30.935,15.004 28.248,17 24.75,17 C24.656,17 24.5,17 24.5,17 C24.5,17 24.344,17 24.25,17 C20.752,17 18.065,15.004 13.832,15.004 C9.677,15.004 5.25,17.442 2.454,21.595 C-1.5,27.451 -0.826,38.455 5.574,47.847 C7.861,51.192 10.918,54.964 14.906,54.996 C14.94,54.996 14.973,54.997 15.006,54.997 C18.48,54.997 19.566,53.023 24.335,53 C24.338,53 24.342,53 24.345,53 C24.399,53 24.447,53.003 24.5,53.003 C24.553,53.003 24.601,53 24.655,53 C24.658,53 24.662,53 24.665,53 C29.434,53.023 30.521,54.997 33.994,54.997 C34.027,54.997 34.061,54.997 34.094,54.996 C38.082,54.963 41.139,51.192 43.426,47.847 C44.853,45.753 45.98,43.578 46.85,41.398 C42.29,39.872 39,35.574 39,30.5 C39,25.956 41.642,22.04 45.467,20.172 C42.686,16.892 38.822,15.004 35.168,15.004 Z" id="Shape" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+                <path d="M13.352,47.961 C12.472,47.094 11.523,45.919 10.532,44.47 C7.652,40.242 6,35.333 6,31 C6,27.482 7.65,24.298 10.647,22.035 L11.852,23.631 C9.368,25.507 8,28.124 8,31 C8,34.941 9.525,39.439 12.185,43.343 C13.102,44.685 13.968,45.76 14.756,46.537 L13.352,47.961 Z" id="Path" fill="url(#linearGradient-5)"></path>
+            </g>
+            <g id="Group-2-Copy" transform="translate(91.000000, 14.000000)" fill="#4A4A4A" font-family="SanFranciscoDisplay-Bold, San Francisco Display" font-weight="bold">
+                <text id="Disponibile-su" opacity="0.8" font-size="12">
+                    <tspan x="1" y="11">Disponibile su</tspan>
+                </text>
+                <text id="App-Store" font-size="34">
+                    <tspan x="0" y="46">App Store</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

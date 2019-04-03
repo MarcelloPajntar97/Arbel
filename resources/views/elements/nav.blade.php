@@ -1,9 +1,9 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel" id="navbar">
-  <div class="container">
+  <div class="container" id="navbarContainer">
     <a class="navbar-brand" href="{{ url('/home') }}">
-    <img src="{{ asset('/img/lightLogo.svg')}}">
+    <img class = "arbelLogo" src="{{ asset('/img/darkLogo.svg')}}">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
     <span class="navbar-toggler-icon"></span>
@@ -11,24 +11,23 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <!-- Left Side Of Navbar -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only"></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('/calendar') }}">Calendario</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('/courses') }}">I miei corsi</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('/contact') }}">Contatta</a>
-      </li>
-    </ul>
+
 
     <!-- Right Side Of Navbar -->
     <ul class="navbar-nav ml-auto">
       <!-- Authentication Links -->
+
+      <ul class="navbar-nav mr-auto navVoice">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/calendar') }}">Calendario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/contact') }}">Contatta</a>
+        </li>
+      </ul>
 
       @guest
       <li class="nav-item">
@@ -42,12 +41,31 @@
       @else
 
        <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+         <!-- <img class = "imageProfile" src="{{ asset('/img/profile.png')}}"> -->
+        <a id="navbarDropdown" class="nav-link dropdown-toggle logoutButton" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
           {{ Auth::user()->name }} <span class="caret"></span>
         </a>
 
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('login') }}"
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class = "profileVoice"><a class= "item" href="#">{{ __('Cambia Password') }}<span class="pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li class = "profileVoice"><a class= "item"href="#">{{ __('Informazioni Arbel') }}<span class="pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li class = "profileVoice"><a class= "item"href="{{ route('login') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">{{ __('Logout') }}<span class="pull-right">
+            </span></a></li>
+            <li class="divider"></li>
+
+
+          </ul>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+
+        <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item profileVoice " href="{{ route('login') }}"
           onclick="event.preventDefault();
           document.getElementById('logout-form').submit();">
           {{ __('Logout') }}
@@ -56,7 +74,7 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
           @csrf
         </form>
-      </div>
+      </div> -->
     </li>
      @endguest
   </ul>
