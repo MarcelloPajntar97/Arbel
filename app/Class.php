@@ -10,4 +10,9 @@ class Class extends Model
   {
       return $this->hasMany('App\Student');
   }
+
+  public function school()
+  {
+      return $this->hasOne('App\School');
+  }
 }
