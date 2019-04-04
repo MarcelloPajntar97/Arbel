@@ -40,24 +40,24 @@
       @endif
       @else
 
-       <li class="nav-item dropdown">
+       <li class="nav-item dropdown dropdownProfile">
          <!-- <img class = "imageProfile" src="{{ asset('/img/profile.png')}}"> -->
-        <a id="navbarDropdown" class="nav-link dropdown-toggle logoutButton" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-          {{ Auth::user()->name }} <span class="caret"></span>
+        <a class="nav-link dropdown-toggle profileButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="photo">
+            <img class = "imageProfile" src="{{ asset('/img/profile.png')}}">
+          </div>
+          <!-- {{ Auth::user()->name }}<b class="caret d-none d-lg-block d-xl-block"></b> -->
         </a>
 
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li class = "profileVoice"><a class= "item" href="#">{{ __('Cambia Password') }}<span class="pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li class = "profileVoice"><a class= "item"href="#">{{ __('Informazioni Arbel') }}<span class="pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li class = "profileVoice"><a class= "item"href="{{ route('login') }}"
-            onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">{{ __('Logout') }}<span class="pull-right">
-            </span></a></li>
-            <li class="divider"></li>
-
-
+        <ul class="dropdown-menu dropdown-navbar">
+            <li class = "nav-link text-right">{{ Auth::user()->name }} {{ Auth::user()->surname }}</li>
+            <li class="dropdown-divider"></li>
+            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="#">{{ __('Cambia Password') }}</a>
+            </li>
+            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="#">{{ __('Informazioni Arbel') }}
+            </a></li>
+            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ route('login') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
           </ul>
 
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

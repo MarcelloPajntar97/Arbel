@@ -10,4 +10,9 @@ class Student extends Model
   {
       return $this->belongsTo('App\Class');
   }
+
+  public function subjects()
+  {
+      return $this->belongsToMany('App\Subject');
+  }
 }
