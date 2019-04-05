@@ -1,7 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Heebo);@charset "UTF-8";
 
 #navbar {
   background-color: none !important;
+  font-family: "Heebo", sans-serif;
+  height: auto !important;
 }
 
 #navbarContainer {
@@ -50,6 +52,7 @@ body {
 }
 
 #registerButton {
+  font-family: "Heebo", sans-serif;
   background-color: white;
   margin-top: 10%;
   color: #A4AAB3;
@@ -82,7 +85,7 @@ body {
   margin-top: 5%;
   border-radius: 20px !important;
   border-width: 0px !important;
-  box-shadow: 0px 2px 3px lightGrey;
+  box-shadow: 0px 1px 4px lightGrey;
   padding: 5% !important;
 }
 
@@ -92,11 +95,12 @@ body {
   margin-top: 0.4% !important;
   border-radius: 5px !important;
   border-width: 0px !important;
-  box-shadow: 0px 2px 4px lightGrey;
+  box-shadow: 0px 1px 3px lightGrey;
   padding-top: 2% !important;
 }
 
 .titleUsers {
+  font-family: "Heebo", sans-serif;
   margin-top: 2%;
   padding-bottom: 1%;
   font-weight: bold;
@@ -114,6 +118,135 @@ body {
 
 .trashIcon {
   width: 40% !important;
+}
+
+body {
+  background-color: #FBFBFB !important;
+}
+
+.allContainer {
+  margin-top: 10% !important;
+}
+
+.prova {
+  background-color: #FFFFFF;
+  padding-top: 2%;
+  padding-left: 2% !important;
+  padding-bottom: 2%;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 4px lightGrey !important;
+  z-index: 10 !important;
+}
+
+.containerForm {
+  background-color: #FFFFFF;
+}
+
+.allCourses {
+  margin-top: 2%;
+  padding-left: 4% !important;
+}
+
+.addArrow {
+  margin-left: 3.5%;
+  margin-top: 5%;
+}
+
+.sendButton {
+  font-family: "Heebo", sans-serif;
+  background-color: #F2001E !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin-top: 5%;
+}
+
+.sendButton:hover {
+  transition: all 0.3s;
+  background-color: #cb021b !important;
+  color: #FFFFFF !important;
+}
+
+.containerCheck {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+
+.containerCheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  height: 15px;
+  width: 15px;
+  background-color: lightGrey;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+.containerCheck:hover input ~ .checkmark {
+  background-color: darkGrey;
+}
+
+/* When the radio button is checked, add a blue background */
+
+.containerCheck input:checked ~ .checkmark {
+  background-color: #F2001E;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.containerCheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+
+.containerCheck .checkmark:after {
+  top: 3.5px;
+  left: 3.5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.Mail {
+  position: fixed;
+  width: 100%;
+  margin-left: -35%;
+  margin-top: -15%;
+  z-index: -1 !important;
 }
 
 /*!
@@ -10772,7 +10905,7 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: #FDFDFD !important;
+  background-color: #FBFBFB !important;
 }
 
 .row {
@@ -10785,6 +10918,7 @@ body {
 }
 
 .loginButton {
+  font-family: "Heebo", sans-serif;
   background-color: #F2001E !important;
   font-weight: bold !important;
   color: #FFFFFF !important;
@@ -10792,6 +10926,12 @@ body {
   padding-left: 30px !important;
   padding-right: 30px !important;
   margin-top: 5%;
+}
+
+.loginButton:hover {
+  transition: all 0.3s;
+  background-color: #cb021b !important;
+  color: #FFFFFF !important;
 }
 
 .myPhone {
@@ -10812,7 +10952,8 @@ body {
 }
 
 .loginText {
-  font-size: 18px;
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: -3% !important;
 }
@@ -10820,12 +10961,6 @@ body {
 .arbelText {
   font-size: 16px;
   margin-bottom: 2%;
-}
-
-.loginButton:hover {
-  transition: all 0.3s;
-  background-color: #cb021b !important;
-  color: #FFFFFF !important;
 }
 
 .passwordHelp {
@@ -10889,6 +11024,7 @@ body {
 }
 
 .profileVoice {
+  font-family: "Nunito", sans-serif;
   text-align: right;
   padding-right: 10px !important;
   padding-top: 0 !important;

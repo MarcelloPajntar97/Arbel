@@ -1,21 +1,21 @@
 #navbar {
   background-color: none !important;
+  font-family: $titleFont;
+  height: auto !important;
 }
 
 #navbarContainer{
   min-width: 100%;
 }
 
-
 .nav-link {
   color: transparentize($black, 0.3) !important;
   font-weight: bold !important;
-}
-
-.nav-link:hover{
-  transition: all 0.3s;
-  color: transparentize($black, 0) !important;
-  font-weight: bold !important;
+  &:hover {
+    transition: all 0.3s;
+    color: transparentize($black, 0) !important;
+    font-weight: bold !important;
+  }
 }
 
 .arbelLogo {
@@ -36,10 +36,9 @@
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
-}
-
-.logoutButton:hover{
-  transition: all 0.3s;
-  background-color: #BD0118 !important;
-  color: $white !important;
+  &:hover {
+    transition: all 0.3s;
+    background-color: #BD0118 !important;
+    color: $white !important;
+  }
 }
