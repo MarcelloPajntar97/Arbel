@@ -17,7 +17,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Authentication Links -->
 
-      <ul class="navbar-nav mr-auto navVoice">
+      <!-- <ul class="navbar-nav mr-auto navVoice">
         <li class="nav-item active">
           <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only"></span></a>
         </li>
@@ -27,7 +27,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/contact') }}">Contatta</a>
         </li>
-      </ul>
+      </ul> -->
 
       @guest
       <li class="nav-item">

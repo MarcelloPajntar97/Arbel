@@ -5,7 +5,7 @@
   <div class = "row allContainer">
 
 
-    <div class="col-md-6 prova">
+    <div class="col-md-6 sendContainer">
       <form>
     <div class="row form-group">
       <div class = "col-md-12">
