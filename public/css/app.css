@@ -391,6 +391,32 @@ a:hover {
   margin-bottom: 3%;
 }
 
+.imageSubmitButton {
+  font-family: "Heebo", sans-serif !important;
+  background-color: white !important;
+  margin-top: 10% !important;
+  color: #A4AAB3 !important;
+  border-radius: 25px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  font-weight: bold !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #A4AAB3 !important;
+}
+
+.imageSubmitButton:hover {
+  transition: all 0.5s !important;
+  background-color: #F2001E !important;
+  color: white !important;
+  border-radius: 25px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #F2001E !important;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors

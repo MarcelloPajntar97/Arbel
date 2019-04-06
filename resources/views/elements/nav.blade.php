@@ -44,7 +44,10 @@
          <!-- <img class = "imageProfile" src="{{ asset('/img/profile.png')}}"> -->
         <a class="nav-link dropdown-toggle profileButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="photo">
-            <img class = "imageProfile" src="{{ asset('/img/profile.png')}}">
+            <!-- <img class = "imageProfile" src="{{ asset('/img/profile.png')}}"> -->
+            <!-- {{ Auth::user()->avatar }} -->
+            <img class="rounded-circle" src="/storage/avatars/{{ Auth::user()->avatar }}" />
+
           </div>
           <!-- {{ Auth::user()->name }}<b class="caret d-none d-lg-block d-xl-block"></b> -->
         </a>
@@ -54,7 +57,7 @@
             <li class="dropdown-divider"></li>
             <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="#">{{ __('Cambia Password') }}</a>
             </li>
-            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="#">{{ __('Informazioni Arbel') }}
+            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ url('/profile') }}">{{ __('Immagine Profilo') }}
             </a></li>
             <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ route('login') }}"
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>

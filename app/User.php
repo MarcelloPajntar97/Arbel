@@ -42,4 +42,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Subject');
     }
 
+    public function memories()
+    {
+        return $this->hasMany('App\Memory');
+    }
+
 }
