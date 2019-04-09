@@ -2,6 +2,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Heebo');
+@import url('/fonts/futuraMedium.ttf');
+@import url('/fonts/futuraBook.ttf');
 
 // Variables
 @import 'variables';
@@ -10,16 +12,27 @@
 @import 'layout/contact';
 @import 'layout/courses';
 @import 'layout/profile';
+@import 'layout/todayCalendar';
+// @import '/fonts/futura medium bt.ttf';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: $body-bg !important;
+  // background-color: $body-bg !important;
+  background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
 }
 
 .row {
   width: 100% !important;
+}
+
+a {
+ color: $deselectedItem !important;
+  &:hover{
+    transition: all 0.3s,
+    color $redArbel !important;
+  }
 }
 
 #login {
@@ -30,7 +43,7 @@ body {
 .loginButton {
   font-family: $titleFont;
   background-color: $redArbel !important;
-  font-weight: bold !important;
+  // font-weight: bold !important;
   color: $white !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
@@ -62,8 +75,9 @@ body {
 .loginText
 {
   font-family: $titleFont;
-  font-size: 20px;
   font-weight: bold;
+  font-size: 26px;
+  // font-weight:;
   margin-bottom: -3% !important;
 }
 
@@ -92,16 +106,28 @@ body {
 }
 
 #primaFascia, #secondaFascia, #terzaFascia, #quartaFascia, #corsi{
-  margin: 5%;
+  margin-bottom: 4%;
+  font-weight: bold;
+  margin-left: 0 !important;
 }
 
-.page-footer{
+.footerLogin{
   bottom: 0 !important;
   float: right !important;
   margin-right: 4%;
+  margin-top: 2% !important;
   margin-bottom: 1%;
   color: #626262 !important;
   position: fixed;
+  right: 0;
+}
+
+.footerHome{
+  bottom: 0 !important;
+  float: right !important;
+  margin-right: 4%;
+  margin-top: 12%;
+  color: $white !important;
   right: 0;
 }
 
@@ -121,4 +147,8 @@ body {
 .GoogleStore{
   float: left !important;
   margin-left: -12% !important;
+}
+
+.passwordForm, .mailForm {
+  border-radius: 5px !important;
 }

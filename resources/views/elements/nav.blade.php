@@ -44,7 +44,7 @@
          <!-- <img class = "imageProfile" src="{{ asset('/img/profile.png')}}"> -->
         <a class="nav-link dropdown-toggle profileButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="photo">
-            <!-- <img class = "imageProfile" src="{{ asset('/img/profile.png')}}"> -->
+            <!-- <img class = "imageProfile" src="{{ asset('/img/userDefault.jpg')}}"> -->
             <!-- {{ Auth::user()->avatar }} -->
             <img class="rounded-circle" src="/storage/avatars/{{ Auth::user()->avatar }}" />
 

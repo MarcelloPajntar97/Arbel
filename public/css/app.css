@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Heebo);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Heebo);@import url(/fonts/futuraMedium.ttf);@import url(/fonts/futuraBook.ttf);@charset "UTF-8";
 
 #navbar {
   background-color: none !important;
-  font-family: "Heebo", sans-serif;
+  font-family: "futura", sans-serif;
   height: auto !important;
 }
 
@@ -169,14 +169,13 @@ body {
 }
 
 #registerButton {
-  font-family: "Heebo", sans-serif;
+  font-family: "futura", sans-serif;
   background-color: white;
   margin-top: 10%;
   color: #A4AAB3;
   border-radius: 25px;
   padding-left: 30px;
   padding-right: 30px;
-  font-weight: bold;
   border-style: solid;
   border-width: 1px;
   border-color: #A4AAB3;
@@ -217,11 +216,10 @@ body {
 }
 
 .titleUsers {
-  font-family: "Heebo", sans-serif;
+  font-family: "futura", sans-serif;
   margin-top: 2%;
   padding-bottom: 1%;
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   color: #4A4A4A;
 }
 
@@ -237,13 +235,9 @@ body {
   width: 40% !important;
 }
 
-body {
-  background-color: #FBFBFB !important;
-}
-
 .allContainer {
   margin-top: -10% !important;
-  margin-left: 6% !important;
+  margin-left: 7% !important;
   align-items: center;
   align-content: center;
   position: absolute;
@@ -254,7 +248,7 @@ body {
   background-color: #FFFFFF;
   padding-top: 2%;
   padding-left: 2% !important;
-  padding-bottom: 2%;
+  padding-bottom: 4%;
   border-radius: 10px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 4px darkGrey !important;
@@ -262,7 +256,7 @@ body {
 }
 
 .newColorBg {
-  background-color: #F2001E;
+  background: linear-gradient(to top, #F2001E 0%, #EF2252 100%) !important;
   z-index: -1 !important;
   margin-top: 12%;
   margin-bottom: -15% !important;
@@ -271,14 +265,13 @@ body {
 }
 
 .sendButton {
-  font-family: "Heebo", sans-serif;
+  font-family: "futura", sans-serif;
   background-color: #F2001E !important;
-  font-weight: bold !important;
   color: #FFFFFF !important;
   border: none !important;
   border-radius: 25px !important;
-  padding-left: 30px !important;
-  padding-right: 30px !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
   margin-top: 5%;
 }
 
@@ -298,19 +291,25 @@ body {
   height: 400px;
 }
 
-.prova1 {
-  margin-top: 5%;
-  margin-bottom: 10%;
-}
-
 .contactTitle {
-  margin-left: -1% !important;
+  font-family: "futura", sans-serif;
   padding-top: 5%;
+  font-size: 16px !important;
 }
 
 .coursesList {
   padding-top: 8%;
   padding-left: 3% !important;
+}
+
+#formEmail,
+#formObject,
+#formTextarea {
+  border-radius: 5px !important;
+}
+
+placeholder {
+  color: lightGrey !important;
 }
 
 .allCourses {
@@ -326,59 +325,83 @@ body {
   padding-top: 2%;
   padding-left: 2% !important;
   padding-bottom: 2%;
+  margin-top: 15% !important;
   margin-bottom: 15%;
-  border-radius: 10px !important;
+  border-radius: 8px !important;
   bottom: 0 !important;
-  box-shadow: 0px 1px 4px lightGrey !important;
-  width: 100%;
-  height: 170px;
+  box-shadow: 0px 1px 5px #dddbdb !important;
+  background-color: #FFFFFF;
+  height: 350px;
+  width: 260px !important;
+  color: #343434 !important;
+  transition: all 0.2s ease-in-out;
 }
 
-.mediaText,
-.videoText,
-.soundText,
-.photoText,
-.comunicationText,
-.graphicText {
-  padding-left: 5%;
+.mediaContainer:hover,
+.videoContainer:hover,
+.soundContainer:hover,
+.photoContainer:hover,
+.comunicationContainer:hover,
+.graphicContainer:hover {
+  transition: all 0.2s !important;
+  background-color: #F2001E !important;
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+  color: #FFFFFF !important;
+}
+
+.sectionText {
+  padding-left: 7%;
   font-size: 18px;
-  padding-top: 15%;
   font-weight: bold;
-  color: #FFFFFF;
 }
 
-.mediaText:hover,
-.videoText:hover,
-.soundText:hover,
-.photoText:hover,
-.comunicationText:hover,
-.graphicText:hover {
-  transition: all 0.3s;
-  color: #DBDBDB;
+.descriptionText {
+  padding-left: 7%;
+  font-size: 14px;
+  padding-top: 10%;
 }
 
-.mediaContainer {
-  background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
+.yearText {
+  padding-right: 15% !important;
+  padding-left: 7% !important;
+  font-size: 22px;
+  margin-top: 29% !important;
+  font-family: "futura", sans-serif;
 }
 
-.videoContainer {
-  background: linear-gradient(to right, #3C989B 0%, #62BCBC 100%) !important;
+.horizontalLine {
+  margin-left: 7% !important;
+  width: 100% !important;
 }
 
-.soundContainer {
-  background: linear-gradient(to right, #FFAC00 0%, #F4B647 100%) !important;
+.mediaImage {
+  width: 85%;
+  margin-left: 7% !important;
 }
 
-.photoContainer {
-  background: linear-gradient(to right, #282B40 0%, #444A6B 100%) !important;
+.goArrow {
+  margin-left: 120% !important;
+  margin-top: -17% !important;
+  width: 10px !important;
+  fill: #000000 !important;
+  height: auto;
 }
 
-.comunicationContainer {
-  background: linear-gradient(to right, #DBDBDB 0%, #F1F2EC 100%) !important;
+.goArrow:hover {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
 }
 
-.graphicContainer {
-  background: linear-gradient(to right, #9D25E8 0%, #AB53EA 100%) !important;
+.card {
+  display: flex !important;
+  background: none !important;
+  border: none !important;
+  overflow-x: auto;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
 }
 
 a:hover {
@@ -386,13 +409,21 @@ a:hover {
 }
 
 .coursesTitle {
+  font-family: "futura", sans-serif !important;
   margin-left: -1% !important;
+  font-size: 16px !important;
   padding-top: 5%;
-  margin-bottom: 3%;
+}
+
+.nextButton {
+  position: absolute;
+  right: 0 !important;
+  margin-right: 5%;
+  margin-top: 12%;
 }
 
 .imageSubmitButton {
-  font-family: "Heebo", sans-serif !important;
+  font-family: "futura", sans-serif !important;
   background-color: white !important;
   margin-top: 10% !important;
   color: #A4AAB3 !important;
@@ -415,6 +446,91 @@ a:hover {
   border-style: solid !important;
   border-width: 1px !important;
   border-color: #F2001E !important;
+}
+
+.todayContainer {
+  margin-bottom: 5% !important;
+  background-color: #FFFFFF;
+  padding-bottom: 3%;
+  border-radius: 10px !important;
+  padding-top: 3% !important;
+  bottom: 0 !important;
+}
+
+.todayTitle {
+  font-family: "futura", sans-serif;
+  font-size: 16px !important;
+  margin-top: 5% !important;
+}
+
+.linkCalendar {
+  color: #A4AAB3 !important;
+  float: right !important;
+  margin-top: 3% !important;
+}
+
+.linkCalendar:hover {
+  transition: all 0.5s;
+  color: #F2001E !important;
+}
+
+.weekContainer {
+  background-color: #FBFBFB !important;
+  width: 80% !important;
+  padding-top: 10% !important;
+  padding-left: 2% !important;
+  margin: 0 auto !important;
+  border-radius: 6px !important;
+}
+
+.selectDay {
+  margin-bottom: 40% !important;
+  text-align: center !important;
+}
+
+.month {
+  font-size: 12px;
+  color: darkGrey;
+  text-align: center !important;
+}
+
+.day {
+  font-family: "futura", sans-serif;
+  font-size: 14px;
+  text-align: center !important;
+}
+
+.selectedDay {
+  background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
+  margin-bottom: 40% !important;
+  box-shadow: 0px 1px 9px darkGrey !important;
+}
+
+.monthSelected {
+  color: lightGrey;
+  font-size: 14px;
+  text-align: center !important;
+}
+
+.daySelected {
+  color: #FFFFFF;
+  font-family: "futura", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center !important;
+}
+
+.allWeek {
+  margin-right: -50% !important;
+}
+
+.allHour {
+  margin-top: 2% !important;
+}
+
+.activity {
+  font-weight: normal;
+  margin-left: 6% !important;
 }
 
 /*!
@@ -11073,11 +11189,19 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: #FBFBFB !important;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FBFBFB 100%) !important;
 }
 
 .row {
   width: 100% !important;
+}
+
+a {
+  color: #A4AAB3 !important;
+}
+
+a:hover {
+  transition: all 0.3s, color #F2001E !important;
 }
 
 #login {
@@ -11086,9 +11210,8 @@ body {
 }
 
 .loginButton {
-  font-family: "Heebo", sans-serif;
+  font-family: "futura", sans-serif;
   background-color: #F2001E !important;
-  font-weight: bold !important;
   color: #FFFFFF !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
@@ -11120,9 +11243,9 @@ body {
 }
 
 .loginText {
-  font-family: "Heebo", sans-serif;
-  font-size: 20px;
+  font-family: "futura", sans-serif;
   font-weight: bold;
+  font-size: 26px;
   margin-bottom: -3% !important;
 }
 
@@ -11155,16 +11278,28 @@ body {
 #terzaFascia,
 #quartaFascia,
 #corsi {
-  margin: 5%;
+  margin-bottom: 4%;
+  font-weight: bold;
+  margin-left: 0 !important;
 }
 
-.page-footer {
+.footerLogin {
   bottom: 0 !important;
   float: right !important;
   margin-right: 4%;
+  margin-top: 2% !important;
   margin-bottom: 1%;
   color: #626262 !important;
   position: fixed;
+  right: 0;
+}
+
+.footerHome {
+  bottom: 0 !important;
+  float: right !important;
+  margin-right: 4%;
+  margin-top: 12%;
+  color: #FFFFFF !important;
   right: 0;
 }
 
@@ -11185,5 +11320,10 @@ body {
 .GoogleStore {
   float: left !important;
   margin-left: -12% !important;
+}
+
+.passwordForm,
+.mailForm {
+  border-radius: 5px !important;
 }
 

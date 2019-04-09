@@ -3,7 +3,7 @@
 @section('content')
 
 <div class = "container">
-  <div class="titleUsers">{{ __('Utenti registrati') }}</div>
+  <div class="titleUsers">{{ __('UTENTI REGISTRATI') }}</div>
 
 
   <!-- <div class="containerAllUser"> -->
@@ -13,10 +13,10 @@
   foreach ($teachers as $teacher) { ?>
     <div class="row containerAllUser">
       <div class = "col-md-3">
-    <?php echo $teacher->name?>
+    <?php echo $teacher->name?>  <?php echo $teacher->surname?>
       </div>
         <div class = "col-md-3">
-      <?php echo $teacher->surname?>
+      da mettere la data di iscrizione
         </div>
 
           <div class = "col-md-3">
