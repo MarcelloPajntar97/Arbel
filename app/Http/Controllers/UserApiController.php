@@ -15,7 +15,7 @@ class UserApiController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::where('isAdmin', 0)->get();
         return UserResource::collection($users);
     }
 
