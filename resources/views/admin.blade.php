@@ -16,7 +16,7 @@
     <?php echo $teacher->name?>  <?php echo $teacher->surname?>
       </div>
         <div class = "col-md-3">
-      da mettere la data di iscrizione
+      <?php echo $teacher->created_at?>
         </div>
 
           <div class = "col-md-3">
