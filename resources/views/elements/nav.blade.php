@@ -53,11 +53,11 @@
         </a>
 
         <ul class="dropdown-menu dropdown-navbar">
-            <li class = "nav-link text-right">{{ Auth::user()->name }} {{ Auth::user()->surname }}</li>
+            <li class = "text-right userName">{{ Auth::user()->name }} {{ Auth::user()->surname }}</li>
             <li class="dropdown-divider"></li>
-            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="#">{{ __('Cambia Password') }}</a>
-            </li>
-            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ url('/profile') }}">{{ __('Immagine Profilo') }}
+            <!-- <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ url('/profile') }}">{{ __('Modifica Profilo') }}</a>
+            </li> -->
+            <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ url('/profile') }}">{{ __('Modifica Profilo') }}
             </a></li>
             <li class = "nav-link profileVoice"><a class= "nav-item dropdown-item" href="{{ route('login') }}"
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>

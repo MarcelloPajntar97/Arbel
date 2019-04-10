@@ -6,7 +6,7 @@
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
-  font-weight: bold !important;
+  // font-weight: bold !important;
   border-style: solid !important;
   border-width: 1px !important;
   border-color: $deselectedItem !important;
@@ -21,4 +21,32 @@
     border-width: 1px !important;
     border-color: $redArbel !important;
   }
+}
+
+.profileTitle{
+  // font-family: $titleFont;
+  font-family: $titleFont !important;
+  margin-left: -1% !important;
+  font-size: 16px !important;
+  padding-top: 5%;
+  // margin-bottom: 4%;
+}
+
+.allProfile{
+  background-color: $white;
+  margin-top: 4% !important;
+  padding-top: 2%;
+  padding-left: 2% !important;
+  padding-bottom: 4%;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 4px darkGrey !important;
+  z-index: 10 !important;
+}
+
+.roundedImg{
+  width: auto !important;
+  height: 120px !important;
+  margin: 0 auto !important;
+  border-radius: 50% !important;
 }

@@ -4,38 +4,48 @@
 
 <div class = "container"><h3 class = "todayTitle">{{ __('ORARIO') }}</h3></div>
 <div class="container todayContainer">
-  <div class="row justify-content-between">
+  <div class="row">
     <div class = "col-md-1 allWeek">
-      <div class = "weekContainer">
-      <div class = "row">
-        <div class = "col selectDay">
-          <div class = "month">APRILE</div>
-          <div class = "day text-center">8</div>
+      <div class = "weekContainer navigation" id="navigation">
+        <div class = "row">
+          <a href="#" class="active">
+            <div class = "col selectDay">
+              <div class = "month text-center">APRILE</div>
+              <div class = "day text-center">8</div>
+            </div>
+          </a>
         </div>
+      <div class = "row">
+        <a href="#">
+          <div class = "col activeDay">
+            <div class = "monthSelected">APRILE</div>
+            <div class = "daySelected text-center">9</div>
+          </div>
+        </a>
       </div>
       <div class = "row">
-        <div class = "col selectedDay">
-          <div class = "monthSelected">APRILE</div>
-          <div class = "daySelected text-center">9</div>
-        </div>
+        <a href="#">
+          <div class = "col selectDay">
+            <div class = "month">APRILE</div>
+            <div class = "day text-center">10</div>
+          </div>
+        </a>
       </div>
       <div class = "row">
-        <div class = "col selectDay">
-          <div class = "month">APRILE</div>
-          <div class = "day text-center">10</div>
-        </div>
+        <a href="#">
+          <div class = "col selectDay">
+            <div class = "month">APRILE</div>
+            <div class = "day text-center">11</div>
+          </div>
+        </a>
       </div>
       <div class = "row">
-        <div class = "col selectDay">
-          <div class = "month">APRILE</div>
-          <div class = "day text-center">11</div>
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "col selectDay">
-          <div class = "month">APRILE</div>
-          <div class = "day text-center">12</div>
-        </div>
+        <a href="#">
+          <div class = "col selectDay">
+            <div class = "month">APRILE</div>
+            <div class = "day text-center">12</div>
+          </div>
+        </a>
       </div>
 
       </div>
@@ -54,21 +64,67 @@
       </div>
     </div>
   </div>
+
 </div>
 
-<div class = "container-fluid originalColorBg">
+<img src="{{asset('/img/sinceramente.svg')}}" class = "nextSection">
 
 <div class = "container"><h3 class = "coursesTitle">{{ __('I MIEI CORSI') }}</h3></div>
-<div class = "container allCourses">
+<div class = "allCourses">
 
-  <a href= ""><img src="{{asset('/img/nextButton.svg')}}" class = "nextButton"></a>
+  <!-- <a href= ""><img src="{{asset('/img/nextButton.svg')}}" class = "nextButton"></a> -->
 
-  <section class="card">
-    <div class = "row">
-      <div class="col-md-3">
+
+  <!-- <div class="container-fluid idk">
+      <h2>Bootstrap Horizontal Scrolling with Flexbox</h2>
+      <div class="row flex-row flex-nowrap">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card card-block">Card</div>
+          </div>
+      </div>
+  </div> -->
+    <div class="container-fluid idk">
+    <div class = "row flex-row flex-nowrap">
+      <div class="col-md-3" id = "spero">
 
         <a class = "linkCard" href="">
-          <div class = "container mediaContainer">
+          <div class = "container mediaContainer card-block">
           <div class = "row">
             <div class = "col">
               <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
@@ -82,7 +138,7 @@
           </div>
           <div class = "row">
             <div class = "col">
-              <div class = "descriptionText">Breve descrizione del corso, Marcello approverà?</div>
+              <div class = "descriptionText">Breve descrizione del corso,<br> Marcello approverà?</div>
             </div>
           </div>
           <div class = "row">
@@ -94,10 +150,10 @@
           </div>
           </a>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3"  id = "spero">
 
       <a class = "linkCard" href="">
-        <div class = "container mediaContainer">
+        <div class = "container mediaContainer card-block">
         <div class = "row">
           <div class = "col">
             <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
@@ -111,7 +167,7 @@
         </div>
         <div class = "row">
           <div class = "col">
-            <div class = "descriptionText">Breve descrizione del corso, Marcello approverà?</div>
+            <div class = "descriptionText">Breve descrizione del corso, <br>  Marcello approverà?</div>
           </div>
         </div>
         <div class = "row">
@@ -123,10 +179,10 @@
         </div>
         </a>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3"  id = "spero">
 
     <a class = "linkCard" href="">
-      <div class = "container mediaContainer">
+      <div class = "container mediaContainer card-block">
       <div class = "row">
         <div class = "col">
           <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
@@ -140,7 +196,7 @@
       </div>
       <div class = "row">
         <div class = "col">
-          <div class = "descriptionText">Breve descrizione del corso, Marcello approverà?</div>
+          <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
         </div>
       </div>
       <div class = "row">
@@ -152,10 +208,10 @@
       </div>
       </a>
 </div>
-<div class="col-md-3">
+<div class="col-md-3"  id = "spero">
 
   <a class = "linkCard" href="">
-    <div class = "container mediaContainer">
+    <div class = "container mediaContainer card-block">
     <div class = "row">
       <div class = "col">
         <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
@@ -169,7 +225,67 @@
     </div>
     <div class = "row">
       <div class = "col">
-        <div class = "descriptionText">Breve descrizione del corso, Marcello approverà?</div>
+        <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class = "container-fluid yearText">year 3 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
+
+      </div>
+    </div>
+    </div>
+    </a>
+</div>
+
+<div class="col-md-3"  id = "spero">
+
+  <a class = "linkCard" href="">
+    <div class = "container mediaContainer card-block">
+    <div class = "row">
+      <div class = "col">
+        <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
+        <hr class = "horizontalLine">
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class = "sectionText">Media Design</div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class = "container-fluid yearText">year 3 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
+
+      </div>
+    </div>
+    </div>
+    </a>
+</div>
+
+<div class="col-md-3"  id = "spero">
+
+  <a class = "linkCard" href="">
+    <div class = "container mediaContainer card-block">
+    <div class = "row">
+      <div class = "col">
+        <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
+        <hr class = "horizontalLine">
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class = "sectionText">Media Design</div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
       </div>
     </div>
     <div class = "row">
@@ -183,8 +299,8 @@
 </div>
 
   </div>
-</section>
-</div>
+  </div>
+<!-- </div> -->
 </div>
 
 

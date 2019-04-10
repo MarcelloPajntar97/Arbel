@@ -117,7 +117,7 @@
 }
 
 .profileButton{
-  background-color: $redArbel;
+  background-color: #f5f5f5;
   float: right;
   vertical-align: middle;
   border-radius: 50px;
@@ -151,3 +151,14 @@
 }
 
 *:focus {outline:none !important}
+
+.userName{
+  margin-right: 7% !important;
+}
+
+.dropdown-toggle{
+  color: $title !important;
+  &:hover {
+    color: $redArbel !important;
+  }
+}

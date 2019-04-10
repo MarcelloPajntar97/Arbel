@@ -27,6 +27,12 @@ body {
   width: 100% !important;
 }
 
+.container-fluid {
+  margin-left: none !important;
+  margin-right: none !important;
+  padding: none !important;
+}
+
 a {
  color: $deselectedItem !important;
   &:hover{
