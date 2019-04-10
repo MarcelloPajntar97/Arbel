@@ -26,3 +26,8 @@ Route::get('/calendar', 'CalendarController@index');
 Route::get('/routes/admin', 'HomeController@index');
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
+
+
+Route::get('/editUser', function () {
+    return view('editUser');
+});

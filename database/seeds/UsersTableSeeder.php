@@ -18,6 +18,15 @@ class UsersTableSeeder extends Seeder
             'password'=>bcrypt('cavolo'),
             'isAdmin'=>0
         ]);
+
+        App\User::create([
+            'name'=>'Fabrizio',
+            'surname'=>'Infante',
+            'email'=>'fabrizio.infante@ied.edu',
+            'password'=>bcrypt('credenti'),
+            'isAdmin'=>0
+        ]);
+
         App\User::create([
             'name'=>'Segreteria',
             'surname'=>'Università',

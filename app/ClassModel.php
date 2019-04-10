@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Class extends Model
+class ClassModel extends Model
 {
+  protected $table = 'classes';
   public function students()
   {
       return $this->hasMany('App\Student');

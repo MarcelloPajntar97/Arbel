@@ -24,6 +24,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/register') }}">Aggiungi docente</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/editUser') }}">Gestisci docente</a>
+          </li>
         </ul>
       </div>
 
