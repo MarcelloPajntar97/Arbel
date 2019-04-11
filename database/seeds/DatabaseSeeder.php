@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
 
         DB::table('classes')->delete();
         $this->call(ClassTableSeeder::class);
+
+        DB::table('subjects')->delete();
+        $this->call(SubjectsTableSeeder::class);
     }
 }
