@@ -239,12 +239,30 @@ body {
   color: #4A4A4A !important;
 }
 
-#deleteUser {
-  margin-top: -2.3%;
+#deleteUser,
+#editUser {
+  margin-top: -10% !important;
+  width: 60px !important;
+  padding: 7px !important;
 }
 
-.trashIcon {
-  width: 40% !important;
+.editBtn {
+  background-color: #4A90E2 !important;
+}
+
+.editBtn:hover {
+  background: #2D75C9 !important;
+}
+
+.trashIcon,
+.editIcon {
+  width: auto !important;
+  height: 17px !important;
+}
+
+.trashIcon:hover,
+.editIcon:hover {
+  opacity: 0.7s !important;
 }
 
 .allContainer {
@@ -491,10 +509,10 @@ a:hover {
 
 .allProfile {
   background-color: #FFFFFF;
-  margin-top: 4% !important;
+  margin-top: 2% !important;
   padding-top: 2%;
   padding-left: 2% !important;
-  padding-bottom: 4%;
+  padding-bottom: 2.5% !important;
   border-radius: 10px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 4px darkGrey !important;
@@ -503,9 +521,52 @@ a:hover {
 
 .roundedImg {
   width: auto !important;
-  height: 120px !important;
+  height: 180px !important;
   margin: 0 auto !important;
-  border-radius: 50% !important;
+}
+
+.form-control-file {
+  background-color: #F2001E;
+}
+
+.upload-btn-wrapper {
+  position: absolute;
+  overflow: hidden;
+  margin-top: -44%;
+  margin-left: 27%;
+  z-index: 1;
+  display: inline-block;
+}
+
+.btnUpload {
+  border: none;
+  background-color: transparent;
+  padding: 8px 20px;
+  cursor: pointer !important;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.nameUser {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.descriptionUser {
+  margin-top: 2%;
+  margin-bottom: 3%;
+  font-size: 14px;
+  color: darkGrey;
+}
+
+.changePassword {
+  margin-left: 5% !important;
 }
 
 .todayContainer {
@@ -540,7 +601,7 @@ a:hover {
 }
 
 .weekContainer {
-  background-color: #FBFBFB !important;
+  background: linear-gradient(to top, #FFFFFF 0%, #FBFBFB 15%, #FBFBFB 83%, #FFFFFF 100%) !important;
   width: 80% !important;
   padding-top: 10% !important;
   padding-left: 14% !important;
@@ -570,6 +631,7 @@ a:hover {
   margin-left: none !important;
   margin-right: none !important;
   padding-top: 4%;
+  margin-right: -3px !important;
   padding-bottom: 4%;
   color: #FFFFFF !important;
   margin-bottom: 40% !important;
@@ -579,6 +641,7 @@ a:hover {
 .monthSelected {
   color: lightGrey;
   font-size: 14px;
+  margin-left: -3px !important;
   text-align: center !important;
 }
 
@@ -586,6 +649,7 @@ a:hover {
   color: #FFFFFF;
   font-family: "futura", sans-serif;
   font-weight: bold;
+  margin-left: -1px !important;
   font-size: 16px;
   text-align: center !important;
 }

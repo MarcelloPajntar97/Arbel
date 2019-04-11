@@ -22,7 +22,13 @@
           <div class = "col-md-3">
         <?php echo $teacher->email?>
           </div>
-            <div class = "col-md-3 text-center">
+            <div class = "col-md-1 text-center">
+              <a href="{{ url('/editUser') }}" alt = "Gestisci Docente">
+                <button class="btn editBtn" id="editUser" type="submit"><img class = "editIcon" src="{{ asset('/img/editIcon.svg')}}"></button>
+              </a>
+            </div>
+
+            <div class = "col-md-1 text-center">
               <form action="{{action('SecretaryController@destroy', $teacher->id)}}" method="post">
                 @csrf
                 <input name="_method" type="hidden" value="DELETE">

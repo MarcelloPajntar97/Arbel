@@ -4,6 +4,7 @@
 
 <div class = "container"><h3 class = "coursesTitle">{{ __('IL MIO PROFILO') }}</h3></div>
 <div class="container allProfile">
+
   <div class="row">
     @if ($message = Session::get('success'))
     <div class="alert alert-success alert-block">
@@ -22,24 +23,55 @@
     </div>
     @endif
   </div>
-  <div class="row">
-    <div class="container">
+
+
+  <div class = "row">
+    <div class = "col-md-4">
       <div class="profileImg">
         <img class="roundedImg" src="/storage/avatars/{{ $user->avatar }}" />
       </div>
+      <form action="/profile" method="post" enctype="multipart/form-data">
+        @csrf
+
+        <div class="form-group">
+          <div class="upload-btn-wrapper">
+            <button class="btnUpload"><img class = "loadImage" src="{{asset('/img/editImage.svg')}}"></button>
+            <input type="file" name="myfile" />
+          </div>
+
+          <!-- <input type="file" class="" name="avatar">Carica</input> -->
+        </div>
+        <button type="submit" class="btn btn-primary imageSubmitButton">Salva</button> <span> <button class="btn btn-primary imageSubmitButton changePassword">Modifica Password</button> </span>
+      </form>
     </div>
 
-  </div>
-  <div class="row justify-content-center">
-    <form action="/profile" method="post" enctype="multipart/form-data">
-      @csrf
 
-      <div class="form-group">
-        <input type="file" class="form-control-file" name="avatar" aria-describedby="fileHelp">
-        <small id="fileHelp" class="form-text text-muted">Seleziona un immagine profilo direttamente dalla tua galleria</small>
+    <div class = "col-md-8">
+      <div class = "row">
+        <div class = "col">
+          <div class = "nameUser">
+          {{ Auth::user()->name }} {{ Auth::user()->surname }}
+          </div>
       </div>
-      <button type="submit" class="btn btn-primary imageSubmitButton">SALVA</button>
-    </form>
+      </div>
+
+      <div class = "row">
+        <div class = "col">
+          <div class = "descriptionUser">
+          Lorem ipsum dolor, prova testo. Devo capire se una descrizione del docente oppure inserire i corsi che lui tratta...
+          </div>
+      </div>
+      </div>
+
+      <!-- <div class = "row">
+        <div class = "col-md-3">
+          <button type="submit" class="btn btn-primary imageSubmitButton">Modifica Password</button>
+      </div> -->
+      </div>
+
+    </div>
+  </div>
+
   </div>
 </div>
 @endsection

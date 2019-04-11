@@ -138,7 +138,7 @@
           </div>
           <div class = "row">
             <div class = "col">
-              <div class = "descriptionText">Breve descrizione del corso,<br> Marcello approverà?</div>
+              <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
             </div>
           </div>
           <div class = "row">
@@ -167,7 +167,7 @@
         </div>
         <div class = "row">
           <div class = "col">
-            <div class = "descriptionText">Breve descrizione del corso, <br>  Marcello approverà?</div>
+            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
           </div>
         </div>
         <div class = "row">
@@ -196,7 +196,7 @@
       </div>
       <div class = "row">
         <div class = "col">
-          <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
+          <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
         </div>
       </div>
       <div class = "row">
@@ -225,7 +225,7 @@
     </div>
     <div class = "row">
       <div class = "col">
-        <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
+        <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
       </div>
     </div>
     <div class = "row">
@@ -255,7 +255,7 @@
     </div>
     <div class = "row">
       <div class = "col">
-        <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
+        <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
       </div>
     </div>
     <div class = "row">
@@ -285,7 +285,7 @@
     </div>
     <div class = "row">
       <div class = "col">
-        <div class = "descriptionText">Breve descrizione del corso,<br>  Marcello approverà?</div>
+        <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
       </div>
     </div>
     <div class = "row">
