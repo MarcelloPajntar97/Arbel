@@ -11,30 +11,39 @@
         <h2>Stai modificando {{ $teacher->name }} {{ $teacher->surname }}</h2>
       <div class="row form-group">
       <div class = "col-md-12">
-        <label for="addCourse">Quali materie insegna {{ $teacher->name }}?</label><br>
+        <label for="addCourse">A quali corsi insegna {{ $teacher->name }}?</label><br>
         <!--<input type="email" class="form-control" id = "addCourse"> -->
+        <select>
         <?php
-          $subjects = App\Subject::all();
-          foreach ($subjects as $subject) {
+          $courses = App\ClassModel::all();
+          $materia = 0;
+          foreach ($courses as $course) {
         ?>
-          <input type="checkbox" name="subject" value="{{ $subject->id }}">{{ $subject->subjectName }}<br>
-      <?php } ?>
+          <!-- <input type="checkbox" name="subjects" value="{{ $course->id }}">{{ $course->year }} {{ $course->section }} {{ $course->course }}<br> -->
+          <option id="selectCourse" value="{{ $course->id }}">{{ $course->year }} {{ $course->section }} {{ $course->course }}</option>
+      <?php
+        $materia = $course->id;
+    } ?>
+    </select>
       </div>
       </div>
 
-      <!-- <div class="row form-group">
-      <div class = "col-md-12">
-        <label for="addSection">{{ __('Sezione') }}</label>
-        <input type="text" class="form-control" id="addSection">
-      </div>
-      </div>
 
       <div class="row form-group">
       <div class = "col-md-12">
-        <label for="addSubject">{{ __('Materia') }}</label>
-        <input type="text" class="form-control" id="addSubject">
+        <label for="addSubject">Quali materie insegna {{ $teacher->name }}?</label><br>
+        <select>
+        <?php
+          $subjects = App\Subject::where('class_id', '=', $materia)->get();
+          foreach ($subjects as $subject) {
+        ?>
+          <!-- <input type="checkbox" name="subjects" value="{{ $course->id }}">{{ $course->year }} {{ $course->section }} {{ $course->course }}<br> -->
+          <option value="{{ $subject->id }}">{{ $subject->subjectName }}</option>
+      <?php } ?>
+    </select>
+        <!-- <input type="text" class="form-control" id="addSubject"> -->
       </div>
-      </div> -->
+      </div>
 
       <div class="row form-group">
       <div class = "col-md-12">
@@ -49,4 +58,5 @@
     </div>
   </div>
 </div>
+<?php dd($materia) ?>
 @endsection
