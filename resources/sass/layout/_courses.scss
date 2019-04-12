@@ -1,12 +1,6 @@
-.allCourses{
+.allCourses {
   margin-bottom: 8%;
   margin-left: 9%;
-}
-
-.originalColorBg{
-  // background-color: $body-bg !important;
-  // background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
-  // box-shadow: 0px -3px 4px lightGrey !important;
 }
 
 .mediaContainer, .videoContainer, .soundContainer, .photoContainer, .comunicationContainer, .graphicContainer {
@@ -16,31 +10,19 @@
   margin-top: 15% !important;
   margin-bottom: 15%;
   margin-left: none !important;
-  // margin-left: none !important;
-  // margin-right: none !important;
   border-radius: 5px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 20px #efefef !important;
-  // width: 80% !important;
-  // -webkit-filter: brightness(90%);
   background-color: $white;
   height: 350px;
   width: 240px !important;
   color: #343434 !important;
   transition: all .2s ease-in-out;
-
   &:hover {
     transition: all 0.2s !important;
     background-color: $redArbel !important;
     transform: scale(1.06);
-    // background: linear-gradient(to top, $redArbel 0%, #EF2252 100%) !important;
     color: $white !important;
-    // background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
-    // -webkit-filter: brightness(100%);
-
-    // width: 120% !important;
-    // height:400px !important;
-    // box-shadow: none !important;
   }
 }
 
@@ -52,6 +34,7 @@
   color: #343434 !important;
   transition: all .2s ease-in-out;
   margin-top: 15% !important;
+  margin-bottom: 5% !important;
   border-radius: 5px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 17px #f2f2f2 !important;
@@ -61,32 +44,14 @@
   width: 230px !important;
   &:hover {
     transition: all 0.2s !important;
-    // background-color: $redArbel !important;
-    transform: scale(1.04);
-
-    // box-shadow: none !important;
-    // background: linear-gradient(to top, $redArbel 0%, #EF2252 100%) !important;
-    // color: $white !important;
-    // background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
-    // -webkit-filter: brightness(100%);
-
-    // width: 120% !important;
-    // height:400px !important;
-    // box-shadow: none !important;
+    transform: scale(1.05);
   }
 }
 
 .sectionText {
   padding-left: 7%;
   font-size: 18px;
-  // margin-top: -2% !important;
   font-weight: bold;
-  // font-family: $titleFont;
-  // color: $black;
-  // &:hover{
-  //   transition: alsl 0.3s;
-  //   color: $white;
-  // }
 }
 
 .sectionTextp {
@@ -95,68 +60,31 @@
   font-size: 18px;
   color: $redArbel;
   font-family: $titleFont;
-  // margin-top: -2% !important;
-  // font-weight: bold;
-  // font-family: $titleFont;
-  // color: $black;
-  // &:hover{
-  //   transition: alsl 0.3s;
-  //   color: $white;
-  // }
 }
 
-.descriptionText{
+.descriptionText {
   padding-left: 7%;
   font-size: 14px;
   padding-top: 10%;
   opacity: 0.5 !important;
-
-
-  // font-weight: bold;
-  // color: lightGrey;
 }
 
-.yearText{
-  // bottom: 0 !important;
+.yearText {
   padding-right: 15% !important;
   padding-left: 7% !important;
-  // margin-left: -10% !important;
   font-size: 22px;
   margin-top: 29% !important;
-  // padding-top: 15%;
   font-family: $titleFont;
-
-  // color: darkGrey !important;
-
 }
 
-.horizontalLine{
+.horizontalLine {
   margin-left: 7% !important;
   width: 100% !important;
 }
 
-.mediaImage{
+.mediaImage {
   width: 85%;
   margin-left:7% !important;
-  // margin-top: 16% !important;
-  // margin-bottom: 6% !important;
-}
-
-// .linkCard:hover{
-//     color:  $white !important;
-// }
-
-.goArrow {
-  // float: right;
-  margin-left: 75% !important;
-  margin-top: -4% !important;
-  width: 10px !important;
-  fill: $black !important;
-  height: auto;
-  &:hover {
-    color: $white !important;
-    fill: $white !important;
-  }
 }
 
 .card {
@@ -170,51 +98,22 @@
   display: none;
 }
 
-// .yearText {
-//   font-size: 30px;
-//   margin-top: 20%;
-//   text-align: right;
-//   opacity: 60%;
-//   font-weight: bold;
-//   color: $white;
-// }
-
-
 // .mediaContainer {
 //   // background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
 //   background-image: url("/img/mediaCard.svg");
 // }
-// .videoContainer {
-//   // background: linear-gradient(to right, #3C989B 0%, #62BCBC 100%) !important;
-//   background-image: url("/img/videoCard.svg");
-// }
-// .soundContainer {
-//   background: linear-gradient(to right, #FFAC00 0%, #F4B647 100%) !important;
-// }
-// .photoContainer {
-//   background: linear-gradient(to right, #282B40 0%, #444A6B 100%) !important;
-// }
-// .comunicationContainer {
-//   background: linear-gradient(to right, #DBDBDB 0%, #F1F2EC 100%) !important;
-// }
-// .graphicContainer {
-//   background: linear-gradient(to right, #9D25E8 0%, #AB53EA 100%) !important;
-// }
-
 a:hover {
   text-decoration: none !important;
 }
 
 .coursesTitle{
-  // font-family: $titleFont;
   font-family: $titleFont !important;
   margin-left: -1% !important;
   font-size: 16px !important;
   padding-top: 5%;
-  // margin-bottom: 4%;
 }
 
-.nextButton{
+.nextButton {
   position: absolute;
   right: 0 !important;
   margin-right: 5%;
@@ -224,9 +123,6 @@ a:hover {
 .card-block {
     min-height: 220px;
     display: inline-block;
-    // margin: 0 auto !important;
-    // width: 220px !important;
-
 }
 
 .idk::-webkit-scrollbar {
@@ -237,40 +133,29 @@ a:hover {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  // margin-left: 5% !important;
 }
-
-// .col-12, .col-sm-6, .col-md-4, .col-lg-3{
-//   margin: 0 auto !important;
-//   padding: none !important;
-// }
 
 #spero {
   margin-right: -6.5% !important;
-  // padding: none !important;
   padding-right: none !important;
 }
 
-.yearNumber{
+.yearNumber {
   font-family: $titleFont;
   font-size: 12px !important;
   text-align: center !important;
   color: $redArbel;
-
-
-  // float: right;
   &:hover {
     font-size: 18px;
   }
 }
 
-.circle{
+.circle {
   background-color: #f9f9f9;
   width: 16% !important;
   float: right;
   padding: 5px !important;
   margin-right: -14% !important;
   margin-top: -3% !important;
-  // height: 20px !important;
   border-radius: 50% !important;
 }

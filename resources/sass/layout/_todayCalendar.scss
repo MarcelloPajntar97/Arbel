@@ -1,7 +1,6 @@
 .todayContainer{
   margin-bottom: 1% !important;
-  background-color: $white;
-  padding-bottom: 3%;
+  padding-bottom: 1.5%;
   border-radius: 10px !important;
   padding-top: 3% !important;
   bottom: 0 !important;
@@ -23,28 +22,26 @@
   }
 }
 
-.allWeek{
+.allWeek {
   margin: 0 auto !important;
   padding: none !important
 }
 
-.weekContainer{
-  // background-color: $body-bg !important;
+.weekContainer {
   background: linear-gradient(to top, $white 0%, $body-bg 15%, $body-bg 83%, $white 100%, ) !important;
   width: 80% !important;
-
   padding-top: 10% !important;
   padding-left: 14% !important;
   margin: 0 auto !important;
   border-radius: 6px !important;
 }
 
-.selectDay{
+.selectDay {
   margin-bottom: 40% !important;
   text-align: center !important;
 }
 
-.month{
+.month {
   font-size: 12px;
   color: darkGrey;
   text-align: center !important;
@@ -53,47 +50,43 @@
 .day {
   font-family: $titleFont;
   font-size: 14px;
-  // margin-left: 50% !important;
   text-align: center !important;
 }
 
-.activeDay{
+.activeDay {
   background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
   margin-left: none !important;
   margin-right: none !important;
-  // width: 120px;
   padding-top: 4%;
   margin-right: -3px !important;
   padding-bottom: 4%;
   color: $white !important;
   margin-bottom: 40% !important;
-
   box-shadow: 0px 1px 9px darkGrey !important;
 }
 
-.monthSelected{
+.monthSelected {
   color: lightGrey;
   font-size: 14px;
   margin-left: -3px !important;
   text-align: center !important;
 }
 
-.daySelected{
+.daySelected {
   color: $white;
   font-family: $titleFont;
   font-weight: bold;
   margin-left: -1px !important;
-    // margin-left: 53% !important;
   font-size: 16px;
   text-align: center !important;
 }
 
-.allHour{
-  margin-top: 2% !important;
+.allHour {
+  margin-top: 3% !important;
   margin-left: 3%;
 }
 
-.activity{
+.activity {
   font-weight: normal;
   margin-left: 6% !important;
 }
@@ -104,4 +97,13 @@
   margin-bottom: 3% !important;
   width: auto !important;
   max-width: 90%;
+}
+
+.colHour{
+padding: none !important;
+margin-right: -5%;
+}
+
+.rowHour{
+  margin-bottom: 1.5%;
 }

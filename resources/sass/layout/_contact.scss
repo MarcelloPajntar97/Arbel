@@ -31,7 +31,6 @@
 .sendButton {
   font-family: $titleFont;
   background-color: $redArbel !important;
-  // font-weight: bold !important;
   color: $white !important;
   border: none !important;
   border-radius: 25px !important;
@@ -57,10 +56,8 @@
 
 .contactTitle {
   font-family: $titleFont;
-  // margin-left: -1% !important;
-  padding-top: 5%;
+  padding-top: 1%;
   font-size: 16px !important;
-  // padding-bottom: 2% !important;
 }
 
 .coursesList {
@@ -68,12 +65,10 @@
   padding-left: 3% !important;
 }
 
-#formEmail, #formObject, #formTextarea{
-  // border: none !important;
-  // background: $body-bg;
+#formEmail, #formObject, #formTextarea {
   border-radius: 5px !important;
 }
 
-placeholder{
+placeholder {
   color: lightGrey !important;
 }

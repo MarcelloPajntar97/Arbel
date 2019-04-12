@@ -70,7 +70,7 @@
 
 .dropdown-menu{
     margin-top: 4% !important;
-    margin-left: 20%;
+    // margin-left: 10%;
 }
 
 .dropdown-menu>li>a {
@@ -80,7 +80,7 @@
     border-radius:4px;
     box-shadow:none;
     margin-top:20px;
-    margin-left: -50px !important;
+    margin-left: -60px !important;
     width:100px;
     &:before {
       content: "";

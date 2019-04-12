@@ -50,22 +50,59 @@
 
       </div>
     </div>
+
+
     <div class="col-md-11 ">
       <div class="card-body allHour">
-        <div class="container" id="primaFascia">8:30 - 11:30 <span class = "activity">lorem ipsum dolor consect</span>
+      <div class = "row rowHour">
+        <div class = "col-md-2 colHour">
+          <div class="container" id="primaFascia">8:30 - 11:30</div>
+        </div>
+        <div class = "col-md-9">
+          <p class = "activity">2° Media Design (S106), programmazione 2</p>
+        </div>
+      </div>
+
+        <div class = "row rowHour">
+          <div class = "col-md-2 colHour">
+            <div class="container" id="primaFascia">12:00 - 15:00</div>
+          </div>
+          <div class = "col-md-9">
+            <p class = "activity">2° Media Design (S106), programmazione 2</p>
+          </div>
+        </div>
+
+          <div class = "row rowHour">
+            <div class = "col-md-2 colHour">
+              <div class="container" id="primaFascia">15:30 - 18:30</div>
+            </div>
+            <div class = "col-md-9">
+              <p class = "activity">1° Video Design (S8), After Effects</p>
+            </div>
+          </div>
+
+            <div class = "row rowHour">
+              <div class = "col-md-2 colHour">
+                <div class="container" id="primaFascia">19:00 - 21:00</div>
+              </div>
+              <div class = "col-md-9">
+                <p class = "activity"> // </p>
+              </div>
+            </div>
+
+        <!-- <div class="container" id="primaFascia">8:30 - 11:30 <span class = "activity">lorem ipsum dolor consect</span>
         </div>
         <div class="container" id="secondaFascia">12:00 - 15:00 <span class = "activity">lorem ipsum dolor consect</span>
         </div>
         <div class="container" id="terzaFascia">15:30 - 18:30 <span class = "activity">lorem ipsum dolor consect</span>
         </div>
         <div class="container" id="quartaFascia">19:00 - 21:30 <span class = "activity">lorem ipsum dolor consect</span>
-        </div>
+        </div> -->
         <a class="linkCalendar" href="{{ url('/calendar') }}">Visualizza Calendario</a>
+      </div>
       </div>
     </div>
   </div>
-
-</div>
 
 <img src="{{asset('/img/sinceramente.svg')}}" class = "nextSection">
 
@@ -149,7 +186,79 @@
     </div>
 
 
-<div class="col-md-3"  id = "spero">
+    <div class="col-md-3" id = "spero">
+      <a class = "linkCard" href="">
+        <div class = "container provaContainer card-block">
+        <div class = "row">
+          <div class = "col">
+            <div class = "circle">
+              <div class = "yearNumber">2</div>
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "sectionTextp">Video Design</div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
+          </div>
+        </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="col-md-3" id = "spero">
+      <a class = "linkCard" href="">
+        <div class = "container provaContainer card-block">
+        <div class = "row">
+          <div class = "col">
+            <div class = "circle">
+              <div class = "yearNumber">1</div>
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "sectionTextp">Sound Design</div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
+          </div>
+        </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="col-md-3" id = "spero">
+      <a class = "linkCard" href="">
+        <div class = "container provaContainer card-block">
+        <div class = "row">
+          <div class = "col">
+            <div class = "circle">
+              <div class = "yearNumber">2</div>
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "sectionTextp">Sound Design</div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
+          </div>
+        </div>
+        </div>
+        </a>
+    </div>
+
+<!-- <div class="col-md-3"  id = "spero">
 
   <a class = "linkCard" href="">
     <div class = "container mediaContainer card-block">
@@ -177,67 +286,7 @@
     </div>
     </div>
     </a>
-</div>
-
-<div class="col-md-3"  id = "spero">
-
-  <a class = "linkCard" href="">
-    <div class = "container mediaContainer card-block">
-    <div class = "row">
-      <div class = "col">
-        <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
-        <hr class = "horizontalLine">
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "sectionText">Media Design</div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "container-fluid yearText">year 3 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
-
-      </div>
-    </div>
-    </div>
-    </a>
-</div>
-
-<div class="col-md-3"  id = "spero">
-
-  <a class = "linkCard" href="">
-    <div class = "container mediaContainer card-block">
-    <div class = "row">
-      <div class = "col">
-        <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
-        <hr class = "horizontalLine">
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "sectionText">Media Design</div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "container-fluid yearText">year 3 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
-
-      </div>
-    </div>
-    </div>
-    </a>
-</div>
+</div> -->
 
   </div>
   </div>

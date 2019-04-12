@@ -28,7 +28,7 @@
   <div class = "row">
     <div class = "col-md-4">
       <div class="profileImg">
-        <img src="/storage/avatars/{{ $user->avatar }}" style = "width:170px; height:170px; float:left; border-radius:50%; margin-right:25px; margin-left:25px; margin-bottom:25px;" />
+        <img src="/storage/avatars/{{ $user->avatar }}" style = "width:170px; height:170px; float:left; border-radius:50%; margin-left:25px; margin-bottom:25px;" />
       </div>
       <form action="/profile" method="post" enctype="multipart/form-data">
         @csrf
