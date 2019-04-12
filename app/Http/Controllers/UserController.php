@@ -21,7 +21,7 @@ class UserController extends Controller
         $request->avatar->storeAs('avatars',$avatarName);
         $user->avatar = $avatarName;
         $user->save();
-        return back()->with('success','You have successfully upload image.');
+        return back()->with('success','La tua immagine è stata caricata correttamente!');
 
     }
 }

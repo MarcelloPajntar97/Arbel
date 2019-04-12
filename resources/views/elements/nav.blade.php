@@ -46,7 +46,21 @@
           <div class="photo">
             <!-- <img class = "imageProfile" src="{{ asset('/img/userDefault.jpg')}}"> -->
             <!-- {{ Auth::user()->avatar }} -->
-            <img class="rounded-circle" src="/storage/avatars/{{ Auth::user()->avatar }}" />
+            <?php
+
+            $imageDefualt = App\User::where('avatar')->get();
+
+            if ($imageDefualt) { ?>
+              <img class="rounded-circle" src="/storage/avatars/{{ Auth::user()->avatar }}" />
+            <?php }
+
+               else{ ?>
+                  <img src="{{asset('/img/userDefault.jpg')}}" class = "nextSection">
+            <?php
+               }?>
+
+
+            <!-- <img class="rounded-circle" src="/storage/avatars/{{ Auth::user()->avatar }}" /> -->
 
           </div>
           <!-- {{ Auth::user()->name }}<b class="caret d-none d-lg-block d-xl-block"></b> -->

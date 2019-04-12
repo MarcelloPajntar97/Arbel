@@ -74,66 +74,21 @@
 
   <!-- <a href= ""><img src="{{asset('/img/nextButton.svg')}}" class = "nextButton"></a> -->
 
-
-  <!-- <div class="container-fluid idk">
-      <h2>Bootstrap Horizontal Scrolling with Flexbox</h2>
-      <div class="row flex-row flex-nowrap">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card card-block">Card</div>
-          </div>
-      </div>
-  </div> -->
     <div class="container-fluid idk">
     <div class = "row flex-row flex-nowrap">
       <div class="col-md-3" id = "spero">
-
         <a class = "linkCard" href="">
-          <div class = "container mediaContainer card-block">
+          <div class = "container provaContainer card-block">
           <div class = "row">
             <div class = "col">
-              <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
-              <hr class = "horizontalLine">
+              <div class = "circle">
+                <div class = "yearNumber">1</div>
+              </div>
             </div>
           </div>
           <div class = "row">
             <div class = "col">
-              <div class = "sectionText">Media Design</div>
+              <div class = "sectionTextp">Media Design</div>
             </div>
           </div>
           <div class = "row">
@@ -141,28 +96,23 @@
               <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
             </div>
           </div>
-          <div class = "row">
-            <div class = "col">
-              <div class = "container-fluid yearText">year 1 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
-
-            </div>
-          </div>
           </div>
           </a>
     </div>
-    <div class="col-md-3"  id = "spero">
 
+    <div class="col-md-3" id = "spero">
       <a class = "linkCard" href="">
-        <div class = "container mediaContainer card-block">
+        <div class = "container provaContainer card-block">
         <div class = "row">
           <div class = "col">
-            <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
-            <hr class = "horizontalLine">
+            <div class = "circle">
+              <div class = "yearNumber">2</div>
+            </div>
           </div>
         </div>
         <div class = "row">
           <div class = "col">
-            <div class = "sectionText">Media Design</div>
+            <div class = "sectionTextp">Media Design</div>
           </div>
         </div>
         <div class = "row">
@@ -170,44 +120,35 @@
             <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
           </div>
         </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="col-md-3" id = "spero">
+      <a class = "linkCard" href="">
+        <div class = "container provaContainer card-block">
         <div class = "row">
           <div class = "col">
-            <div class = "container-fluid yearText">year 1 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
-
+            <div class = "circle">
+              <div class = "yearNumber">3</div>
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "sectionTextp">Media Design</div>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col">
+            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
           </div>
         </div>
         </div>
         </a>
-  </div>
-  <div class="col-md-3"  id = "spero">
+    </div>
 
-    <a class = "linkCard" href="">
-      <div class = "container mediaContainer card-block">
-      <div class = "row">
-        <div class = "col">
-          <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
-          <hr class = "horizontalLine">
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "col">
-          <div class = "sectionText">Media Design</div>
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "col">
-          <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "col">
-          <div class = "container-fluid yearText">year 2 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
 
-        </div>
-      </div>
-      </div>
-      </a>
-</div>
 <div class="col-md-3"  id = "spero">
 
   <a class = "linkCard" href="">

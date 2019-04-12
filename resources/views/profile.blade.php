@@ -28,20 +28,21 @@
   <div class = "row">
     <div class = "col-md-4">
       <div class="profileImg">
-        <img class="roundedImg" src="/storage/avatars/{{ $user->avatar }}" />
+        <img src="/storage/avatars/{{ $user->avatar }}" style = "width:170px; height:170px; float:left; border-radius:50%; margin-right:25px; margin-left:25px; margin-bottom:25px;" />
       </div>
       <form action="/profile" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
-          <div class="upload-btn-wrapper">
-            <button class="btnUpload"><img class = "loadImage" src="{{asset('/img/editImage.svg')}}"></button>
-            <input type="file" name="myfile" />
-          </div>
+          <!-- <div class="upload-btn-wrapper">
 
-          <!-- <input type="file" class="" name="avatar">Carica</input> -->
+            <input type="file" name="myfile" /><button class="btnUpload"><img class = "loadImage" src="{{asset('/img/editImage.svg')}}"></button></input>
+          </div> -->
+
+          <input type="file" class="" name="avatar"></input>
         </div>
-        <button type="submit" class="btn btn-primary imageSubmitButton">Salva</button> <span> <button class="btn btn-primary imageSubmitButton changePassword">Modifica Password</button> </span>
+        <button type="submit" class="btn btn-primary imageSubmitButton">Salva</button>
+        <!-- <span> <button class="btn btn-primary imageSubmitButton changePassword">Modifica Password</button> </span> -->
       </form>
     </div>
 
