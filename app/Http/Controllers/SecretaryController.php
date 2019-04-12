@@ -11,9 +11,15 @@ class SecretaryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
+
     public function index()
     {
-        //
+        return view('editUser');
     }
 
     /**
@@ -56,7 +62,8 @@ class SecretaryController extends Controller
      */
     public function edit($id)
     {
-        //
+      $teacher = \App\User::find($id);
+      return view('editUser', compact('teacher','id', 'name', 'surname'));
     }
 
     /**
@@ -68,7 +75,13 @@ class SecretaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      //  $teacher = \App\User::find($id);
+        $subject = \App\Subject::find($id);
+        $subject->update([
+        'user_id' => $request->get('subject')
+      ]);
+
+      return redirect('/home');
     }
 
     /**

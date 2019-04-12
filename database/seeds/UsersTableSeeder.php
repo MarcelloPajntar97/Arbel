@@ -28,6 +28,14 @@ class UsersTableSeeder extends Seeder
         ]);
 
         App\User::create([
+            'name'=>'Mauro',
+            'surname'=>'Paffi',
+            'email'=>'mauro.paffi@ied.edu',
+            'password'=>bcrypt('vivalafiga'),
+            'isAdmin'=>0
+        ]);
+
+        App\User::create([
             'name'=>'Segreteria',
             'surname'=>'Università',
             'email'=>'segreteria.uni@ied.edu',

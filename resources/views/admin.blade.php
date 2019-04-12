@@ -23,7 +23,7 @@
         <?php echo $teacher->email?>
           </div>
             <div class = "col-md-1 text-center">
-              <a href="{{ url('/editUser') }}" alt = "Gestisci Docente">
+              <a href="{{action('SecretaryController@edit', $teacher->id)}}" alt = "Gestisci Docente">
                 <button class="btn editBtn" id="editUser" type="submit"><img class = "editIcon" src="{{ asset('/img/editIcon.svg')}}"></button>
               </a>
             </div>
