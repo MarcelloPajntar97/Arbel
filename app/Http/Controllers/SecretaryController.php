@@ -19,6 +19,8 @@ class SecretaryController extends Controller
 
     public function index()
     {
+    
+
         return view('editUser');
     }
 
