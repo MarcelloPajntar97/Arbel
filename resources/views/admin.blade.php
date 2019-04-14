@@ -35,7 +35,11 @@
                 <button class="btn btn-danger" id="deleteUser" type="submit"><img class = "trashIcon" src="{{ asset('/img/trashIcon.svg')}}"></button>
               </form>
             </div>
+            <!-- <div class="row">
+              <div class = "col">Materia Insegnata 1</div>
+            </div> -->
     </div>
+
     <?php
   }
   ?>

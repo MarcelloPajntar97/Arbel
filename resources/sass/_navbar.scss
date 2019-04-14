@@ -9,14 +9,24 @@
 }
 
 .nav-link {
-  color: transparentize($black, 0.3) !important;
+  color: $darkGrey !important;
   font-weight: bold !important;
-  &:hover {
-    transition: all 0.3s;
-    color: transparentize($black, 0) !important;
-    font-weight: bold !important;
-  }
 }
+
+.activeLink{
+  color: $redArbel !important;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+// .active, .active:hover, li.active {
+//   background-color: #666;
+//   color: $redArbel !important;
+// }
+
+.navbar-default .nav-item > .nav-link.active  {
+    color: $redArbel !important;
+}
+
 
 .arbelLogo {
   width: 70% !important;
@@ -24,17 +34,16 @@
   margin-top: 2% !important;
 }
 
-.navVoice{
-  margin-left: 80% !important;
-}
-
 .logoutButton{
-  background-image: linear-gradient(to right, $redArbel 0%, #EF2252 100%);
+  background-color: $redArbel !important;
   font-weight: bold !important;
   color: $white !important;
   margin-left: 2% !important;
+  margin-right: 1.5% !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-right: 30px !important;
   &:hover {
     transition: all 0.3s;
@@ -43,9 +52,6 @@
   }
 }
 
-.navVoice {
-  margin-left: -10% !important;
-}
 
 .profileVoice {
   font-family: $font-family-sans-serif;
