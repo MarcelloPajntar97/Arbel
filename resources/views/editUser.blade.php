@@ -9,6 +9,7 @@
       <form method="post" action="{{action('SecretaryController@update', $id)}}">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
+        <input name="docente" type="hidden" value="{{ $teacher->id }}">
         <h2 class = "nameTeacher">Stai modificando {{ $teacher->name }} {{ $teacher->surname }}</h2>
       <div class="row form-group">
       <div class = "col-md-12">
@@ -18,7 +19,7 @@
           <option selected = "" disabled= "" class = "placeholder">Seleziona il corso</option>
           <?php
             $courses = \App\ClassModel::all();
-            foreach ($courses as $key => $value) {
+            foreach ($courses as $value) {
           ?>
 
           <option value="{{ $value->id }}">{{ $value->year }} {{ $value->section }} {{ $value->course }} </option>
@@ -27,21 +28,14 @@
       </span>
       </div>
       </div>
-
-
       <div class="row form-group">
       <div class = "col-md-12">
         <span class="custom-dropdown">
-        <!-- <label for="subject">Quali materie insegna {{ $teacher->name }}?</label><br> -->
         <select name="subject">
-
-          <option selected = "" disabled= "">Seleziona la materia</option>
-
-    </select>
+          <option value="{{ $subject->id }}" selected = "" disabled= "">Seleziona la materia</option>
+        </select>
       </div>
-
       </div>
-
       <div class="row form-group">
       <div class = "col-md-12">
         <button type="submit" class="btn btn-primary" id="registerButton">
@@ -56,4 +50,5 @@
     </div>
   </div>
 </div>
+
 @endsection

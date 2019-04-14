@@ -75,14 +75,14 @@ class SecretaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //$teacher = \App\User::find($id);
-      //   $subject = \App\Subject::find($id);
-      //   $subject->update([
-      //   'user_id' => $request->get('subject')
-      // ]);
-      //
-       return redirect('/home');
+        $subject = \App\Subject::find($id);
+        $subject->update([
+        'user_id' => $request->get('docente')
+         ]);
+
+       return view('editUser', compact('subject', 'id'));
     }
+
 
     /**
      * Remove the specified resource from storage.
