@@ -51,7 +51,7 @@ class SecretaryController extends Controller
      */
     public function show($id)
     {
-        //
+      
     }
 
     /**
@@ -63,7 +63,7 @@ class SecretaryController extends Controller
     public function edit($id)
     {
       $teacher = \App\User::find($id);
-      return view('editUser', compact('teacher','id', 'name', 'surname'));
+      return view('editUser', compact('teacher', 'id'));
     }
 
     /**

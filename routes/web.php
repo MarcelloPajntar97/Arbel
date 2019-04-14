@@ -24,3 +24,4 @@ Route::get('/routes/admin', 'HomeController@index');
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 Route::resource('/editUser', 'SecretaryController');
+Route::get('subjects/get/{id}', 'SecretaryEditData@getSubjects');

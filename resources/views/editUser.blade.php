@@ -11,38 +11,35 @@
         <h2>Stai modificando {{ $teacher->name }} {{ $teacher->surname }}</h2>
       <div class="row form-group">
       <div class = "col-md-12">
-        <label for="addCourse">A quali corsi insegna {{ $teacher->name }}?</label><br>
+        <!-- <label for="addCourse"></label><br> -->
+        <label for="course">A quali corsi insegna {{ $teacher->name }}?</label><br>
         <!--<input type="email" class="form-control" id = "addCourse"> -->
-        <select>
-        <?php
-          $courses = App\ClassModel::all();
-          $materia = 0;
-          foreach ($courses as $course) {
-        ?>
-          <!-- <input type="checkbox" name="subjects" value="{{ $course->id }}">{{ $course->year }} {{ $course->section }} {{ $course->course }}<br> -->
-          <option id="selectCourse" value="{{ $course->id }}">{{ $course->year }} {{ $course->section }} {{ $course->course }}</option>
-      <?php
-        $materia = $course->id;
-    } ?>
-    </select>
+        <select name="courses">
+          <option value="">--- Select Course ---</option>
+          <?php
+            $courses = \App\ClassModel::all();
+            foreach ($courses as $key => $value) {
+          ?>
+
+          <option value="{{ $value->id }}"> {{ $value->year }} {{ $value->section }} {{ $value->course }} </option>
+        <?php } ?>
+        </select>
       </div>
       </div>
 
 
       <div class="row form-group">
       <div class = "col-md-12">
-        <label for="addSubject">Quali materie insegna {{ $teacher->name }}?</label><br>
-        <select>
-        <?php
-          $subjects = App\Subject::where('class_id', '=', $materia)->get();
-          foreach ($subjects as $subject) {
-        ?>
-          <!-- <input type="checkbox" name="subjects" value="{{ $course->id }}">{{ $course->year }} {{ $course->section }} {{ $course->course }}<br> -->
-          <option value="{{ $subject->id }}">{{ $subject->subjectName }}</option>
-      <?php } ?>
+        <label for="subject">Quali materie insegna {{ $teacher->name }}?</label><br>
+        <select name="subject">
+
+          <option>Materie</option>
+
     </select>
+    </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
         <!-- <input type="text" class="form-control" id="addSubject"> -->
       </div>
+
       </div>
 
       <div class="row form-group">
@@ -58,5 +55,32 @@
     </div>
   </div>
 </div>
-<?php dd($materia) ?>
+<script type="text/javascript">
+    jQuery(document).ready(function ()
+    {
+            jQuery('select[name="courses"]').on('change',function(){
+               var courseID = jQuery(this).val();
+               if(courseID)
+               {
+                  jQuery.ajax({
+                     url : '/subjects/get/' +courseID,
+                     type : "GET",
+                     dataType : "json",
+                     success:function(data)
+                     {
+                        console.log(data);
+                        jQuery('select[name="subject"]').empty();
+                        jQuery.each(data, function(key,value){
+                           $('select[name="subject"]').append('<option value="'+ key +'">'+ value +'</option>');
+                        });
+                     }
+                  });
+               }
+               else
+               {
+                  $('select[name="subject"]').empty();
+               }
+            });
+    });
+    </script>
 @endsection

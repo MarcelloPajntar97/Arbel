@@ -265,6 +265,10 @@ body {
   opacity: 0.7s !important;
 }
 
+#loader {
+  visibility: hidden;
+}
+
 .allContainer {
   margin-top: -10% !important;
   margin-left: 7% !important;
