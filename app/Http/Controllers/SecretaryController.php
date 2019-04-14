@@ -51,7 +51,7 @@ class SecretaryController extends Controller
      */
     public function show($id)
     {
-      
+
     }
 
     /**
@@ -81,7 +81,7 @@ class SecretaryController extends Controller
       //   'user_id' => $request->get('subject')
       // ]);
       //
-      // return redirect('/home');
+       return redirect('/home');
     }
 
     /**

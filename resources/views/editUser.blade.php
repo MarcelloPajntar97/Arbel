@@ -11,9 +11,7 @@
         <h2>Stai modificando {{ $teacher->name }} {{ $teacher->surname }}</h2>
       <div class="row form-group">
       <div class = "col-md-12">
-        <!-- <label for="addCourse"></label><br> -->
         <label for="course">A quali corsi insegna {{ $teacher->name }}?</label><br>
-        <!--<input type="email" class="form-control" id = "addCourse"> -->
         <select name="courses">
           <option value="">--- Select Course ---</option>
           <?php
@@ -36,7 +34,7 @@
           <option>Materie</option>
 
     </select>
-    </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div>
+    <!-- </div><div class="col-md-2"><span id="loader"><i class="fa fa-spinner fa-3x fa-spin"></i></span></div> -->
         <!-- <input type="text" class="form-control" id="addSubject"> -->
       </div>
 
