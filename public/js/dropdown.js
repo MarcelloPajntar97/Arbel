@@ -13,8 +13,7 @@ jQuery(document).ready(function ()
                     // console.log(data);
                     jQuery('select[name="subject"]').empty();
                     jQuery.each(data, function(key,value){
-                      var speriamo = key + 1;
-                       $('select[name="subject"]').append('<option value="'+ speriamo +'">'+ value +'</option>');
+                       $('select[name="subject"]').append('<option value="'+ key +'">'+ value +'</option>');
                     });
                  }
               });

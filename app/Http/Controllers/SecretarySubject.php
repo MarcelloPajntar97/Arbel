@@ -4,24 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SecretaryController extends Controller
+class SecretarySubject extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
-
-
     public function index()
     {
-
-
-        return view('editUser');
+        //
     }
 
     /**
@@ -53,7 +45,7 @@ class SecretaryController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -64,8 +56,7 @@ class SecretaryController extends Controller
      */
     public function edit($id)
     {
-      $teacher = \App\User::find($id);
-      return view('editUser', compact('teacher', 'id'));
+        //
     }
 
     /**
@@ -77,14 +68,13 @@ class SecretaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $subject = \App\Subject::find($id);
-        $subject->update([
-        'user_id' => $request->get('docente')
-         ]);
+      $subject = \App\Subject::find($id);
+      $subject->update([
+      'user_id' => $request->get('docente')
+       ]);
 
-       return redirect('/home');
+     return redirect('/home');
     }
-
 
     /**
      * Remove the specified resource from storage.
@@ -94,8 +84,6 @@ class SecretaryController extends Controller
      */
     public function destroy($id)
     {
-      $teacher = \App\User::find($id);
-      $teacher->delete();
-      return redirect('/home');
+        //
     }
 }

@@ -32,7 +32,7 @@
       <div class = "col-md-12">
         <span class="custom-dropdown">
         <select name="subject">
-          <option value="{{ $subject->id }}" selected = "" disabled= "">Seleziona la materia</option>
+          <option selected = "" disabled= "">Seleziona la materia</option>
         </select>
       </div>
       </div>
