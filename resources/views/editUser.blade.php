@@ -13,7 +13,6 @@
         <h2 class = "nameTeacher">Stai modificando {{ $teacher->name }} {{ $teacher->surname }}</h2>
       <div class="row form-group">
       <div class = "col-md-12">
-        <!-- <label for="course">A quali corsi insegna {{ $teacher->name }}?</label><br> -->
         <span class="custom-dropdown">
         <select name="courses">
           <option selected = "" disabled= "" class = "placeholder">Seleziona il corso</option>

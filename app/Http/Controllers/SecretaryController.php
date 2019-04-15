@@ -77,10 +77,10 @@ class SecretaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $subject = \App\Subject::find($id);
-        $subject->update([
+      $subject = \App\Subject::find($id);
+      $subject->update([
         'user_id' => $request->get('docente')
-         ]);
+      ]);
 
        return redirect('/home');
     }

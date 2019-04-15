@@ -66,9 +66,9 @@ class SecretarySubject extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $key)
     {
-      $subject = \App\Subject::find($id);
+      $subject = \App\Subject::find($key);
       $subject->update([
       'user_id' => $request->get('docente')
        ]);
