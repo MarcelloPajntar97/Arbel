@@ -15,15 +15,14 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('class_id');
+            $table->unsignedBigInteger('class_id')->nullable();;
             $table->foreign('class_id')->references('id')->on('classes');
             $table->integer('badgeNumber');
             $table->string('name');
             $table->string('surname');
             $table->date('birthday');
             $table->string('sex');
-            $table->string('address');
-            $table->longText('details');
+            $table->longText('details')->nullable();
             $table->timestamps();
         });
     }
