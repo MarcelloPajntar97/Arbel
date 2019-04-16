@@ -113,6 +113,10 @@
 
     <div class="container-fluid idk">
     <div class = "row flex-row flex-nowrap">
+      <?php
+        $subjects = App\Subject::where('user_id', Auth::user()->id)->get();
+        foreach ($subjects as $subject) {
+      ?>
       <div class="col-md-3" id = "spero">
         <a class = "linkCard" href="">
           <div class = "container provaContainer card-block">
@@ -130,14 +134,15 @@
           </div>
           <div class = "row">
             <div class = "col">
-              <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
+              <div class = "descriptionText"><?php echo $subject->subjectName ?></div>
             </div>
           </div>
           </div>
           </a>
     </div>
+    <?php } ?>
 
-    <div class="col-md-3" id = "spero">
+    <!-- <div class="col-md-3" id = "spero">
       <a class = "linkCard" href="">
         <div class = "container provaContainer card-block">
         <div class = "row">
@@ -256,7 +261,7 @@
         </div>
         </div>
         </a>
-    </div>
+    </div> -->
 
 <!-- <div class="col-md-3"  id = "spero">
 

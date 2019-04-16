@@ -26,12 +26,9 @@ class HomeController extends Controller
 
       if (auth()->user()->isAdmin == 0) {
         return view('home');
-        //return redirect('/home');
       }
       elseif (auth()->user()->isAdmin == 1) {
         return view('admin');
-        //return redirect('/homeAdmin');
-
       }
     }
 }
