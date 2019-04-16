@@ -85,7 +85,6 @@ class SecretaryController extends Controller
             'user_id' => $request->get('docente')
           ]);
         return redirect('/home');
-        //ho rifatto il clone
     }
 
 

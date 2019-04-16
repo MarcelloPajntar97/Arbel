@@ -116,6 +116,8 @@
       <?php
         $subjects = App\Subject::where('user_id', Auth::user()->id)->get();
         foreach ($subjects as $subject) {
+          $courses = App\ClassModel::where('id', $subject->class_id)->get();
+          foreach ($courses as $course) {
       ?>
       <div class="col-md-3" id = "spero">
         <a class = "linkCard" href="">
@@ -123,13 +125,14 @@
           <div class = "row">
             <div class = "col">
               <div class = "circle">
-                <div class = "yearNumber">1</div>
+                <div class = "yearNumber"><?php echo $course->year ?></div>
+                <div class = "yearNumber"><?php echo $course->section ?></div>
               </div>
             </div>
           </div>
           <div class = "row">
             <div class = "col">
-              <div class = "sectionTextp">Media Design</div>
+              <div class = "sectionTextp"><?php echo $course->course ?></div>
             </div>
           </div>
           <div class = "row">
@@ -140,7 +143,9 @@
           </div>
           </a>
     </div>
-    <?php } ?>
+    <?php }
+      }
+    ?>
 
     <!-- <div class="col-md-3" id = "spero">
       <a class = "linkCard" href="">
