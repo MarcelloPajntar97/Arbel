@@ -20,7 +20,6 @@
             $courses = \App\ClassModel::all();
             foreach ($courses as $value) {
           ?>
-
           <option value="{{ $value->id }}">{{ $value->year }} {{ $value->section }} {{ $value->course }} </option>
         <?php } ?>
         </select>
