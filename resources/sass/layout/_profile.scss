@@ -1,7 +1,8 @@
 .imageSubmitButton {
   font-family: $titleFont !important;
   background-color: white !important;
-  margin-top: 10% !important;
+  margin-top: 60% !important;
+  margin-left: -45% !important;
   color: $deselectedItem !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
@@ -67,7 +68,9 @@
 .btnUpload {
   border: none;
   background-color: transparent;
-  padding: 8px 20px;
+  padding-left: 30% !important;
+  padding-top: 25% !important;
+  // margin-left: 3% !important;
   cursor:pointer !important;
 }
 
@@ -84,13 +87,32 @@
   font-weight: bold;
 }
 
+.mailUser{
+  color: lightGrey;
+  font-size: 14px;
+  margin-top: -3% !important;
+}
+
 .descriptionUser{
   margin-top: 2%;
   margin-bottom: 3%;
   font-size: 14px;
-  color: darkGrey;
+  color: $black;
 }
 
 .changePassword{
   margin-left: 5% !important;
+}
+
+.uploadShape{
+  margin-left: 43%;
+  background-color: $redArbel;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  &:hover{
+    transition: all 0.3s;
+    background-color: $redSelected;
+  }
 }

@@ -613,7 +613,8 @@ a:hover {
 .imageSubmitButton {
   font-family: "futura", sans-serif !important;
   background-color: white !important;
-  margin-top: 10% !important;
+  margin-top: 60% !important;
+  margin-left: -45% !important;
   color: #A4AAB3 !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
@@ -676,7 +677,8 @@ a:hover {
 .btnUpload {
   border: none;
   background-color: transparent;
-  padding: 8px 20px;
+  padding-left: 30% !important;
+  padding-top: 25% !important;
   cursor: pointer !important;
 }
 
@@ -693,15 +695,35 @@ a:hover {
   font-weight: bold;
 }
 
+.mailUser {
+  color: lightGrey;
+  font-size: 14px;
+  margin-top: -3% !important;
+}
+
 .descriptionUser {
   margin-top: 2%;
   margin-bottom: 3%;
   font-size: 14px;
-  color: darkGrey;
+  color: #000000;
 }
 
 .changePassword {
   margin-left: 5% !important;
+}
+
+.uploadShape {
+  margin-left: 43%;
+  background-color: #F2001E;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.uploadShape:hover {
+  transition: all 0.3s;
+  background-color: #cb021b;
 }
 
 .todayContainer {

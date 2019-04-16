@@ -14,7 +14,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('home') ? 'activeLink' : '' }}" href="{{ url('/home') }}">Dashboard <span class="sr-only"></span></a>
+            <a class="nav-link {{ Request::is('home') ? 'activeLink' : '' }} || {{ Request::is('editUser/*') ? 'activeLink' : '' }}" href="{{ url('/home') }}">Dashboard <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('register') ? 'activeLink' : '' }}" href="{{ url('/register') }}">Aggiungi docente</a>

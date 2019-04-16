@@ -26,7 +26,7 @@
 
 
   <div class = "row">
-    <div class = "col-md-4">
+    <div class = "col-md-3">
       <div class="profileImg">
         <img src="/storage/avatars/{{ $user->avatar }}" style = "width:170px; height:170px; float:left; border-radius:50%; margin-left:25px; margin-bottom:25px;" />
       </div>
@@ -39,9 +39,18 @@
             <input type="file" name="myfile" /><button class="btnUpload"><img class = "loadImage" src="{{asset('/img/editImage.svg')}}"></button></input>
           </div> -->
 
-          <input type="file" class="" name="avatar"></input>
+          <!-- <input type="file" id='my_file' class="" name="avatar"></input> -->
+
+
+          <div style="height:0px;overflow:hidden">
+           <input type="file" id="fileInput" name="avatar" />
+          </div>
+          <div class = "uploadShape">
+          <button type="button" class="btnUpload" onclick="chooseFile();"><img src="{{asset('/img/editImage.svg')}}"></button>
         </div>
-        <button type="submit" class="btn btn-primary imageSubmitButton">Salva</button>
+
+        </div>
+        <button type="submit" class="btn btn-primary imageSubmitButton">SALVA</button>
         <!-- <span> <button class="btn btn-primary imageSubmitButton changePassword">Modifica Password</button> </span> -->
       </form>
     </div>
@@ -50,16 +59,15 @@
     <div class = "col-md-8">
       <div class = "row">
         <div class = "col">
-          <div class = "nameUser">
-          {{ Auth::user()->name }} {{ Auth::user()->surname }}
-          </div>
+          <h4 class = "nameUser">{{ Auth::user()->name }} {{ Auth::user()->surname }}</h4> <br>
+          <h6 class = "mailUser" >{{ Auth::user()->email }}</h6>
       </div>
       </div>
 
       <div class = "row">
         <div class = "col">
           <div class = "descriptionUser">
-          Lorem ipsum dolor, prova testo. Devo capire se una descrizione del docente oppure inserire i corsi che lui tratta...
+          Senza ombra di dubbio il miglior professore della storia, passione nell'insegnamento, sfruttamento un po' minorile, ma di sani principi e sempre disposto ad aiutare chi ha bisogno.
           </div>
       </div>
       </div>
@@ -75,4 +83,9 @@
 
   </div>
 </div>
+<script>
+   function chooseFile() {
+      $("#fileInput").click();
+   }
+</script>
 @endsection
