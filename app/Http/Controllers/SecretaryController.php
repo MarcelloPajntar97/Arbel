@@ -78,13 +78,14 @@ class SecretaryController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $teacher = \App\User::find($id);
       $sub = $request->get('subject');
       DB::table('subjects')
           ->where('id', $sub)
           ->update([
             'user_id' => $request->get('docente')
           ]);
-        return redirect('/home');
+        return view('editUser', compact('teacher', 'id'));
     }
 
 

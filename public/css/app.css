@@ -269,10 +269,10 @@ body {
 }
 
 .editContainer {
-  margin-top: 5%;
   background-color: #FFFFFF;
   padding-top: 2%;
-  padding-left: 2% !important;
+  padding-left: 5% !important;
+  padding-right: 5%;
   padding-bottom: 4%;
   border-radius: 10px !important;
   bottom: 0 !important;
@@ -283,7 +283,17 @@ body {
 .nameTeacher {
   font-family: "futura", sans-serif;
   font-size: 16px;
-  margin-bottom: 6% !important;
+  margin-top: 2%;
+  padding-bottom: 1%;
+  text-transform: uppercase;
+}
+
+.titleDrop {
+  font-family: "futura", sans-serif;
+  color: lightGrey;
+  font-size: 14px;
+  margin-top: 2%;
+  margin-bottom: 10%;
 }
 
 /* Custom dropdown */
@@ -292,7 +302,7 @@ body {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  width: 200px !important;
+  width: 300px !important;
   margin-bottom: 3% !important;
 }
 
@@ -300,7 +310,7 @@ body {
   background-color: #f5f5f5;
   color: #000000;
   padding-left: 5% !important;
-  width: 200px !important;
+  width: 300px !important;
   font-size: inherit;
   padding: 3%;
   padding-right: 2%;
@@ -358,6 +368,82 @@ body {
 
 .placeholder {
   color: #F2001E !important;
+}
+
+.teacherDate {
+  margin-top: -2% !important;
+  margin-bottom: -2% !important;
+  padding: none !important;
+}
+
+/* Custom dropdown */
+
+.custom-dropdownRegister {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 347px !important;
+  margin-bottom: 0.5% !important;
+}
+
+.custom-dropdownRegister select {
+  background-color: #f5f5f5;
+  color: #000000;
+  padding-left: 5% !important;
+  width: 347px !important;
+  font-size: inherit;
+  padding: 3%;
+  padding-right: 2%;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-appearance: button;
+  /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdownRegister::before,
+.custom-dropdownRegister::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdownRegister::after {
+  /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: 0.625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -0.5em;
+}
+
+.custom-dropdownRegister::before {
+  /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdownRegister select[disabled] {
+  color: black;
+}
+
+.custom-dropdownRegister select[disabled]::after {
+  color: black;
+}
+
+.custom-dropdownRegister::before {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.custom-dropdownRegister::after {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .allContainer {
@@ -557,7 +643,7 @@ a:hover {
 
 .coursesTitle {
   font-family: "futura", sans-serif !important;
-  margin-left: -1% !important;
+  margin-left: none !important;
   font-size: 16px !important;
   padding-top: 5%;
 }
@@ -608,6 +694,10 @@ a:hover {
   margin-right: -14% !important;
   margin-top: -3% !important;
   border-radius: 50% !important;
+}
+
+.badgeSection {
+  font-size: 2px !important;
 }
 
 .imageSubmitButton {

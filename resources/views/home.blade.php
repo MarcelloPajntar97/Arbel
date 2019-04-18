@@ -90,14 +90,6 @@
               </div>
             </div>
 
-        <!-- <div class="container" id="primaFascia">8:30 - 11:30 <span class = "activity">lorem ipsum dolor consect</span>
-        </div>
-        <div class="container" id="secondaFascia">12:00 - 15:00 <span class = "activity">lorem ipsum dolor consect</span>
-        </div>
-        <div class="container" id="terzaFascia">15:30 - 18:30 <span class = "activity">lorem ipsum dolor consect</span>
-        </div>
-        <div class="container" id="quartaFascia">19:00 - 21:30 <span class = "activity">lorem ipsum dolor consect</span>
-        </div> -->
         <a class="linkCalendar" href="{{ url('/calendar') }}">Visualizza Calendario</a>
       </div>
       </div>
@@ -109,45 +101,57 @@
 <div class = "container"><h3 class = "coursesTitle">{{ __('I MIEI CORSI') }}</h3></div>
 <div class = "allCourses">
 
-  <!-- <a href= ""><img src="{{asset('/img/nextButton.svg')}}" class = "nextButton"></a> -->
-
     <div class="container-fluid idk">
     <div class = "row flex-row flex-nowrap">
+
+
       <?php
         $subjects = App\Subject::where('user_id', Auth::user()->id)->get();
         foreach ($subjects as $subject) {
           $courses = App\ClassModel::where('id', $subject->class_id)->get();
           foreach ($courses as $course) {
-      ?>
-      <div class="col-md-3" id = "spero">
-        <a class = "linkCard" href="">
-          <div class = "container provaContainer card-block">
-          <div class = "row">
-            <div class = "col">
-              <div class = "circle">
-                <div class = "yearNumber"><?php echo $course->year ?></div>
-                <div class = "yearNumber"><?php echo $course->section ?></div>
-              </div>
+
+
+             if (!is_null($subject->user_id)) { ?>
+              <div class="col-md-3" id = "spero">
+                <a class = "linkCard" href="">
+                  <div class = "container provaContainer card-block">
+                    <div class = "row">
+                      <div class = "col">
+                        <div class = "circle">
+                          <div class = "yearNumber"><?php echo $course->year ?></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "row">
+                      <div class = "col">
+                        <div class = "sectionTextp"><?php echo $course->course ?> (<?php echo $course->section ?>)
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "row">
+                      <div class = "col">
+                        <div class = "descriptionText"><?php echo $subject->subjectName ?></div>
+                      </div>
+                    </div>
+                  </div>
+                  </a>
             </div>
-          </div>
-          <div class = "row">
-            <div class = "col">
-              <div class = "sectionTextp"><?php echo $course->course ?></div>
-            </div>
-          </div>
-          <div class = "row">
-            <div class = "col">
-              <div class = "descriptionText"><?php echo $subject->subjectName ?></div>
-            </div>
-          </div>
-          </div>
-          </a>
-    </div>
-    <?php }
+
+            <?php }
+            else {
+
+              echo "porco dio 2 ore per un if";
+
+
+            }
+          }
       }
     ?>
 
-    <!-- <div class="col-md-3" id = "spero">
+
+
+ <!-- <div class="col-md-3" id = "spero">
       <a class = "linkCard" href="">
         <div class = "container provaContainer card-block">
         <div class = "row">
@@ -242,9 +246,9 @@
         </div>
         </div>
         </a>
-    </div>
+    </div> -->
 
-    <div class="col-md-3" id = "spero">
+    <!--    <div class="col-md-3" id = "spero">
       <a class = "linkCard" href="">
         <div class = "container provaContainer card-block">
         <div class = "row">

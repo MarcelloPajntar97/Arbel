@@ -75,6 +75,35 @@
               </div>
             </div>
 
+            <div class="form-group row">
+              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Seleziona il corso') }}</label>
+
+              <div class="col-md-6">
+                <span class="custom-dropdownRegister">
+                <select name="courses">
+                  <option selected = "" disabled= "" class = "placeholder"> --- </option>
+                  <?php
+                    $courses = \App\ClassModel::all();
+                    foreach ($courses as $value) {
+                  ?>
+                  <option value="{{ $value->id }}">{{ $value->year }} {{ $value->section }} {{ $value->course }} </option>
+                <?php } ?>
+                </select>
+              </span>
+            </div>
+          </div>
+
+            <div class="form-group row">
+              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Seleziona la materia') }}</label>
+              <div class="col-md-6">
+                <span class="custom-dropdownRegister">
+                  <select name="subject">
+                    <option selected = "" disabled= ""> --- </option>
+                  </select>
+                </span>
+              </div>
+            </div>
+
             <div class="form-group row mb-0">
               <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn btn-primary" id="registerButton">
@@ -82,9 +111,10 @@
                 </button>
               </div>
             </div>
+
           </form>
         </div>
-      </div>
+
       @if(session()->has('success'))
       <div class="alert alert-success">
         {{ session()->get('success') }}
