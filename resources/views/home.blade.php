@@ -104,6 +104,14 @@
     <div class="container-fluid idk">
     <div class = "row flex-row flex-nowrap">
 
+      <!-- <div class="col-md-3" id ="spero">
+        <a class = "linkCard" href="">
+          <div class = "container provaContainer card-block">
+            IDK
+          </div>
+          </a>
+      </div> -->
+
 
       <?php
         $subjects = App\Subject::where('user_id', Auth::user()->id)->get();
@@ -111,8 +119,9 @@
           $courses = App\ClassModel::where('id', $subject->class_id)->get();
           foreach ($courses as $course) {
 
-              if ($teacher->id == 1) { ?>
-              <div class="col-md-3" id = "spero">
+
+             if( 'user_id' < 1) { ?>
+              <div class="col-md-3" id ="spero">
                 <a class = "linkCard" href="">
                   <div class = "container provaContainer card-block">
                     <div class = "row">
@@ -138,15 +147,11 @@
             </div>
 
             <?php }
-            else { ?>
 
-              <h1>DIOOOOOOOO</h1>
-
-
-            <?php }
-
+            else {
+              echo "non lo so";
+            }
           }
-
       }
     ?>
 

@@ -21,6 +21,9 @@
 body {
   // background-color: $body-bg !important;
   background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
+  line-height: none !important;
+  margin: none !important;
+  padding: none !important;
 }
 
 .row {
