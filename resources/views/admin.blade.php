@@ -6,21 +6,17 @@
   <div class="titleUsers">{{ __('UTENTI REGISTRATI') }}</div>
 
 
-  <!-- <div class="containerAllUser"> -->
-
-  <?php
-  $teachers = App\User::where('isAdmin', 0)->get();
-  foreach ($teachers as $teacher) { ?>
+  @foreach ($teachers as $teacher) 
     <div class="row containerAllUser">
       <div class = "col-md-3">
-    <?php echo $teacher->name?>  <?php echo $teacher->surname?>
+    {{ $teacher->name }}  {{ $teacher->surname }}
       </div>
         <div class = "col-md-3">
-      <?php echo $teacher->created_at?>
+      {{ $teacher->created_at }}
         </div>
 
           <div class = "col-md-3">
-        <?php echo $teacher->email?>
+        {{ $teacher->email }}
           </div>
             <div class = "col-md-1 text-center">
               <a href="{{action('SecretaryController@edit', $teacher->id)}}" alt = "Gestisci Docente">
@@ -35,13 +31,8 @@
                 <button class="btn btn-danger" id="deleteUser" type="submit"><img class = "trashIcon" src="{{ asset('/img/trashIcon.svg')}}"></button>
               </form>
             </div>
-            <!-- <div class="row">
-              <div class = "col">Materia Insegnata 1</div>
-            </div> -->
     </div>
 
-    <?php
-  }
-  ?>
+  @endforeach
 </div>
 @endsection

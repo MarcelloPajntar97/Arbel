@@ -23,12 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
       if (auth()->user()->isAdmin == 0) {
-        return view('home');
+        $subjects = \App\Subject::where('user_id', \Auth::user()->id)->get();
+        return view('home', compact('subjects'));
       }
       elseif (auth()->user()->isAdmin == 1) {
-        return view('admin');
+        $teachers = \App\User::where('isAdmin', 0)->get();
+        return view('admin', compact('teachers'));
       }
     }
 }

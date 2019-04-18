@@ -20,9 +20,7 @@ class SecretaryController extends Controller
 
     public function index()
     {
-
-
-        return view('editUser');
+      return view('editUser');
     }
 
     /**
@@ -66,7 +64,9 @@ class SecretaryController extends Controller
     public function edit($id)
     {
       $teacher = \App\User::find($id);
-      return view('editUser', compact('teacher', 'id'));
+      // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
+      $courses = \App\ClassModel::all();
+      return view('editUser', compact('teacher', 'id', 'courses'));
     }
 
     /**
@@ -79,13 +79,15 @@ class SecretaryController extends Controller
     public function update(Request $request, $id)
     {
       $teacher = \App\User::find($id);
+      // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
+      $courses = \App\ClassModel::all();
       $sub = $request->get('subject');
       DB::table('subjects')
           ->where('id', $sub)
           ->update([
             'user_id' => $request->get('docente')
           ]);
-        return view('editUser', compact('teacher', 'id'));
+        return view('editUser', compact('teacher', 'id', 'courses'));
     }
 
 

@@ -104,213 +104,39 @@
     <div class="container-fluid idk">
     <div class = "row flex-row flex-nowrap">
 
-      <!-- <div class="col-md-3" id ="spero">
-        <a class = "linkCard" href="">
-          <div class = "container provaContainer card-block">
-            IDK
-          </div>
-          </a>
-      </div> -->
 
-
-      <?php
-        $subjects = App\Subject::where('user_id', Auth::user()->id)->get();
-        foreach ($subjects as $subject) {
-          $courses = App\ClassModel::where('id', $subject->class_id)->get();
-          foreach ($courses as $course) {
-
-
-             if( 'user_id' < 1) { ?>
+        @foreach ($subjects as $subject)
+          <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>
+          @foreach ($courses as $course) 
               <div class="col-md-3" id ="spero">
                 <a class = "linkCard" href="">
                   <div class = "container provaContainer card-block">
                     <div class = "row">
                       <div class = "col">
                         <div class = "circle">
-                          <div class = "yearNumber"><?php echo $course->year ?></div>
+                          <div class = "yearNumber">{{ $course->year }}</div>
                         </div>
                       </div>
                     </div>
                     <div class = "row">
                       <div class = "col">
-                        <div class = "sectionTextp"><?php echo $course->course ?> (<?php echo $course->section ?>)
+                        <div class = "sectionTextp">{{ $course->course }} ({{ $course->section }})
                         </div>
                       </div>
                     </div>
                     <div class = "row">
                       <div class = "col">
-                        <div class = "descriptionText"><?php echo $subject->subjectName ?></div>
+                        <div class = "descriptionText">{{ $subject->subjectName }}</div>
                       </div>
                     </div>
                   </div>
                   </a>
             </div>
-
-            <?php }
-
-            else {
-              echo "non lo so";
-            }
-          }
-      }
-    ?>
-
-
-
- <!-- <div class="col-md-3" id = "spero">
-      <a class = "linkCard" href="">
-        <div class = "container provaContainer card-block">
-        <div class = "row">
-          <div class = "col">
-            <div class = "circle">
-              <div class = "yearNumber">2</div>
-            </div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "sectionTextp">Media Design</div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-          </div>
-        </div>
-        </div>
-        </a>
-    </div>
-
-    <div class="col-md-3" id = "spero">
-      <a class = "linkCard" href="">
-        <div class = "container provaContainer card-block">
-        <div class = "row">
-          <div class = "col">
-            <div class = "circle">
-              <div class = "yearNumber">3</div>
-            </div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "sectionTextp">Media Design</div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-          </div>
-        </div>
-        </div>
-        </a>
-    </div>
-
-
-    <div class="col-md-3" id = "spero">
-      <a class = "linkCard" href="">
-        <div class = "container provaContainer card-block">
-        <div class = "row">
-          <div class = "col">
-            <div class = "circle">
-              <div class = "yearNumber">2</div>
-            </div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "sectionTextp">Video Design</div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-          </div>
-        </div>
-        </div>
-        </a>
-    </div>
-
-    <div class="col-md-3" id = "spero">
-      <a class = "linkCard" href="">
-        <div class = "container provaContainer card-block">
-        <div class = "row">
-          <div class = "col">
-            <div class = "circle">
-              <div class = "yearNumber">1</div>
-            </div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "sectionTextp">Sound Design</div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-          </div>
-        </div>
-        </div>
-        </a>
-    </div> -->
-
-    <!--    <div class="col-md-3" id = "spero">
-      <a class = "linkCard" href="">
-        <div class = "container provaContainer card-block">
-        <div class = "row">
-          <div class = "col">
-            <div class = "circle">
-              <div class = "yearNumber">2</div>
-            </div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "sectionTextp">Sound Design</div>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col">
-            <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-          </div>
-        </div>
-        </div>
-        </a>
-    </div> -->
-
-<!-- <div class="col-md-3"  id = "spero">
-
-  <a class = "linkCard" href="">
-    <div class = "container mediaContainer card-block">
-    <div class = "row">
-      <div class = "col">
-        <img src="{{asset('/img/ill.svg')}}" class = "mediaImage">
-        <hr class = "horizontalLine">
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "sectionText">Media Design</div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "descriptionText">Nome materia insegnata 1<br> Nome materia insegnata 2</div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "col">
-        <div class = "container-fluid yearText">year 3 <img src="{{asset('/img/goArrow.svg')}}" class = "goArrow"></div>
-
-      </div>
-    </div>
-    </div>
-    </a>
-</div> -->
+            @endforeach
+          @endforeach
 
   </div>
   </div>
-<!-- </div> -->
 </div>
 
 
