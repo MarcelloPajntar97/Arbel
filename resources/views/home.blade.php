@@ -111,8 +111,7 @@
           $courses = App\ClassModel::where('id', $subject->class_id)->get();
           foreach ($courses as $course) {
 
-
-             if (!is_null($subject->user_id)) { ?>
+              if ($teacher->id == 1) { ?>
               <div class="col-md-3" id = "spero">
                 <a class = "linkCard" href="">
                   <div class = "container provaContainer card-block">
@@ -139,13 +138,15 @@
             </div>
 
             <?php }
-            else {
+            else { ?>
 
-              echo "porco dio 2 ore per un if";
+              <h1>DIOOOOOOOO</h1>
 
 
-            }
+            <?php }
+
           }
+
       }
     ?>
 
