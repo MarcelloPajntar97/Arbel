@@ -25,4 +25,10 @@ class UserLogController extends Controller
           return response()->json(['error'=>'Unauthorised'], 401);
       }
   }
+
+  public function details()
+    {
+        $user = Auth::user();
+        return response()->json(['success' => $user], $this-> successStatus);
+    }
 }
