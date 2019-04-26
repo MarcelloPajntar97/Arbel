@@ -72,3 +72,23 @@
 placeholder {
   color: lightGrey !important;
 }
+
+// .selectArrow{
+//   padding-right: 2%;
+//   width: 50px;
+//   height: auto;
+// }
+
+.contactCourses{
+  color: $black !important;
+  transition: all 0.3s;
+  &:hover {
+    // color: #2a2a2a !important;
+    transition: all 0.3s;
+    color: $redArbel !important;
+  }
+}
+
+.rowSelectCourse{
+  margin-bottom: 2%;
+}

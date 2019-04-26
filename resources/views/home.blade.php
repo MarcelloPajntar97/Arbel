@@ -107,9 +107,9 @@
 
         @foreach ($subjects as $subject)
           <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>
-          @foreach ($courses as $course) 
+          @foreach ($courses as $course)
               <div class="col-md-3" id ="spero">
-                <a class = "linkCard" href="">
+                <a class = "linkCard" href="{{ url('/studentsList') }}">
                   <div class = "container provaContainer card-block">
                     <div class = "row">
                       <div class = "col">
@@ -151,7 +151,7 @@
           <div class="row form-group">
             <div class = "col-md-12">
               <label for="formEmail">{{ __('Destinatari') }}</label>
-              <input type="email" class="form-control" id = "formEmail" placeholder="inserisci le Mail">
+              <input type="email" class="form-control" id = "formEmail" placeholder="inserisci le Mail o seleziona i corsi">
             </div>
           </div>
 
@@ -178,10 +178,27 @@
       </div>
 
       <div class = "col-md-6 coursesList">
-        <div class="row">
-          {{ __('Qui vanno messi i corsi da selezionare') }}
+        <div class="row rowSelectTitile">
+          <div class = "col-md-12">
+            <div class = "selectCourse">{{ __('Invia a:') }}</div>
         </div>
       </div>
+      @foreach ($subjects as $subject)
+        <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>
+        @foreach ($courses as $course)
+        <div class="row rowSelectCourse">
+          <div class = "col">
+            <a href="">
+              <div class = "contactCourses">
+                <!-- <img class = "selectArrow" src="{{asset('/img/arrow2.svg')}}"/><span> -->
+                  {{ $course->year }} {{ $course->course }} ({{ $course->section }})
+                <!-- </span> -->
+              </div>
+            </a>
+          </div>
+        </div>
+        @endforeach
+      @endforeach
     </div>
   </div>
 </div>

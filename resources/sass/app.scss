@@ -13,6 +13,8 @@
 @import 'layout/courses';
 @import 'layout/profile';
 @import 'layout/todayCalendar';
+@import 'layout/studentsList';
+@import 'layout/activity';
 // @import '/fonts/futura medium bt.ttf';
 
 // Bootstrap
@@ -134,7 +136,7 @@ a {
   bottom: 0 !important;
   float: right !important;
   margin-right: 4%;
-  margin-top: 12%;
+  margin-top: 31%;
   color: $white !important;
   right: 0;
 }

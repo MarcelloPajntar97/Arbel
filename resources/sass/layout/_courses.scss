@@ -3,28 +3,28 @@
   margin-left: 9%;
 }
 
-.mediaContainer, .videoContainer, .soundContainer, .photoContainer, .comunicationContainer, .graphicContainer {
-  padding-top: 6%;
-  padding-left: 2% !important;
-  padding-bottom: 2%;
-  margin-top: 15% !important;
-  margin-bottom: 15%;
-  margin-left: none !important;
-  border-radius: 5px !important;
-  bottom: 0 !important;
-  box-shadow: 0px 1px 20px #efefef !important;
-  background-color: $white;
-  height: 350px;
-  width: 240px !important;
-  color: #343434 !important;
-  transition: all .2s ease-in-out;
-  &:hover {
-    transition: all 0.2s !important;
-    background-color: $redArbel !important;
-    transform: scale(1.06);
-    color: $white !important;
-  }
-}
+// .mediaContainer, .videoContainer, .soundContainer, .photoContainer, .comunicationContainer, .graphicContainer {
+//   padding-top: 6%;
+//   padding-left: 2% !important;
+//   padding-bottom: 2%;
+//   margin-top: 15% !important;
+//   margin-bottom: 15%;
+//   margin-left: none !important;
+//   border-radius: 5px !important;
+//   bottom: 0 !important;
+//   box-shadow: 0px 1px 20px #efefef !important;
+//   background-color: $white;
+//   height: 350px;
+//   width: 240px !important;
+//   color: #343434 !important;
+//   transition: all .2s ease-in-out;
+//   &:hover {
+//     transition: all 0.2s !important;
+//     background-color: $redArbel !important;
+//     transform: scale(1.06);
+//     color: $white !important;
+//   }
+// }
 
 .provaContainer {
   padding-top: 6%;
@@ -35,9 +35,9 @@
   transition: all .2s ease-in-out;
   margin-top: 15% !important;
   margin-bottom: 5% !important;
-  border-radius: 5px !important;
+  border-radius: 10px !important;
   bottom: 0 !important;
-  box-shadow: 0px 1px 17px #f2f2f2 !important;
+  box-shadow: 0px 1px 17px #edecec !important;
   background-color: $white;
   height: 220px;
   min-height: 220px !important;
@@ -163,4 +163,9 @@ a:hover {
 .badgeSection{
   font-size: 2px !important;
 
+}
+
+.rowSelectTitile{
+  margin-top: -17.5% !important;
+  margin-bottom: 5%;
 }

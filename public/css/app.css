@@ -526,44 +526,23 @@ placeholder {
   color: lightGrey !important;
 }
 
+.contactCourses {
+  color: #000000 !important;
+  transition: all 0.3s;
+}
+
+.contactCourses:hover {
+  transition: all 0.3s;
+  color: #F2001E !important;
+}
+
+.rowSelectCourse {
+  margin-bottom: 2%;
+}
+
 .allCourses {
   margin-bottom: 8%;
   margin-left: 9%;
-}
-
-.mediaContainer,
-.videoContainer,
-.soundContainer,
-.photoContainer,
-.comunicationContainer,
-.graphicContainer {
-  padding-top: 6%;
-  padding-left: 2% !important;
-  padding-bottom: 2%;
-  margin-top: 15% !important;
-  margin-bottom: 15%;
-  margin-left: none !important;
-  border-radius: 5px !important;
-  bottom: 0 !important;
-  box-shadow: 0px 1px 20px #efefef !important;
-  background-color: #FFFFFF;
-  height: 350px;
-  width: 240px !important;
-  color: #343434 !important;
-  transition: all 0.2s ease-in-out;
-}
-
-.mediaContainer:hover,
-.videoContainer:hover,
-.soundContainer:hover,
-.photoContainer:hover,
-.comunicationContainer:hover,
-.graphicContainer:hover {
-  transition: all 0.2s !important;
-  background-color: #F2001E !important;
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
-  color: #FFFFFF !important;
 }
 
 .provaContainer {
@@ -575,9 +554,9 @@ placeholder {
   transition: all 0.2s ease-in-out;
   margin-top: 15% !important;
   margin-bottom: 5% !important;
-  border-radius: 5px !important;
+  border-radius: 10px !important;
   bottom: 0 !important;
-  box-shadow: 0px 1px 17px #f2f2f2 !important;
+  box-shadow: 0px 1px 17px #edecec !important;
   background-color: #FFFFFF;
   height: 220px;
   min-height: 220px !important;
@@ -701,6 +680,11 @@ a:hover {
 
 .badgeSection {
   font-size: 2px !important;
+}
+
+.rowSelectTitile {
+  margin-top: -17.5% !important;
+  margin-bottom: 5%;
 }
 
 .imageSubmitButton {
@@ -927,6 +911,125 @@ a:hover {
 
 .rowHour {
   margin-bottom: 1.5%;
+}
+
+.studentBox {
+  transition: all 0.3s ease-in-out;
+  font-family: "futura", sans-serif;
+  font-size: 16px;
+  margin-top: -4% !important;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  height: 45px;
+  width: 145px;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 7px lightGrey !important;
+  background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
+  color: #FFFFFF;
+}
+
+.studentBox:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.testBox,
+.activityBox {
+  transition: all 0.3s ease-in-out;
+  font-family: "futura", sans-serif;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  height: 40px;
+  width: 140px;
+  font-weight: normal !important;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 5px #ECEAEA !important;
+  background-color: #FFFFFF;
+}
+
+.testBox:hover,
+.activityBox:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  color: #F2001E;
+}
+
+.linkStudent {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.switchContainer {
+  margin: 0 auto !important;
+  margin-top: 5% !important;
+}
+
+.row-centered {
+  text-align: center !important;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: 4%;
+  text-align: center;
+}
+
+.activityBox3 {
+  transition: all 0.3s ease-in-out;
+  font-family: "futura", sans-serif;
+  font-size: 15px;
+  margin-top: -4% !important;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  height: 45px;
+  width: 145px;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 7px lightGrey !important;
+  background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
+  color: #FFFFFF;
+}
+
+.activityBox3:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.studentBox3,
+.testBox3 {
+  transition: all 0.3s ease-in-out;
+  font-family: "futura", sans-serif;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  height: 40px;
+  width: 140px;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 5px #ECEAEA !important;
+  background-color: #FFFFFF;
+}
+
+.studentBox3:hover,
+.testBox3:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  color: #F2001E;
 }
 
 /*!
@@ -11703,7 +11806,7 @@ a:hover {
   bottom: 0 !important;
   float: right !important;
   margin-right: 4%;
-  margin-top: 12%;
+  margin-top: 31%;
   color: #FFFFFF !important;
   right: 0;
 }
