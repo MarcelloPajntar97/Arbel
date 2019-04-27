@@ -18,13 +18,18 @@ class StudentTableSeeder extends Seeder
       $faker = Faker::create('it_IT');
       for ($i=0; $i < 700; $i++) {
         $gender = $faker->randomElement(['Male', 'Female'])[0];
+        $name = $faker->firstName($gender);
+        $surname = $faker->lastname;
+        $domain = 'ied.edu';
+        $uniqueFakeEmail = "$name.$surname@$domain";
         DB::table('students')->insert([
           'class_id' => $faker->numberBetween($min = 1, $max = 36),
           'badgeNumber' => $faker->numberBetween($min = 100000, $max = 999999),
-          'name' => $faker->firstName($gender),
-          'surname' => $faker->lastname,
-          'birthday'=> $faker->date($format = 'Y-m-d', $max = 'now') ,
+          'name' => $name,
+          'surname' => $surname,
+          'birthday'=> $faker->date($format = 'Y-m-d', $max = 'now'),
           'sex' => $gender,
+          'email' => $uniqueFakeEmail,
           'created_at'=> \Carbon\Carbon::now(),
           'updated_at'=> \Carbon\Carbon::now()
 

@@ -28,3 +28,5 @@ Route::get('subjects/get/{id}', 'SecretaryEditData@getSubjects');
 
 Route::get('/studentsList', 'StudentsListController@index');
 Route::get('/activity', 'ActivityController@index');
+
+Route::post('/home/send', "HomeController@send");

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 class HomeController extends Controller
 {
@@ -31,5 +33,26 @@ class HomeController extends Controller
         $teachers = \App\User::where('isAdmin', 0)->get();
         return view('admin', compact('teachers'));
       }
+    }
+
+    function send(Request $request) {
+      $this->validate($request, [
+        'email' => 'required|email',
+        'subject' => 'required',
+        'message' => 'required'
+      ]);
+      $data = array(
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message
+            // $data->subject = $request->subject;
+            // $data->message = $request->message;
+        );
+
+      Mail::to($data['email'])
+            // ->subject($data['email'])
+            ->send(new SendMail($data));
+      // Mail::to($data['email'])->send(new SendMail($data));
+      return back()->with('success', 'Mail inviata correttamente!');
     }
 }

@@ -147,31 +147,33 @@
   <div class = "container allContainer">
     <div class = "row sendContainer">
       <div class="col-md-6 firstPart">
-        <form>
+        <form method="post" action= "{{ url('home/send') }}">
+
+          {{ csrf_field() }}
           <div class="row form-group">
             <div class = "col-md-12">
               <label for="formEmail">{{ __('Destinatari') }}</label>
-              <input type="email" class="form-control" id = "formEmail" placeholder="inserisci le Mail o seleziona i corsi">
+              <input type="text" name="email" class="form-control" value="" placeholder="inserisci le mail o seleziona i corsi" />
             </div>
           </div>
 
           <div class="row form-group">
             <div class = "col-md-12">
               <label for="formObject">{{ __('Oggetto') }}</label>
-              <input type="text" class="form-control" id="formObject" placeholder="inserisci l'oggetto">
+              <input type="text" name="subject" class="form-control" id="formObject" placeholder="inserisci l'oggetto">
             </div>
           </div>
 
           <div class="row form-group">
             <div class = "col-md-12">
               <label for="formTextarea">{{ __('Messaggio') }}</label>
-              <textarea class="form-control" id="formTextarea" rows="5"></textarea>
+              <textarea name="message" class="form-control" id="formTextarea" rows="5"></textarea>
             </div>
           </div>
 
           <div class="row form-group">
             <div class = "col-md-12">
-              <button type="submit" class="btn btn-primary sendButton">{{ __('INVIA') }}</button>
+              <button type="submit" name="send" value="Send" class="btn btn-primary sendButton">{{ __('INVIA') }}</button>
             </div>
           </div>
         </form>
@@ -199,6 +201,27 @@
         </div>
         @endforeach
       @endforeach
+
+      @if(count($errors) > 0)
+        <br>
+        <div class = "alert alert-danger">
+          <button type = "button" class = "close" data-dismiss = "alert">x</button>
+          <ul>
+            @foreach($errors->all() as $error)
+              <br>
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+
+      @if($message = Session::get('success'))
+        <br>
+        <div class = "alert alert-success alert-block">
+          <button type = "button" class = "close" data-dismiss = "alert">x</button>
+          <strong>{{ $message }}</strong>
+        </div>
+      @endif
     </div>
   </div>
 </div>
