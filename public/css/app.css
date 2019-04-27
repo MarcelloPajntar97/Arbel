@@ -863,7 +863,7 @@ a:hover {
   background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
   margin-left: none !important;
   margin-right: none !important;
-  padding-top: 4%;
+  padding-top: 5%;
   margin-right: -3px !important;
   padding-bottom: 4%;
   color: #FFFFFF !important;
@@ -872,7 +872,7 @@ a:hover {
 }
 
 .monthSelected {
-  color: lightGrey;
+  color: #FFFFFF;
   font-size: 14px;
   margin-left: -3px !important;
   text-align: center !important;
@@ -913,17 +913,28 @@ a:hover {
   margin-bottom: 1.5%;
 }
 
+#primaFascia,
+#secondaFascia,
+#terzaFascia,
+#quartaFascia,
+#corsi {
+  margin-bottom: 4%;
+  font-weight: bold;
+  margin-left: 0 !important;
+}
+
 .studentBox {
   transition: all 0.3s ease-in-out;
   font-family: "futura", sans-serif;
   font-size: 16px;
-  margin-top: -4% !important;
+  margin-top: -1% !important;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  height: 45px;
-  width: 145px;
-  border-radius: 10px !important;
+  padding-top: 8px;
+  height: 42px;
+  width: 142px;
+  margin-left: 3% !important;
+  border-radius: 7px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 7px lightGrey !important;
   background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
@@ -940,14 +951,14 @@ a:hover {
 .activityBox {
   transition: all 0.3s ease-in-out;
   font-family: "futura", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   justify-content: center;
   align-items: center;
-  padding-top: 8px;
+  padding-top: 10px;
   height: 40px;
   width: 140px;
-  font-weight: normal !important;
-  border-radius: 10px !important;
+  border: 0.7px solid #ECEAEA;
+  border-radius: 6px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 5px #ECEAEA !important;
   background-color: #FFFFFF;
@@ -968,7 +979,7 @@ a:hover {
 
 .switchContainer {
   margin: 0 auto !important;
-  margin-top: 5% !important;
+  margin-top: 3% !important;
 }
 
 .row-centered {
@@ -981,21 +992,22 @@ a:hover {
   /* reset the text-align */
   text-align: left;
   /* inline-block space fix */
-  margin-right: 4%;
+  margin-right: 3%;
   text-align: center;
 }
 
 .activityBox3 {
   transition: all 0.3s ease-in-out;
   font-family: "futura", sans-serif;
-  font-size: 15px;
-  margin-top: -4% !important;
+  font-size: 16px;
+  margin-top: -1% !important;
+  margin-left: -3% !important;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  height: 45px;
-  width: 145px;
-  border-radius: 10px !important;
+  padding-top: 8px;
+  height: 42px;
+  width: 142px;
+  border-radius: 7px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 7px lightGrey !important;
   background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
@@ -1018,7 +1030,8 @@ a:hover {
   padding-top: 10px;
   height: 40px;
   width: 140px;
-  border-radius: 10px !important;
+  border: 0.7px solid #ECEAEA;
+  border-radius: 6px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 5px #ECEAEA !important;
   background-color: #FFFFFF;
@@ -1030,6 +1043,49 @@ a:hover {
   -webkit-transform: scale(1.07);
           transform: scale(1.07);
   color: #F2001E;
+}
+
+.chartContainer {
+  margin-top: 10%;
+}
+
+.argumentRow {
+  margin-bottom: 7%;
+  margin-left: 2% !important;
+}
+
+.argumentDate {
+  font-family: "futura", sans-serif;
+  font-size: 14px !important;
+}
+
+.argumentName {
+  font-size: 14px !important;
+}
+
+.argumentTitle {
+  font-family: "futura", sans-serif;
+  font-size: 18px !important;
+  color: #A4AAB3;
+}
+
+.infoContainer {
+  margin-top: 10%;
+  color: #A4AAB3;
+}
+
+.infoIcon {
+  width: 20px;
+  height: auto;
+  margin-top: -0.2%;
+}
+
+.infoText {
+  margin-left: 1%;
+}
+
+.infoText2 {
+  margin-left: 2.6%;
 }
 
 /*!
@@ -11780,16 +11836,6 @@ a:hover {
   min-width: 100%;
   min-height: auto !important;
   margin-top: -1.5% !important;
-}
-
-#primaFascia,
-#secondaFascia,
-#terzaFascia,
-#quartaFascia,
-#corsi {
-  margin-bottom: 4%;
-  font-weight: bold;
-  margin-left: 0 !important;
 }
 
 .footerLogin {

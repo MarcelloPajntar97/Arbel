@@ -14,6 +14,10 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/dropdown.js') }}"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="{{ asset('js/chartArea.js') }}"></script>
+
+
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
