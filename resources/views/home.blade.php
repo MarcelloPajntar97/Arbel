@@ -7,41 +7,44 @@
   <div class="row">
     <div class = "col-md-1 allWeek">
       <div class = "weekContainer navigation" id="navigation">
-        <div class = "row">
-          <a href="#" class="active">
-            <div class = "col selectDay">
+        <div class = "row rowDay">
+          <a class= "linkDay activeDay" href= "home">
+          <!-- <a href="#" class="active"> -->
+            <div class = "col">
               <div class = "month text-center">APRILE</div>
               <div class = "day text-center">8</div>
             </div>
           </a>
         </div>
-      <div class = "row">
-        <a href="#">
-          <div class = "col activeDay">
-            <div class = "monthSelected">APRILE</div>
-            <div class = "daySelected text-center">9</div>
+      <div class = "row rowDay">
+        <a class= "linkDay" href= "home">
+          <div class = "col colDay">
+            <!-- <div class = "monthSelected">APRILE</div>
+            <div class = "daySelected text-center">9</div> -->
+            <div class = "month text-center">APRILE</div>
+            <div class = "day text-center">9</div>
           </div>
         </a>
       </div>
-      <div class = "row">
-        <a href="#">
-          <div class = "col selectDay">
+      <div class = "row rowDay">
+        <a class= "linkDay" href= "home">
+          <div class = "col colDay">
             <div class = "month">APRILE</div>
             <div class = "day text-center">10</div>
           </div>
         </a>
       </div>
-      <div class = "row">
-        <a href="#">
-          <div class = "col selectDay">
+      <div class = "row rowDay">
+        <a class= "linkDay" href= "home">
+          <div class = "col colDay">
             <div class = "month">APRILE</div>
             <div class = "day text-center">11</div>
           </div>
         </a>
       </div>
       <div class = "row">
-        <a href="#">
-          <div class = "col selectDay">
+        <a class= "linkDay" href= "home">
+          <div class = "col colDay">
             <div class = "month">APRILE</div>
             <div class = "day text-center">12</div>
           </div>

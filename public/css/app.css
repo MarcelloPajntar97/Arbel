@@ -490,8 +490,7 @@ body {
 }
 
 .sendButton:hover {
-  transition: all 0.3s;
-  background-color: #cb021b !important;
+  background-color: #e2001c !important;
   color: #FFFFFF !important;
 }
 
@@ -800,7 +799,7 @@ a:hover {
 
 .uploadShape:hover {
   transition: all 0.3s;
-  background-color: #cb021b;
+  background-color: #e2001c;
 }
 
 .todayContainer {
@@ -859,16 +858,43 @@ a:hover {
   text-align: center !important;
 }
 
+.linkDay {
+  cursor: pointer !important;
+}
+
 .activeDay {
   background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
   margin-left: none !important;
   margin-right: none !important;
-  padding-top: 5%;
-  margin-right: -3px !important;
-  padding-bottom: 4%;
+  padding-top: 7%;
+  padding-bottom: 8%;
+  border-radius: 3px;
   color: #FFFFFF !important;
-  margin-bottom: 40% !important;
+  margin-bottom: 30% !important;
   box-shadow: 0px 1px 9px darkGrey !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.activeDay .month {
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 12px;
+  text-align: center !important;
+}
+
+.activeDay .day {
+  color: #FFFFFF;
+  font-family: "futura", sans-serif;
+  margin-left: -2px !important;
+  margin-top: -2px;
+  font-size: 16px;
+  text-align: center !important;
+}
+
+.activeDay:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .monthSelected {
@@ -921,6 +947,10 @@ a:hover {
   margin-bottom: 4%;
   font-weight: bold;
   margin-left: 0 !important;
+}
+
+.colDay {
+  margin-bottom: 30%;
 }
 
 .studentBox {
@@ -11786,7 +11816,7 @@ a:hover {
 
 .loginButton:hover {
   transition: all 0.3s;
-  background-color: #cb021b !important;
+  background-color: #e2001c !important;
   color: #FFFFFF !important;
 }
 

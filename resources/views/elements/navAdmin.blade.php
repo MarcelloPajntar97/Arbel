@@ -1,6 +1,4 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
-
 <nav class="navbar navbar-expand-md navbar-default navbar-laravel" id="navbar">
   <div class="container" id="navbarContainer">
     <a class="navbar-brand" href="{{ url('/home') }}">
@@ -47,9 +45,3 @@
 </div>
 </div>
 </nav>
-<!-- <script type="text/javascript">
-  $('.navbar-nav .nav-link').click(function(){
-      $('.navbar-nav .nav-link').removeClass('active');
-      $(this).addClass('active');
-  })
-</script> -->

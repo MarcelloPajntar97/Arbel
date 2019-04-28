@@ -30,6 +30,7 @@
 
 .sendButton {
   font-family: $titleFont;
+  // background-color: $redArbel !important;
   background-color: $redArbel !important;
   color: $white !important;
   border: none !important;
@@ -38,7 +39,6 @@
   padding-right: 50px !important;
   margin-top: 5%;
   &:hover {
-    transition: all 0.3s;
     background-color: $redSelected !important;
     color: $white !important;
   }
