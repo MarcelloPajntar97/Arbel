@@ -106,8 +106,32 @@
 
     <div class="container-fluid idk">
     <div class = "row flex-row flex-nowrap">
-
-
+      @if ( $subjects->count() == 0)
+      <div class="col-md-3" id ="spero">
+        <div class = "linkCard">
+          <div class = "container provaContainer card-block">
+            <div class = "row">
+              <div class = "col">
+                <div class = "circle">
+                  <div class = "yearNumber">n</div>
+                </div>
+              </div>
+            </div>
+            <div class = "row">
+              <div class = "col">
+                <div class = "sectionTextp">Corso, sezione
+                </div>
+              </div>
+            </div>
+            <div class = "row">
+              <div class = "col">
+                <div class = "descriptionText">Nome materia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      @else
         @foreach ($subjects as $subject)
           <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>
           @foreach ($courses as $course)
@@ -137,6 +161,7 @@
             </div>
             @endforeach
           @endforeach
+          @endif
 
   </div>
   </div>

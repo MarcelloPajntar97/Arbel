@@ -15,7 +15,7 @@ class UserLogController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function login(){
+  public function login() {
       if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
           $user = Auth::user();
           $success['token'] =  $user->createToken('MyApp')-> accessToken;
@@ -30,9 +30,8 @@ class UserLogController extends Controller
       }
   }
 
-  public function details()
-    {
+  public function details() {
         $user = Auth::user();
         return response()->json(['success' => $user], $this-> successStatus);
-    }
+  }
 }

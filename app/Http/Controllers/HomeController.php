@@ -45,14 +45,9 @@ class HomeController extends Controller
             'email' => $request->email,
             'subject' => $request->subject,
             'message' => $request->message
-            // $data->subject = $request->subject;
-            // $data->message = $request->message;
         );
 
-      Mail::to($data['email'])
-            // ->subject($data['email'])
-            ->send(new SendMail($data));
-      // Mail::to($data['email'])->send(new SendMail($data));
+      Mail::to($data['email'])->send(new SendMail($data));
       return back()->with('success', 'Mail inviata correttamente!');
     }
 }

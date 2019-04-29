@@ -22,7 +22,6 @@ class SendMail extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
-        // $this->sub = $sub;
     }
 
     /**
@@ -33,7 +32,7 @@ class SendMail extends Mailable
     public function build()
     {
         return $this->from('arbel.project@hotmail.com')
-                    ->subject("Comunicazione")
+                    ->subject($this->data['subject'])
                     ->view('dynamic_email_template')
                     ->with(['data', $this->data]);
     }
