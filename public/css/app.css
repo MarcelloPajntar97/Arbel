@@ -648,6 +648,7 @@ a:hover {
 .idk {
   overflow-x: scroll;
   overflow-y: hidden;
+  white-space: nowrap;
 }
 
 #spero {
@@ -683,11 +684,6 @@ a:hover {
 .rowSelectTitile {
   margin-top: -17.5% !important;
   margin-bottom: 5%;
-}
-
-.defaultCourses {
-  color: #A4AAB3 !important;
-  margin-top: 15%;
 }
 
 .imageSubmitButton {

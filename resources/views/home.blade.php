@@ -131,17 +131,6 @@
           </div>
         </div>
     </div>
-    <div class="col-md-4">
-      <div class = "contaier defaultCourses">
-        <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}">
-        <span class = "infoText">
-        Card di default.<br>
-        In questa sezione il docente visionerà i corsi in cui insegna, con il relativo anno, sezione e materia insegnata.<br><br>
-        Nel caso in cui si visualizzi questa sezione di default, fare riferimento alla segretieria e assicurarsi di esser stati correttamente registrati.
-      </span>
-      </div>
-
-    </div>
       @else
         @foreach ($subjects as $subject)
           <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>

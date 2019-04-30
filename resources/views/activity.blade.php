@@ -57,7 +57,7 @@
 <div class = "container infoContainer">
   <div class = "row">
     <div class = "col">
-      <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}">
+      <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}" alt="Responsive image" id="footer">
       <span class = "infoText">Il grafico soprastante si basa su un calcolo della media dell'intera classe, suddiviso in mesi.<br><span class = "infoText2">Per avere maggiori dettagli, basterà cliccare sull'indicatore del mese desiderato e sarà possibile visualizzare gli argomenti trattati con la relativa data.</span></span>
     </div>
   </div>
