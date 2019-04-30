@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
       if (auth()->user()->isAdmin == 0) {
-        $subjects = \App\Subject::where('user_id', \Auth::user()->id)->get();
+        $subjects = auth()->user()->subjects()->get();
         return view('home', compact('subjects'));
       }
       elseif (auth()->user()->isAdmin == 1) {

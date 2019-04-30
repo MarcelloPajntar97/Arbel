@@ -133,8 +133,7 @@
     </div>
       @else
         @foreach ($subjects as $subject)
-          <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>
-          @foreach ($courses as $course)
+          @foreach ($subject->class()->get() as $course)
               <div class="col-md-3" id ="spero">
                 <a class = "linkCard" href="{{ url('/studentsList') }}">
                   <div class = "container provaContainer card-block">
@@ -213,22 +212,6 @@
             <div class = "selectCourse">{{ __('Invia a:') }}</div>
         </div>
       </div>
-      @foreach ($subjects as $subject)
-        <?php $courses = \App\ClassModel::where('id', $subject->class_id)->get();?>
-        @foreach ($courses as $course)
-        <div class="row rowSelectCourse">
-          <div class = "col">
-            <a href="">
-              <div class = "contactCourses">
-                <!-- <img class = "selectArrow" src="{{asset('/img/arrow2.svg')}}"/><span> -->
-                  {{ $course->year }} {{ $course->course }} ({{ $course->section }})
-                <!-- </span> -->
-              </div>
-            </a>
-          </div>
-        </div>
-        @endforeach
-      @endforeach
 
       @if(count($errors) > 0)
         <br>

@@ -46,17 +46,11 @@
 
     <div class = "col-md-5">
       <h2 class = "titleDrop">Corsi e materia assegnati</h2>
-
-        <?php
-        $subjects = App\Subject::where('user_id', $teacher->id)->get();
-        foreach ($subjects as $subject) {
-          $courses = App\ClassModel::where('id', $subject->class_id)->get();
-          foreach ($courses as $course) { ?>
+        @foreach ($subjects as $subject)
+          @foreach ($subject->class()->get() as $course)
             <div class = "teacherDate"> {{ $course->year }} {{ $course->course }} ({{ $course->section}}) - {{ $subject->subjectName}} </div></br>
-        <?php
-          }
-        } ?>
-
+          @endforeach
+        @endforeach
       </div>
     </div>
 
