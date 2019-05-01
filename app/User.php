@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    
+
     use HasApiTokens, Notifiable;
 
     /**
@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'surname', 'email', 'password', 'isAdmin',
+        'name', 'surname', 'email', 'password', 'isAdmin'
     ];
 
     /**

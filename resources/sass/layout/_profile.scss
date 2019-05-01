@@ -1,26 +1,18 @@
 .imageSubmitButton {
-  font-family: $titleFont !important;
-  background-color: white !important;
+  font-family: $titleFont;
+  // background-color: $redArbel !important;
+  background-color: $redArbel !important;
+  color: $white !important;
+  border: none !important;
+  border-radius: 25px !important;
   margin-top: 60% !important;
   margin-left: -45% !important;
-  color: $deselectedItem !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
-  // font-weight: bold !important;
-  border-style: solid !important;
-  border-width: 1px !important;
-  border-color: $deselectedItem !important;
   &:hover {
-    transition: all 0.5s !important;
-    background-color: $redArbel !important;
-    color: white !important;
-    border-radius: 25px !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-    border-style: solid !important;
-    border-width: 1px !important;
-    border-color: $redArbel !important;
+    background-color: $redSelected !important;
+    color: $white !important;
   }
 }
 

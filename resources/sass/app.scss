@@ -54,7 +54,7 @@ a {
 .loginButton {
   font-family: $titleFont;
   background-color: $redArbel !important;
-  font-weight: futuraMedium !important;
+  // font-weight: futuraMedium !important;
   color: $white !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
@@ -129,8 +129,8 @@ a {
 .footerHome{
   bottom: 0 !important;
   float: right !important;
-  margin-right: 4%;
-  margin-top: 31%;
+  margin-right: 2%;
+  margin-top: 13%;
   color: $white !important;
   right: 0;
 }

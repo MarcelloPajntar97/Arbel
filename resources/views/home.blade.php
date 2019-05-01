@@ -99,9 +99,9 @@
     </div>
   </div>
 
-<img src="{{asset('/img/sinceramente.svg')}}" class = "nextSection">
+<a href = "#nextSection"><img src="{{asset('/img/sinceramente.svg')}}" class = "nextSection"></a>
 
-<div class = "container"><h3 class = "coursesTitle">{{ __('I MIEI CORSI') }}</h3></div>
+<div class = "container" id = "nextSection"><h3 class = "coursesTitle">{{ __('I MIEI CORSI') }}</h3></div>
 <div class = "allCourses">
 
     <div class="container-fluid idk">
@@ -130,7 +130,21 @@
             </div>
           </div>
         </div>
-    </div>
+        </div>
+
+        <div class="col-md-4">
+      <div class = "contaier defaultCourses">
+        <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}">
+        <span class = "infoText">
+        Card di default.<br>
+        In questa sezione il docente visionerà i corsi in cui insegna, con il relativo anno, sezione e materia associati.<br><br>
+        Nel caso in cui si visualizzi questa sezione di default, fare riferimento alla segretieria e assicurarsi di esser stati correttamente registrati.
+      </span>
+      </div>
+</div>
+
+
+
       @else
         @foreach ($subjects as $subject)
           @foreach ($subject->class()->get() as $course)
@@ -191,7 +205,7 @@
             </div>
           </div>
 
-          <div class="row form-group">
+          {{-- <div class="row form-group">
             <div class = "col-md-12">
               <label for="formTextarea">{{ __('Messaggio') }}</label>
               <textarea name="message" class="form-control" id="formTextarea" rows="5"></textarea>
@@ -202,15 +216,26 @@
             <div class = "col-md-12">
               <button type="submit" name="send" value="Send" class="btn btn-primary sendButton">{{ __('INVIA') }}</button>
             </div>
-          </div>
-        </form>
+          </div> --}}
+
       </div>
 
       <div class = "col-md-6 coursesList">
         <div class="row rowSelectTitile">
           <div class = "col-md-12">
-            <div class = "selectCourse">{{ __('Invia a:') }}</div>
+            <div class="row form-group">
+              <div class = "col-md-12">
+                <label for="formTextarea">{{ __('Messaggio') }}</label>
+                <textarea name="message" class="form-control" id="formTextarea" rows="6"></textarea>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class = "col-md-12">
+                <button type="submit" name="send" value="Send" class="btn btn-primary sendButton">{{ __('INVIA') }}</button>
+              </div>
         </div>
+        </form>
       </div>
 
       @if(count($errors) > 0)
@@ -235,6 +260,8 @@
       @endif
     </div>
   </div>
+</div>
+</div>
 </div>
 
 <footer class="page-footer footerHome font-small">

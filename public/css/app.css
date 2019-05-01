@@ -211,7 +211,7 @@ body {
   margin-top: 5%;
   border-radius: 15px !important;
   border-width: 0px !important;
-  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
   box-shadow: 0px 1px 4px lightGrey;
   padding: 5% !important;
 }
@@ -462,7 +462,7 @@ body {
   background-color: #FFFFFF;
   padding-top: 2%;
   padding-left: 2% !important;
-  padding-bottom: 4%;
+  padding-bottom: none;
   border-radius: 10px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 4px darkGrey !important;
@@ -475,7 +475,7 @@ body {
   margin-top: 12%;
   margin-bottom: -15% !important;
   width: 100%;
-  height: 60%;
+  height: 43%;
 }
 
 .sendButton {
@@ -501,12 +501,12 @@ body {
   margin: 0;
   padding: 0;
   border-right: 1px solid lightGrey;
-  height: 400px;
+  height: 270px;
 }
 
 .contactTitle {
   font-family: "futura", sans-serif;
-  padding-top: 1%;
+  margin-top: 13% !important;
   font-size: 16px !important;
 }
 
@@ -626,7 +626,7 @@ a:hover {
   font-family: "futura", sans-serif !important;
   margin-left: none !important;
   font-size: 16px !important;
-  padding-top: 5%;
+  margin-top: 8%;
 }
 
 .nextButton {
@@ -648,7 +648,6 @@ a:hover {
 .idk {
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
 }
 
 #spero {
@@ -686,30 +685,27 @@ a:hover {
   margin-bottom: 5%;
 }
 
+.defaultCourses {
+  color: #A4AAB3 !important;
+  margin-top: 15%;
+}
+
 .imageSubmitButton {
-  font-family: "futura", sans-serif !important;
-  background-color: white !important;
+  font-family: "futura", sans-serif;
+  background-color: #F2001E !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 25px !important;
   margin-top: 60% !important;
   margin-left: -45% !important;
-  color: #A4AAB3 !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
-  border-style: solid !important;
-  border-width: 1px !important;
-  border-color: #A4AAB3 !important;
 }
 
 .imageSubmitButton:hover {
-  transition: all 0.5s !important;
-  background-color: #F2001E !important;
-  color: white !important;
-  border-radius: 25px !important;
-  padding-left: 30px !important;
-  padding-right: 30px !important;
-  border-style: solid !important;
-  border-width: 1px !important;
-  border-color: #F2001E !important;
+  background-color: #e2001c !important;
+  color: #FFFFFF !important;
 }
 
 .profileTitle {
@@ -11806,7 +11802,6 @@ a:hover {
 .loginButton {
   font-family: "futura", sans-serif;
   background-color: #F2001E !important;
-  font-weight: futuraMedium !important;
   color: #FFFFFF !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
@@ -11881,8 +11876,8 @@ a:hover {
 .footerHome {
   bottom: 0 !important;
   float: right !important;
-  margin-right: 4%;
-  margin-top: 31%;
+  margin-right: 2%;
+  margin-top: 13%;
   color: #FFFFFF !important;
   right: 0;
 }

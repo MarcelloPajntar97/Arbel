@@ -13,5 +13,6 @@ class SecretaryEditData extends Controller
     {
         $subjects = DB::table("subjects")->where("class_id",$id)->pluck("subjectName","id");
         return json_encode($subjects);
+        
     }
 }
