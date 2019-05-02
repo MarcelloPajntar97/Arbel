@@ -182,15 +182,15 @@
 
 
 <div class = "container"><h3 class = "contactTitle">{{ __('CONTATTA') }}</h3></div>
+<form method="post" action= "{{ url('home/send') }}">
 
+  {{ csrf_field() }}
 <div class = "container-fluid newColorBg">
 
   <div class = "container allContainer">
     <div class = "row sendContainer">
       <div class="col-md-6 firstPart">
-        <form method="post" action= "{{ url('home/send') }}">
 
-          {{ csrf_field() }}
           <div class="row form-group">
             <div class = "col-md-12">
               <label for="formEmail">{{ __('Destinatari') }}</label>
@@ -203,9 +203,30 @@
               <label for="formObject">{{ __('Oggetto') }}</label>
               <input type="text" name="subject" class="form-control" id="formObject" placeholder="inserisci l'oggetto">
             </div>
-          </div>
+            @if(count($errors) > 0)
+              <br>
+              <div class = "alert alert-danger">
+                <button type = "button" class = "close" data-dismiss = "alert">x</button>
+                <ul>
+                  @foreach($errors->all() as $error)
+                    <br>
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+            @endif
 
-          {{-- <div class="row form-group">
+            @if($message = Session::get('success'))
+              <br>
+              <div class = "alert alert-success alert-block">
+                <button type = "button" class = "close" data-dismiss = "alert">x</button>
+                <strong>{{ $message }}</strong>
+              </div>
+            @endif
+          </div>
+          </div>
+          <div class="col-md-6 firstPart">
+           <div class="row form-group">
             <div class = "col-md-12">
               <label for="formTextarea">{{ __('Messaggio') }}</label>
               <textarea name="message" class="form-control" id="formTextarea" rows="5"></textarea>
@@ -216,58 +237,19 @@
             <div class = "col-md-12">
               <button type="submit" name="send" value="Send" class="btn btn-primary sendButton">{{ __('INVIA') }}</button>
             </div>
-          </div> --}}
-
-      </div>
-
-      <div class = "col-md-6 coursesList">
-        <div class="row rowSelectTitile">
-          <div class = "col-md-12">
-            <div class="row form-group">
-              <div class = "col-md-12">
-                <label for="formTextarea">{{ __('Messaggio') }}</label>
-                <textarea name="message" class="form-control" id="formTextarea" rows="6"></textarea>
-              </div>
-            </div>
-
-            <div class="row form-group">
-              <div class = "col-md-12">
-                <button type="submit" name="send" value="Send" class="btn btn-primary sendButton">{{ __('INVIA') }}</button>
-              </div>
+          </div>
         </div>
-        </form>
-      </div>
 
-      @if(count($errors) > 0)
-        <br>
-        <div class = "alert alert-danger">
-          <button type = "button" class = "close" data-dismiss = "alert">x</button>
-          <ul>
-            @foreach($errors->all() as $error)
-              <br>
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-      @endif
-
-      @if($message = Session::get('success'))
-        <br>
-        <div class = "alert alert-success alert-block">
-          <button type = "button" class = "close" data-dismiss = "alert">x</button>
-          <strong>{{ $message }}</strong>
-        </div>
-      @endif
-    </div>
-  </div>
 </div>
 </div>
 </div>
+</form>
+
 
 <footer class="page-footer footerHome font-small">
 
   <div class="footer-copyright text-center">© 2019 Copyright:
-    Arbel, a university project</a>
+    Arbel, a university project
   </div>
 
 </footer>
