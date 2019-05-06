@@ -1114,6 +1114,42 @@ a:hover {
   margin-left: 2.6%;
 }
 
+.container {
+  font-family: "futura", sans-serif;
+  margin: 60px auto;
+}
+
+.list-inline {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  height: 100px;
+}
+
+th:nth-of-type(6),
+td:nth-of-type(6) {
+  color: blue;
+}
+
+th:nth-of-type(7),
+td:nth-of-type(7) {
+  color: red;
+}
+
+.today {
+  background-color: ghostwhite;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
