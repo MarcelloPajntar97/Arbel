@@ -147,7 +147,7 @@
 
       @else
         @foreach ($subjects as $subject)
-          @foreach ($subject->class()->get() as $course)
+          @foreach ($subject->classData()->get() as $course)
               <div class="col-md-3" id ="spero">
                 <a class = "linkCard" href="{{ url('/studentsList') }}">
                   <div class = "container provaContainer card-block">
