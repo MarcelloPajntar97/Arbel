@@ -20,14 +20,21 @@ class UserLogController extends Controller
   public function login() {
       if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
           $user = Auth::user();
-          $subjects = auth()->user()->subjects()->with('class')->get();
-          $success['token'] =  $user->createToken('MyApp')-> accessToken;
+          $subjects = auth()->user()->subjects()->get();
+          $courses = array();
+          foreach ($subjects as $subject) {
+            foreach ($subject->class()->get() as $course) {
+              array_push($courses, $course);
+            }
+          }
+          $success['token'] =  $user->createToken('MyApp')->accessToken;
           $success['id'] =  $user->id;
           $success['name'] =  $user->name;
           $success['surname'] =  $user->surname;
           $success['email'] =  $user->email;
-          $success['dataDetails'] =  $subjects;
-          return response()->json(['success' => $success], $this-> successStatus);
+          $success['subjects'] =  $subjects;
+          $success['courses'] =  $courses;
+          return response()->json(['success' => $success], $this->successStatus);
       }
       else {
           return response()->json(['error'=>'Unauthorized'], 401);
