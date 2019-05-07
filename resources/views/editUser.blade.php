@@ -47,7 +47,7 @@
     <div class = "col-md-5">
       <h2 class = "titleDrop">Corsi e materia assegnati</h2>
         @foreach ($subjects as $subject)
-          @foreach ($subject->classData()->get() as $course)
+          @foreach ($subject->class()->get() as $course)
             <div class = "teacherDate"> {{ $course->year }} {{ $course->course }} ({{ $course->section}}) - {{ $subject->subjectName}} </div></br>
           @endforeach
         @endforeach
