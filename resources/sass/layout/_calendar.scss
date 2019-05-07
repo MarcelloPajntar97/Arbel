@@ -1,26 +1,32 @@
-.container {
+.calendar {
     font-family: "futura", sans-serif;
     margin: 60px auto;
 }
-.list-inline {
+.listcalendar  {
     margin-bottom: 30px;
 }
-.title {
+.titleCalendar {
     font-weight: bold;
     font-size: 26px;
 }
-th {
+.dayWeek {
     text-align: center;
+    height: 100px;
 }
 td {
     height: 100px;
 }
-th:nth-of-type(6), td:nth-of-type(6) {
+
+.calendarAll {
+    height: 100px;
+}
+
+.dayWeek:nth-of-type(6), .todayCalendar:nth-of-type(6) {
     color: blue;
 }
-th:nth-of-type(7), td:nth-of-type(7) {
+.dayWeek:nth-of-type(7), .todayCalendar:nth-of-type(7) {
     color: red;
 }
-.today {
+.calendarToday {
     background-color: ghostwhite;
 }

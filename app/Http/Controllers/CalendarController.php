@@ -54,7 +54,7 @@ class CalendarController extends Controller
     for ($day = 1; $day <= $day_count; $day++, $str++) {
         $date = $ym . '-' . $day;
         if ($today == $date) {
-            $week .= '<td class="today">';
+            $week .= '<td class="calendarToday">';
         } else {
             $week .= '<td>';
         }
@@ -64,7 +64,7 @@ class CalendarController extends Controller
             // last day of the month
             if ($day == $day_count && $str % 7 != 0) {
                 // Add empty cell(s)
-                $week .= str_repeat('<td></td>', 7 - $str % 7);
+                $week .= str_repeat('<td class="calendarAll"></td>', 7 - $str % 7);
             }
             $weeks[] = '<tr>' . $week . '</tr>';
             $week = '';
