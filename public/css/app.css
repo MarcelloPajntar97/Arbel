@@ -949,6 +949,19 @@ a:hover {
   margin-bottom: 30%;
 }
 
+.studentSubmitButton {
+  font-family: "futura", sans-serif;
+  background-color: #F2001E !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 25px !important;
+}
+
+.studentSubmitButton:hover {
+  background-color: #e2001c !important;
+  color: #FFFFFF !important;
+}
+
 .studentBox {
   transition: all 0.3s ease-in-out;
   font-family: "futura", sans-serif;

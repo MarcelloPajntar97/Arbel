@@ -1,3 +1,17 @@
+.studentSubmitButton {
+  font-family: $titleFont;
+  // background-color: $redArbel !important;
+  background-color: $redArbel !important;
+  color: $white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  
+  &:hover {
+    background-color: $redSelected !important;
+    color: $white !important;
+  }
+}
+
 
 .studentBox {
   transition: all .3s ease-in-out;

@@ -14,9 +14,7 @@
 Route::get('/', function () {
     return view('auth/login');
 });
-
 Auth::routes();
-
 Route::resource('/home', 'SecretaryController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/calendar', 'CalendarController@index');
@@ -25,8 +23,6 @@ Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 Route::resource('/editUser', 'SecretaryController');
 Route::get('subjects/get/{id}', 'SecretaryEditData@getSubjects');
-
-Route::get('/studentsList', 'StudentsListController@index');
+Route::resource('/students', 'StudentListController');
 Route::get('/activity', 'ActivityController@index');
-
 Route::post('/home/send', "HomeController@send");

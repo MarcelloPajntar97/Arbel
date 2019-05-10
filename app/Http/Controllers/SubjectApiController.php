@@ -16,6 +16,7 @@ class SubjectApiController extends Controller
     public function index()
     {
       $subject = Subject::all();
+
       return SubjectResource::collection($subject);
     }
 
@@ -49,6 +50,10 @@ class SubjectApiController extends Controller
     public function show($id)
     {
       $subject = Subject::findOrFail($id);
+      // $classroom = \App\ClassModel::find($id);
+      // $students = \App\Student::where('class_id', $classroom->id)->get();
+      // // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
+      // return view('studentsList', compact('students'));
       return new SubjectResource($subject);
     }
 

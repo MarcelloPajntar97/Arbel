@@ -19,5 +19,21 @@
     </div>
   </div>
 
+<div class="row  container">
 
+  @foreach ($students as $studentdata)
+  <div class="row studentContainer">
+    <div class = "col-md-3 form-check">
+      <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+    </div>
+    <div class = "col-md-3">
+      {{ $studentdata->name }}  {{ $studentdata->surname }}
+    </div>
+    <div class = "col-md-3">
+      {{ $studentdata->email }}
+    </div>
+  </div>
+  @endforeach
+
+  <button type="submit" class="btn btn-primary studentSubmitButton">SALVA</button>
 </div>

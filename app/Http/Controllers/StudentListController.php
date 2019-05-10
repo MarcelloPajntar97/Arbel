@@ -4,16 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class StudentsListController extends Controller
+class StudentListController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index()
     {
-        return view('studentsList'); 
+        return view('studentsList');
     }
 
     /**
@@ -56,7 +62,13 @@ class StudentsListController extends Controller
      */
     public function edit($id)
     {
-        //
+     $classroom = \App\ClassModel::find($id);
+
+     $students = \App\Student::where('class_id', $classroom->id)->get();
+
+
+      // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
+      return view('studentsList', compact('students', 'id'));
     }
 
     /**
