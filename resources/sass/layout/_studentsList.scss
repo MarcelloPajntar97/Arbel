@@ -1,17 +1,48 @@
+.studentContainer{
+    // background-color: $white;
+    margin: auto !important;
+    margin-top: 0.4% !important;
+    border-radius: 5px !important;
+    border-width: 0px !important;
+    box-shadow: 0px 1px 3px lightGrey !important;
+    padding-top: 2% !important;
+    padding-bottom: 2%;
+    font-family: $titleFont;
+
+}
+.classContainer{
+  margin: auto !important;
+  margin-top: 0.4% !important;
+  border-radius: 5px !important;
+  border-width: 0px !important;
+  box-shadow: 0px 1px 0px lightGrey !important;
+  padding-top: 1% !important;
+  padding-bottom: 1%;
+}
+
+.studentTitle{
+  font-family: $titleFont !important;
+  margin-left: none !important;
+  font-size: 16px !important;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
 .studentSubmitButton {
   font-family: $titleFont;
   // background-color: $redArbel !important;
+  margin-top: 5%;
   background-color: $redArbel !important;
   color: $white !important;
   border: none !important;
   border-radius: 25px !important;
-  
+  padding-left: 50px !important;
+  padding-right: 50px !important;
   &:hover {
     background-color: $redSelected !important;
     color: $white !important;
   }
 }
-
 
 .studentBox {
   transition: all .3s ease-in-out;
@@ -35,6 +66,7 @@
     // background-color: $redArbel;
   }
 }
+
 
 .testBox, .activityBox {
   transition: all .3s ease-in-out;

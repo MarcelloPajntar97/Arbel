@@ -8,7 +8,7 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        return view('activity'); 
+        return view('activity');
     }
 
 }

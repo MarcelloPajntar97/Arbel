@@ -5,7 +5,7 @@
 <div class = "container switchContainer">
   <div class="row row-centered d-flex justify-content-center">
     <div class = "col-md-1 col-centered">
-    <a class = "linkStudent" href="{{ route('students.edit', $course->id) }">
+    <a class = "linkStudent" href="{{ url('/students/{id}/edit') }}">
         <div class = "studentBox3">Studenti</div>
       </a>
     </div>
