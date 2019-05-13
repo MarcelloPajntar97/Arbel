@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Subject;
 use App\ClassModel;
+// use App\Student;
 
 class UserLogController extends Controller
 {
@@ -21,18 +22,27 @@ class UserLogController extends Controller
       if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
           $user = Auth::user();
           $subjects = auth()->user()->subjects()->get();
+          // $students = auth()->class()->students()->get();
           $courses = array();
           foreach ($subjects as $subject) {
             foreach ($subject->class()->get() as $course) {
               array_push($courses, $course);
             }
           }
+
+          // foreach ($students->class()->get() as $course) {
+          //   array_push($courses, $course);
+          // }
+
+
+
           $success['token'] =  $user->createToken('MyApp')->accessToken;
           $success['id'] =  $user->id;
           $success['name'] =  $user->name;
           $success['surname'] =  $user->surname;
           $success['email'] =  $user->email;
           $success['subjects'] =  $subjects;
+          // $success['students'] =  $students;
           $success['courses'] =  $courses;
           return response()->json(['success' => $success], $this->successStatus);
       }
