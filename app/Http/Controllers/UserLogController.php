@@ -49,15 +49,20 @@ class UserLogController extends Controller
   public function studentsList() {
     $data = auth()->user()->subjects()->get();
     $dataStudent = array();
-
+    $final = array();
     foreach ($data as $student) {
       foreach ($student->class()->get() as $course) {
-
         $students = Student::where('class_id', $course->id)->get();
         array_push($dataStudent, $students);
       }
     }
-
-    return response()->json(['students' => $dataStudent], 200);
+     for ($i=0; $i<count($dataStudent); $i++) {
+       for ($k=0; $k<count($dataStudent[$i]); $k++) {
+       array_push($final, $dataStudent[$i][$k]);
+     }
+   }
+    $prova = ['students' => $final];
+    $res = response()->json($prova, 200);
+    return $res;
   }
 }
