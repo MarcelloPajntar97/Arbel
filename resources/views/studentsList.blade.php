@@ -25,17 +25,24 @@
 
     <div class="row-centered studentContainer">
     <div class="row ">
-      <div class = "col-md-3">
-        <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-      </div>
+      <div class = "col-md-2">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+       </div>
       <div class = "col-md-3 text-left">
          Nome Cognome
        </div>
-      <div class = "col-md-3 text-left">
-        Data di nascita
+       <div class = "col-md-2 text-left">
+         Media
+       </div>
+      <div class = "col-md-2 text-left">
+        Assenze
       </div>
-      <div class = "col-md-3  text-left">
+      <div class = "col-md-2  text-left">
         Note
+      </div>
+      <div class = "col-md-1">
+          <button class="btn" id="" type="submit"><img class = "editIcon" src="{{ asset('/img/studenti.svg')}}"></button>
+        </a>
       </div>
     </div>
   </div>
@@ -43,23 +50,26 @@
     @foreach ($students as $studentdata)
     <div class="row-centered classContainer">
       <div class="row ">
-        <div class = "col-md-3">
+        <div class = "col-md-2">
           <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
         </div>
         <div class = "col-md-3 text-left">
           {{ $studentdata->name }}  {{ $studentdata->surname }}
         </div>
-        <div class = "col-md-3 text-left">
-          {{ $studentdata->birthday }}
+        <div class = "col-md-2 text-left">
+          27.5
         </div>
-        <div class = "col-md-3 text-left">
-          {{$studentdata->note}}
+        <div class = "col-md-2 text-left">
+          2/10
         </div>
-        <!-- <div class = "col-md-1 text-left">
-          <a href="{{action('StudentListController@edit', $studentdata->id)}}" alt = "Gestisci Docente">
+        <div class = "col-md-2 text-left">
+          Note
+        </div>
+        <div class = "col-md-1">
+          <a  href="{{ url('#') }}" alt = "option">
             <button class="btn" id="" type="submit"><img class = "editIcon" src="{{ asset('/img/studenti.svg')}}"></button>
           </a>
-        </div> -->
+        </div>
       </div>
     </div>
     @endforeach
