@@ -963,10 +963,16 @@ a:hover {
 }
 
 .classContainer {
+  transition: all 0.3s ease-in-out;
   margin: auto !important;
   box-shadow: 0px 1px 0px lightGrey !important;
   padding-top: 1.7%;
   padding-bottom: 1.5%;
+}
+
+.classContainer:hover {
+  transition: all 0.2s !important;
+  background-color: rgba(2, 117, 216, 0.1);
 }
 
 .studentTitle {
