@@ -21,6 +21,10 @@
 @import 'layout/calendar';
 // @import '/fonts/futura medium bt.ttf';
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
 body {
   // background-color: $body-bg !important;
   background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
