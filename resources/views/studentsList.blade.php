@@ -72,7 +72,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Olè continua?
       </div>
       <div class = "col-md-1">
-        <a  href="{{ url('#') }}" alt = "option">
+        <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
           <div class="more"><img class = "editIcon" src="{{ asset('/img/More.svg')}}"></div>
         </a>
       </div>

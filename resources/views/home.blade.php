@@ -149,7 +149,7 @@
         @foreach ($subjects as $subject)
           @foreach ($subject->class()->get() as $course)
               <div class="col-md-3" id ="spero">
-                <a class = "linkCard" href="{{ route('students.edit', $course->id) }}">
+                <a class = "linkCard" href="{{ route('studentslist.edit', $course->id) }}">
                   <?php $data=$course->id; ?>
                   <div class = "container provaContainer card-block">
                     <div class = "row">
