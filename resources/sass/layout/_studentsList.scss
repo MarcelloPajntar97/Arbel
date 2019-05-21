@@ -50,34 +50,11 @@
   }
 }
 
-.studentBox {
-  transition: all .3s ease-in-out;
-  font-family: $titleFont;
-  font-size: 16px;
-  margin-top: -1% !important;
-  justify-content: center;
-  align-items: center;
-  padding-top: 8px;
-  height: 42px;
-  width: 142px;
-  margin-left: 3% !important;
-  border-radius: 7px !important;
-  bottom: 0 !important;
-  box-shadow: 0px 1px 7px lightGrey !important;
-  background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
-  color: $white;
-  &:hover {
-    transition: all 0.2s !important;
-    transform: scale(1.02);
-    // background-color: $redArbel;
-  }
-}
-
-
-.testBox, .activityBox {
+.studentBox,.testBox, .activityBox {
   transition: all .3s ease-in-out;
   font-family: $titleFont;
   font-size: 14px;
+  font-weight: normal !important;
   justify-content: center;
   align-items: center;
   padding-top: 10px;
@@ -87,7 +64,7 @@
   border-radius: 6px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 5px #ECEAEA !important;
-  background-color: $white;
+  color: $white;
   &:hover {
     transition: all 0.2s !important;
     transform: scale(1.07);
@@ -95,6 +72,13 @@
     color: $redArbel;
 
   }
+}
+
+.nav-pills .nav-link.active{
+  transition: all 0.2s !important;
+  transform: scale(1.07);
+  background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
+  color: $white !important;
 }
 
 .linkStudent {
