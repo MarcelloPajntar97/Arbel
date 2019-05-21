@@ -56,13 +56,46 @@ class UserLogController extends Controller
         array_push($dataStudent, $students);
       }
     }
-     for ($i=0; $i<count($dataStudent); $i++) {
-       for ($k=0; $k<count($dataStudent[$i]); $k++) {
-       array_push($final, $dataStudent[$i][$k]);
-     }
-   }
+    for ($i=0; $i<count($dataStudent); $i++) {
+      for ($k=0; $k<count($dataStudent[$i]); $k++) {
+        array_push($final, $dataStudent[$i][$k]);
+      }
+    }
     $prova = ['students' => $final];
     $res = response()->json($prova, 200);
     return $res;
   }
+
+  public function postReminder(Request $request) {
+
+    $request->validate([
+      'memoryText' => 'required|string'
+
+    ]);
+
+    $reminder = new \App\Memory([
+      'memoryText' => $request->memoryText,
+      'user_id' => auth()->user()->id
+    ]);
+
+    $reminder->save();
+
+    return response()->json([
+      'message' => 'Promemoria aggiunto correttamente!'
+    ], 201);
+
+  }
+
+  public function getReminder() {
+    $dataReminder = auth()->user()->memories();
+    $memories = array();
+
+    foreach ($dataReminder as $memory) {
+      array_push($memories, $memory);
+    }
+
+    return response()->json(['success' => $memories], 200);
+
+  }
+
 }

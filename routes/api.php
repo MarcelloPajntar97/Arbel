@@ -24,6 +24,9 @@ Route::resource('/courses', 'CourseApiController');
 // Route::resource('/students', 'StudentApiController');
 Route::post('login', 'UserLogController@login');
 Route::group(['middleware' => 'auth:api'], function(){
-  Route::post('details', 'UserLogController@details');
-  Route::get('user', 'UserLogController@studentsList');
+Route::post('details', 'UserLogController@details');
+Route::get('user', 'UserLogController@studentsList');
+Route::post('postReminder', 'UserLogController@postReminder');
+Route::get('getReminder', 'UserLogController@getReminder');
+
 });
