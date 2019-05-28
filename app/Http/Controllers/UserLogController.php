@@ -23,6 +23,7 @@ class UserLogController extends Controller
     if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
       $user = Auth::user();
       $subjects = auth()->user()->subjects()->get();
+      $dataReminder = auth()->user()->memories()->get();
       // $students = auth()->class()->students()->get();
       $courses = array();
       foreach ($subjects as $subject) {
@@ -37,6 +38,7 @@ class UserLogController extends Controller
       $success['surname'] =  $user->surname;
       $success['email'] =  $user->email;
       $success['subjects'] =  $subjects;
+      $success['memories'] = $dataReminder;
       // $success['students'] =  $students;
       $success['courses'] =  $courses;
       return response()->json(['success' => $success], $this->successStatus);
@@ -81,21 +83,17 @@ class UserLogController extends Controller
     $reminder->save();
 
     return response()->json([
-      'message' => 'Promemoria aggiunto correttamente!'
+      'memories' => $reminder
     ], 201);
 
   }
-
-  public function getReminder() {
-    $dataReminder = auth()->user()->memories();
-    $memories = array();
-
-    foreach ($dataReminder as $memory) {
-      array_push($memories, $memory);
-    }
-
-    return response()->json(['success' => $memories], 200);
-
-  }
+  // 
+  // public function getReminder() {
+  //   $dataReminder = auth()->user()->memories()->get();
+  //
+  //
+  //   return response()->json(['memo' => $dataReminder], 200);
+  //
+  // }
 
 }
