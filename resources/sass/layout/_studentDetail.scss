@@ -1,0 +1,34 @@
+.studentprofile{
+  background-color: $white;
+  margin-top: 2% !important;
+  padding-top: 2%;
+  padding-left: 2% !important;
+  padding-bottom: 2.5% !important;
+  border-radius: 10px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 4px lightGrey !important;
+  z-index: 10 !important;
+}
+.studentBox{
+  transition: all .3s ease-in-out;
+  font-family: $titleFont;
+  font-size: 14px;
+  font-weight: normal !important;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  height: 40px;
+  width: 140px;
+  border: 0.7px solid #ECEAEA;
+  border-radius: 6px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 5px #ECEAEA !important;
+  color: $white;
+  &:hover {
+    transition: all 0.2s !important;
+    transform: scale(1.07);
+    // background-color: $redArbel;
+    color: $redArbel;
+
+  }
+}
