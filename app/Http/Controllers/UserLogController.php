@@ -87,13 +87,13 @@ class UserLogController extends Controller
     ], 201);
 
   }
-  // 
-  // public function getReminder() {
-  //   $dataReminder = auth()->user()->memories()->get();
-  //
-  //
-  //   return response()->json(['memo' => $dataReminder], 200);
-  //
-  // }
+
+  public function getReminder() {
+    $dataReminder = auth()->user()->memories()->get();
+
+
+    return response()->json(['memo' => $dataReminder], 200);
+
+  }
 
 }
