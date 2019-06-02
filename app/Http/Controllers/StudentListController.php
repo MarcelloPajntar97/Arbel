@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentListController extends Controller
 {
@@ -40,7 +41,7 @@ class StudentListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -80,7 +81,30 @@ class StudentListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $values = $request->input('students');
+        $dataStudent = array();
+        foreach ($values as $studKey => $studValue) {
+          array_push($dataStudent, (int)$studValue);
+          // DB::table('students_subjects')
+          //     ->where('id', $id)
+          //     ->updateOrInsert([
+          //       'stud_id' => (int)$studValue,
+          //       'absence' => 1,
+          //       'absence_hours' => 3
+          //     ]);
+        }
+        dd($dataStudent);
+        for ($i=0; $i<count($dataStudent); $i++) {
+          DB::table('students_subjects')
+              ->where('id', '[0-9]+')
+              ->updateOrInsert([
+                'stud_id' => 56,
+                'absence' => 1,
+                'absence_hours' => 3
+              ]);
+        }
+        return redirect('/home');
     }
 
     /**
