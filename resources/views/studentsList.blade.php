@@ -23,9 +23,10 @@
         <form class="form-inline" method="post" action="{{action('StudentListController@update', $id)}}">
           @csrf
           <input name="_method" type="hidden" value="PATCH"/>
+          <input name="subjects" type="hidden" value="{{ $sub_id }}"/>
           <div class="studentTitle">{{ __('ELENCO STUDENTI') }}</div>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary" type="button"><img src="{{ asset('/img/exsport.svg')}}"> Exsport</button>
+          <button class="btn btn-outline-primary" type="button"><img src="{{ asset('/img/exsport.svg')}}"> Export</button>
 
       </div>
 
