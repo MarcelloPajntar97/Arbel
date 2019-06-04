@@ -176,6 +176,12 @@ return [
         App\Providers\RouteServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
 
+        /*
+         * Application Datatable...
+         */
+
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+
     ],
 
     /*
@@ -226,6 +232,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+        'Form' => Collective\Html\FormFacade::class,
 
     ],
 

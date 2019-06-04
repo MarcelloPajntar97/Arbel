@@ -1,31 +1,57 @@
 @include('elements.nav')
 @extends('layouts.app')
 @section('content')
-    <div class="container calendar">
-        <ul class="list-inline listcalendar text-center">
-            <li class="list-inline-item"><a href="?ym= {{$prev}}" class="btn btn-link">&lt; prev</a></li>
-            <li class="list-inline-item"><span class="titleCalendar">{{$title}}</span></li>
-            <li class="list-inline-item"><a href="?ym= {{$next}}" class="btn btn-link">next &gt;</a></li>
-        </ul>
-        <p class="text-right"><a href="calendar">Today</a></p>
-        <table class="table table-bordered">
-            <thead>
-                <tr >
-                    <th class="dayWeek">MON</th>
-                    <th class="dayWeek">TUE</th>
-                    <th class="dayWeek">WED</th>
-                    <th class="dayWeek">THU</th>
-                    <th class="dayWeek">FRI</th>
-                    <th class="dayWeek">SAT</th>
-                    <th class="dayWeek">SUN</th>
-                </tr>
-            </thead>
-            <tbody>
-                    @foreach ($weeks as $week)
-                      {!! $week !!}
-                    @endforeach
-            </tbody>
-        </table>
-    </div>
 
+{!! Form:open(array('route' => 'events.add', 'method' => 'POST', 'files' =>'true')) !!}
+<div class = "row">
+  <div class = "col-md-12">
+    @if (Session::has('success'))
+      <div class = "alert alert-success"> {{ Session::get('success')}}</div>
+    @elseif (Session::has('warning'))
+      <div class = "alert alert-danger"> {{Session::get('warning')}}</div>
+    @endif
+  </div>
+
+  <div class = "col-md-4">
+    <div class = "form-group">
+      {!! Form::label('weekDay', 'Week Day: ') !!}
+      <div class = "">
+        {!! Form::text('weekDay', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('weekDay', '<p class = "alert alert-danger">:message</p>') !!}
+      </div>
+    </div>
+  </div>
+
+  <div class = "col-md-3">
+    <div class = "form-group">
+      {!! Form::label('weekHour', 'Week Hour: ') !!}
+      <div class = "">
+        {!! Form::text('weekHour', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('weekHour', '<p class = "alert alert-danger">:message</p>') !!}
+      </div>
+    </div>
+  </div>
+
+  <div class = "col-md-3">
+    <div class = "form-group">
+      {!! Form::label('start_date', 'Start Date: ') !!}
+      <div class = "">
+        {!! Form::text('start_date', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('start_date', '<p class = "alert alert-danger">:message</p>') !!}
+      </div>
+    </div>
+  </div>
+
+  <div class = "col-md-3">
+    <div class = "form-group">
+      {!! Form::label('end_date', 'End Date: ') !!}
+      <div class = "">
+        {!! Form::text('end_date', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('end_date', '<p class = "alert alert-danger">:message</p>') !!}
+      </div>
+    </div>
+  </div>
+  {!! Form:close() !!}
+
+</div>
 @endsection
