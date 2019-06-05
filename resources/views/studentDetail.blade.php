@@ -11,7 +11,7 @@
       <div class="profileImg">
         <div class="card mb-4">
 
-          <img class="imgstudent" src="{{ $students->avatar }}"/>
+          <img class="imgstudent" src="{{ asset('storage/avatar' . $students->avatar) }}"/>
           <div class="card-body">
             <div class="card-test">
               <h6 class="studentdati">Data di nascita: {{ $students->birthday }}</h6>
