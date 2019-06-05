@@ -1,3 +1,33 @@
+.containernote{
+  transition: all .3s ease-in-out;
+  margin: auto !important;
+  // margin-top: 0.4% !important;
+  box-shadow: 0px 1px 0px lightGrey !important;
+  padding-top: 1.7%;
+  padding-bottom: 1.5%;
+  &:hover{
+    transition: all 0.2s !important;
+    background-color: rgba(2,117,216,0.1);
+
+  }
+}
+.imgstudent{
+  width:170px;
+  height:170px;
+  float:left;
+  border-radius:50%;
+  margin-left:25px;
+  margin-bottom:25px;
+}
+
+.detailTitle{
+  font-family: $titleFont !important;
+  margin-left: none !important;
+  font-size: 16px !important;
+  margin-top: 8%;
+}
+
+
 .studentprofile{
   background-color: $white;
   margin-top: 2% !important;
