@@ -20,11 +20,14 @@
   <div class="tab-pane fade show active" id="student-just" role="tabpanel" aria-labelledby="studenti-tab-just">
     <div class = "container">
       <div class="row">
-        <form class="form-inline">
+        <form class="form-inline" method="post" action="{{action('StudentListController@update', $id)}}">
+          @csrf
+          <input name="_method" type="hidden" value="PATCH"/>
+          <input name="subjects" type="hidden" value="{{ $sub_id }}"/>
           <div class="studentTitle">{{ __('ELENCO STUDENTI') }}</div>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary" type="button"><img src="{{ asset('/img/exsport.svg')}}"> Exsport</button>
-        </form>
+          <button class="btn btn-outline-primary" type="button"><img src="{{ asset('/img/exsport.svg')}}"> Export</button>
+
       </div>
 
       <div class="row-centered studentContainer">
@@ -56,8 +59,8 @@
   @foreach ($students as $studentdata)
   <div class="row-centered classContainer">
     <div class="row ">
-      <div class = "col-md-1">
-        <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+      <div class = "col-md-1" id="bo">
+        <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
       </div>
       <div class = "col-md-2 text-left">
         {{ $studentdata->name }}  {{ $studentdata->surname }}
@@ -79,7 +82,10 @@
     </div>
   </div>
   @endforeach
-  <button type="submit" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button>
+  <div class="row form-group">
+  <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button>
+</div>
+  </form>
 </div>
 
 </div>
@@ -133,3 +139,18 @@
   </div>
 </div>
 </div>
+<!-- <script type="text/javascript">
+    $(function () {
+        $("#btnClick").click(function () {
+            var selected = new Array();
+
+            $("#bo input[type=checkbox]:checked").each(function () {
+                selected.push(this.value);
+            });
+
+            if (selected.length > 0) {
+                alert("Selected values: " + selected.join(","));
+            }
+        });
+    });
+</script> -->

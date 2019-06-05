@@ -15,12 +15,13 @@ class StudentsSubjects extends Migration
     {
     Schema::create('students_subjects', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->unsignedBigInteger('sub_id');
-      $table->unsignedBigInteger('stud_id');
-      $table->foreign('sub_id')->references('id')->on('students')->onDelete('cascade');
-      $table->foreign('stud_id')->references('id')->on('subjects')->onDelete('cascade');
-      $table->integer('mark');
-      $table->integer('absence');
+      $table->unsignedBigInteger('sub_id')->unsigned()->nullable();
+      $table->unsignedBigInteger('stud_id')->unsigned()->nullable();
+      $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade');
+      $table->foreign('stud_id')->references('id')->on('students')->onDelete('cascade');
+      $table->integer('mark')->nullable();
+      $table->longText('argumentLesson')->nullable();
+      $table->integer('absence_hours')->default(0);
 });
     }
 

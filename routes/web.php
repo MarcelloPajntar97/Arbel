@@ -17,7 +17,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('/home', 'SecretaryController');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/calendar', 'CalendarController@index');
 Route::get('/routes/admin', 'HomeController@index');
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
@@ -26,3 +25,7 @@ Route::resource('/studentDetail', 'StudentDetailController');
 Route::get('subjects/get/{id}', 'SecretaryEditData@getSubjects');
 Route::resource('/studentslist', 'StudentListController');
 Route::post('/home/send', "HomeController@send");
+Route::get('/studentslist/{id}/edit/{sub_id}', 'StudentListController@editCustom');
+
+Route::get('/calendar', 'CalendarController@index');
+Route::post('/calendar', 'CalendarController@addEvent');
