@@ -11875,45 +11875,43 @@ a:hover {
   margin-left: 2.6%;
 }
 
-.calendar {
+.calendarRow {
+  margin-top: 5%;
+}
+
+.customCalendar {
+  width: 100%;
+  height: auto;
+}
+
+.fc-toolbar .fc-state-active,
+.fc-toolbar .ui-state-active {
+  display: none !important;
+}
+
+.fc .fc-button-group > * {
+  display: none !important;
+}
+
+.fc-widget-header {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
   font-family: "futura", sans-serif;
-  margin: 60px auto;
+  font-weight: lighter;
+  color: #A4AAB3;
 }
 
-.listcalendar {
-  margin-bottom: 30px;
+.fc-toolbar {
+  margin-bottom: 2% !important;
 }
 
-.titleCalendar {
-  font-weight: bold;
-  font-size: 26px;
+.fc-basic-view td.fc-day-number {
+  padding-top: 20px !important;
+  padding-right: 20px !important;
 }
 
-.dayWeek {
-  text-align: center;
-  height: 100px;
-}
-
-td {
-  height: 100px;
-}
-
-.calendarAll {
-  height: 100px;
-}
-
-.dayWeek:nth-of-type(6),
-.todayCalendar:nth-of-type(6) {
-  color: blue;
-}
-
-.dayWeek:nth-of-type(7),
-.todayCalendar:nth-of-type(7) {
-  color: red;
-}
-
-.calendarToday {
-  background-color: ghostwhite;
+.fc-unthemed .fc-today {
+  background-color: #d4e2f4 !important;
 }
 
 /*!

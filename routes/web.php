@@ -28,4 +28,4 @@ Route::post('/home/send', "HomeController@send");
 Route::get('/studentslist/{id}/edit/{sub_id}', 'StudentListController@editCustom');
 
 Route::get('/calendar', 'CalendarController@index');
-Route::post('/calendar', 'CalendarController@addEvent');
+// Route::post('/calendar', 'CalendarController@addEvent');

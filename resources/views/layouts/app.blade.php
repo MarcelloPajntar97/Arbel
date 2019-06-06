@@ -10,13 +10,20 @@
   <title>{{ config('Arbel', 'Arbel') }}</title>
 
   <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+
+  <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/dropdown.js') }}"></script>
   <script src="{{ asset('js/studentList.js')}}"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="{{ asset('js/chartArea.js') }}"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
 
 
   <!-- Fonts -->
@@ -25,12 +32,16 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/></head>
+
 <body>
   <div id="app">
     <main class="py-4">
   @yield('content')
+
 </main>
 </div>
+
 </body>
+
 </html>
