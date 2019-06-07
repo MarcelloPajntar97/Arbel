@@ -16,6 +16,8 @@
     aria-selected="false">Activity</a>
   </li>
 </ul>
+
+
 <div class="tab-content card pt-5" id="myTabContentJust">
   <div class="tab-pane fade show active" id="student-just" role="tabpanel" aria-labelledby="studenti-tab-just">
     <div class = "container">

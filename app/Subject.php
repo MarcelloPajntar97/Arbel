@@ -27,8 +27,5 @@ class Subject extends Model
       return $this->hasMany('App\Test');
   }
 
-  public function event()
-  {
-    return $this->hasOne('App\Events');
-  }
+
 }

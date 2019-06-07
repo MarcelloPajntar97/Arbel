@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Events;
 
 use Calendar;
@@ -21,22 +22,26 @@ class CalendarController extends Controller
   }
 
 
-  public function index()
+  public function index(Request $request)
   {
     $event = [];
-    $events= Events::all();
+    // $teacher = $request->get('subHour');
+    $events= Events::where('user_id', Auth::user()->id)->get();
       foreach ($events as $row) {
+        $enddate = $row->end_date."24:00:00";
         $event[] = \Calendar::event(
-          $row->title,
+          $row->subject,
           true,
           new \DateTime($row->start_date),
           new \DateTime($row->end_date.' +1 day'),
           $row->id,
+
           // Add color and link on event
           [
             'color' => 'rgba(2,117,216,0.2)',
             // 'url' => 'pass here url and any route',
           ]
+
         );
       }
 
@@ -62,7 +67,28 @@ class CalendarController extends Controller
   */
   public function store(Request $request)
   {
-    //
+    $this->validate($request, [
+      'subject' => 'required',
+
+      'start_date' => 'required',
+      'end_date' => 'required',
+    ]);
+
+    $events = new Events;
+
+    // $calendar = \App\Subject::find($id);
+    // $subHour = \App\Calendar::where('sub_id', $calendar->id)->get();
+    $teacher = $request->get('docente');
+    $events->subject = $request->get('subject');
+    $events->start_date = $request->input('start_date');
+    $events->end_date = $request->input('end_date');
+    $events->user_id = 1;
+
+    $events->save();
+
+    return view('editUser', compact('teacher'));
+
+
   }
 
   /**

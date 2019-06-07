@@ -49,4 +49,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Memory');
     }
 
+    public function event()
+    {
+      return $this->hasOne('App\Events');
+    }
+
 }

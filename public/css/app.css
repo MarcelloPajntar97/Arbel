@@ -11104,6 +11104,35 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.subjectBox,
+.hourBox {
+  transition: all 0.3s ease-in-out;
+  font-family: "futura", sans-serif;
+  font-size: 14px;
+  font-weight: normal !important;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  width: 120px;
+  border: 0.7px solid #ECEAEA;
+  border-radius: 6px !important;
+  bottom: 0 !important;
+  box-shadow: 0px 1px 5px #ECEAEA !important;
+  color: #FFFFFF;
+}
+
+.subjectBox:hover,
+.hourBox:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  color: #F2001E;
+}
+
+.firstItem {
+  margin-right: 40px !important;
+}
+
 .allContainer {
   margin-top: -10% !important;
   margin-left: 7% !important;
@@ -11884,15 +11913,6 @@ a:hover {
   height: auto;
 }
 
-.fc-toolbar .fc-state-active,
-.fc-toolbar .ui-state-active {
-  display: none !important;
-}
-
-.fc .fc-button-group > * {
-  display: none !important;
-}
-
 .fc-widget-header {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
@@ -11901,8 +11921,24 @@ a:hover {
   color: #A4AAB3;
 }
 
+.fc .fc-toolbar > * > * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .fc-toolbar {
-  margin-bottom: 2% !important;
+  margin-bottom: 3% !important;
+}
+
+.fc th {
+  border: none !important;
+}
+
+.fc-toolbar h2 {
+  margin-top: 7px !important;
+  font-size: 18px !important;
+  color: #000000 !important;
 }
 
 .fc-basic-view td.fc-day-number {
@@ -11911,7 +11947,7 @@ a:hover {
 }
 
 .fc-unthemed .fc-today {
-  background-color: #d4e2f4 !important;
+  background-color: #f1f1f2 !important;
 }
 
 /*!

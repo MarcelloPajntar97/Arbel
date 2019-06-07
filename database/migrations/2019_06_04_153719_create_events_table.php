@@ -16,11 +16,12 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('sub_id')->nullable();
-            $table->foreign('sub_id')->references('id')->on('subjects');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('weekDay');
-            $table->string('weekHour');
+            $table->string('subject');
+            // $table->string('weekDay');
+            // $table->string('weekHour');
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();

@@ -6,8 +6,15 @@
   <div class="titleUsers">{{ __('UTENTI REGISTRATI') }}</div>
 
 
+
+
   @foreach ($teachers as $teacher)
     <div class="row containerAllUser">
+
+
+
+
+
       <div class = "col-md-3">
     {{ $teacher->name }}  {{ $teacher->surname }}
       </div>

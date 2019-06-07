@@ -27,5 +27,5 @@ Route::resource('/studentslist', 'StudentListController');
 Route::post('/home/send', "HomeController@send");
 Route::get('/studentslist/{id}/edit/{sub_id}', 'StudentListController@editCustom');
 
-Route::get('/calendar', 'CalendarController@index');
+Route::resource('/calendar', 'CalendarController');
 // Route::post('/calendar', 'CalendarController@addEvent');

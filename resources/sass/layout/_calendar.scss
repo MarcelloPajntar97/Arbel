@@ -7,13 +7,13 @@
   height: auto;
 }
 
-.fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active {
-  display: none !important
-}
-
-.fc .fc-button-group>* {
-  display: none !important
-}
+// .fc-toolbar .fc-state-active, .fc-toolbar .ui-state-active {
+//   display: none !important
+// }
+//
+// .fc .fc-button-group>* {
+//   display: none !important
+// }
 
 .fc-widget-header {
   padding-top: 5px !important;
@@ -23,13 +23,30 @@
   color: $deselectedItem;
 }
 
+.fc .fc-toolbar>*>*  {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 // .fc-view-container *, .fc-view-container :after, .fc-view-container :before{
 //   width: 70px !important;
 //   height: auto !important;
 // }
 
 .fc-toolbar{
-  margin-bottom: 2% !important;
+  margin-bottom: 3% !important;
+
+}
+
+.fc th{
+    border: none !important;
+}
+
+.fc-toolbar h2 {
+  margin-top: 7px !important;
+  font-size: 18px !important;
+  color: $black !important;
 }
 
 .fc-basic-view td.fc-day-number {
@@ -38,5 +55,8 @@
 }
 
 .fc-unthemed .fc-today{
-  background-color: #d4e2f4 !important;
+  // background-color: #d4e2f4 !important;
+  background-color: #f1f1f2 !important;
+  // background-color: rgba(255, 255, 255, 0) !important;
+
 }
