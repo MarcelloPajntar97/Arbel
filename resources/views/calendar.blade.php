@@ -8,29 +8,30 @@
   <div class="container">
     <div class="row calendarRow">
       <div class="col-md-12">
-        <div class = "customCalendar">
-          <div id = "calendar">
+        <div id ="calendar">
 
 
 
-        {!! $calendar->calendar() !!}
-        {!! $calendar->script() !!}
-        </div>
+          {!! $calendar->calendar() !!}
+          {!! $calendar->script() !!}
+
         </div>
       </div>
     </div>
   </div>
 
-  {{-- <script type="text/javascript">
-  $(document).ready(function () {
-    $('#calendar').fullCalendar({
-      header: {
-        left:   'today',
-        center: 'prev title next',
-        right:  ''
-      }
-        })
-      });
 
-    </script> --}}
-@endsection
+  {{-- <script type='text/javascript'>
+  $(function() {
+  ;
+  $('#calendar-{{$calendar->getId()}}').fullCalendar({
+
+  dayClick: function(date) {
+  alert('clicked ');
+  },
+
+  });
+
+  });
+  </script> --}}
+  @endsection

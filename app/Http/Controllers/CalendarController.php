@@ -30,10 +30,10 @@ class CalendarController extends Controller
       foreach ($events as $row) {
         $enddate = $row->end_date."24:00:00";
         $event[] = \Calendar::event(
-          $row->subject,
+          $row->activity,
           true,
-          new \DateTime($row->start_date),
-          new \DateTime($row->end_date.' +1 day'),
+          new \DateTime($row->day),
+          new \DateTime($row->day),
           $row->id,
 
           // Add color and link on event
@@ -45,7 +45,11 @@ class CalendarController extends Controller
         );
       }
 
-    $calendar = \Calendar::addEvents($event);
+    $calendar = \Calendar::addEvents($event)
+    ->setCallbacks([
+            'eventClick' => 'function(event) { alert(event.title)}',
+            'dayClick' => 'function(event) { alert("prova")}',
+        ]);
     return view('calendar', compact('events','calendar'));
   }
 
@@ -67,27 +71,6 @@ class CalendarController extends Controller
   */
   public function store(Request $request)
   {
-    $this->validate($request, [
-      'subject' => 'required',
-
-      'start_date' => 'required',
-      'end_date' => 'required',
-    ]);
-
-    $events = new Events;
-
-    // $calendar = \App\Subject::find($id);
-    // $subHour = \App\Calendar::where('sub_id', $calendar->id)->get();
-    $teacher = $request->get('docente');
-    $events->subject = $request->get('subject');
-    $events->start_date = $request->input('start_date');
-    $events->end_date = $request->input('end_date');
-    $events->user_id = 1;
-
-    $events->save();
-
-    return view('editUser', compact('teacher'));
-
 
   }
 
@@ -99,7 +82,8 @@ class CalendarController extends Controller
   */
   public function show($id)
   {
-    //
+    // $events = Events::find($id);
+    // return view('editUser')->with('events', $events);
   }
 
   /**
@@ -110,7 +94,7 @@ class CalendarController extends Controller
   */
   public function edit($id)
   {
-    //
+
   }
 
   /**
@@ -122,7 +106,7 @@ class CalendarController extends Controller
   */
   public function update(Request $request, $id)
   {
-    //
+
   }
 
   /**

@@ -19,11 +19,14 @@ class CreateEventsTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('subject');
+            $table->string('activity');
             // $table->string('weekDay');
             // $table->string('weekHour');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('day');
+            $table->string('start_hour')->nullable();
+            $table->string('end_hour')->nullable();
+
+            // $table->time('end_date');
             $table->timestamps();
         });
     }

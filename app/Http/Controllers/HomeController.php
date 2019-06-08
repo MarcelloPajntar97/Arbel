@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 use App\Mail\SendMail;
+use App\Events;
 
 class HomeController extends Controller
 {
@@ -27,7 +29,8 @@ class HomeController extends Controller
     {
       if (auth()->user()->isAdmin == 0) {
         $subjects = auth()->user()->subjects()->get();
-        return view('home', compact('subjects'));
+        $events = Events::where('user_id', Auth::user()->id)->get();
+        return view('home', compact('subjects', 'events'));
       }
       elseif (auth()->user()->isAdmin == 1) {
         $teachers = \App\User::where('isAdmin', 0)->get();

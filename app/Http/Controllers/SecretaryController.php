@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Events;
 
 class SecretaryController extends Controller
 {
@@ -20,7 +21,10 @@ class SecretaryController extends Controller
 
     public function index()
     {
-      return view('editUser');
+      $events = Events::all();
+      // $events= Events::where('user_id', Auth::user()->id)->get();
+      return view('editUser', compact('events'));
+
     }
 
     /**
@@ -41,7 +45,60 @@ class SecretaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+        'activity' => 'required',
+         // 'user_id' => 'required',
+        'day' => 'required',
+        'start_hour' => 'required',
+        'end_hour' => 'required',
+      ]);
+
+      $events = new Events;
+
+      // $calendar = \App\Subject::find($id);
+      // $subHour = \App\Calendar::where('sub_id', $calendar->id)->get();
+      // $this->edit();
+      // $teacher = $request->input('docente');
+      // $teacher = $this->getTeacher;
+      $events->activity = $request->get('activity');
+      $events->day = $request->input('day');
+      $events->start_hour = $request->input('start_hour');
+      $events->end_hour = $request->input('end_hour');
+      $events->user_id = (int)$request->get('docente');
+      $events->save();
+
+      // return redirect('editUser')->with('success', 'Evento aggiunto correttamente!');
+      return view('editUser', compact('teacher', 'events', 'request'));
+
+
+    }
+
+    public function put(Request $request, $id)
+    {
+      $this->validate($request, [
+        'activity' => 'required',
+         // 'user_id' => 'required',
+        'start_date' => 'required',
+        'end_date' => 'required',
+      ]);
+
+      $events = new Events;
+
+      // $calendar = \App\Subject::find($id);
+      // $subHour = \App\Calendar::where('sub_id', $calendar->id)->get();
+      // $this->edit();
+      // $teacher = $request->input('docente');
+      // $teacher = $this->getTeacher;
+      $events->activity = $request->get('activity');
+      $events->start_date = $request->input('start_date');
+      $events->end_date = $request->input('end_date');
+      $events->user_id = (int)$request->get('docente');
+      $events->save();
+
+      // return redirect('editUser')->with('success', 'Evento aggiunto correttamente!');
+      return view('editUser', compact('teacher', 'events', 'request'));
+
+
     }
 
     /**
@@ -52,7 +109,8 @@ class SecretaryController extends Controller
      */
     public function show($id)
     {
-
+      // $events = Events::find($id);
+      // return view('editUser')->with('events', $events);
     }
 
     /**
@@ -64,6 +122,7 @@ class SecretaryController extends Controller
     public function edit($id)
     {
       $teacher = \App\User::find($id);
+      $this->getTeacher = $teacher;
       $subjects = \App\Subject::where('user_id', $teacher->id)->get();
       // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
       $courses = \App\ClassModel::all();

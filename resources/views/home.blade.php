@@ -57,14 +57,16 @@
 
     <div class="col-md-11 ">
       <div class="card-body allHour">
+      @foreach ($events as $event)
       <div class = "row rowHour">
         <div class = "col-md-2 colHour">
-          <div class="container" id="primaFascia">8:30 - 11:30</div>
+          <div class="container" id="primaFascia">{{$event->start_hour}} - {{$event->end_hour}}</div>
         </div>
         <div class = "col-md-9">
-          <p class = "activity">2° Media Design (S106), programmazione 2</p>
+          <p class = "activity">{{$event->activity}}</p>
         </div>
       </div>
+    @endforeach
 
         <div class = "row rowHour">
           <div class = "col-md-2 colHour">
@@ -149,7 +151,6 @@
         @foreach ($subjects as $subject)
           @foreach ($subject->class()->get() as $course)
               <div class="col-md-3" id ="spero">
-                <!-- <a class = "linkCard" href="{{ route('studentslist.edit', $course->id) }}"> -->
                   <a class = "linkCard" href="/studentslist/{{$course->id}}/edit/{{$subject->id}}">
                   <?php $data=$course->id; ?>
                   <div class = "container provaContainer card-block">

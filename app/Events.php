@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Events extends Model
 {
   protected $table = 'events';
-  // protected $fillable = [
-  //     'weekDay', 'weekHour', 'start_date', 'end_date'
-  // ];
+
+
   protected $fillable = [
-      'subject', 'start_date', 'end_date', 'sub_id'
+      'activity', 'day', 'start_hour', 'end_hour', 'user_id'
   ];
 
   public function event()
