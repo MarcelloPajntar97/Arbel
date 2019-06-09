@@ -108,7 +108,7 @@ class StudentListController extends Controller
                 ->updateOrInsert([
                   'stud_id' => $dataStudent[$i],
                   'sub_id' => (int)$valuesSub,
-                  'absence_hours' => 300
+                  'absence_hours' => 3
                 ]);
           }
           elseif ($currentStudent == true && $currentSubject == false) {
@@ -117,7 +117,7 @@ class StudentListController extends Controller
                 ->updateOrInsert([
                   'stud_id' => $dataStudent[$i],
                   'sub_id' => (int)$valuesSub,
-                  'absence_hours' => 300
+                  'absence_hours' => 3
                 ]);
           }
           elseif ($currentStudent == true && $currentSubject == true) {
@@ -131,7 +131,7 @@ class StudentListController extends Controller
         }
         //controllo assenze
         $subSelect = \App\Subject::where('id', (int)$valuesSub)->first();
-        $absPerc = $subSelect->totHours-($subSelect->totHours * (20/100));
+        $absPerc = $subSelect->totHours * (20/100);
         $subStudent = DB::table('students_subjects')
                           ->where('sub_id', (int)$valuesSub)->get();
         $studAbs = array();
