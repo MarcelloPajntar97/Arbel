@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-default navbar-laravel" id="navbar">
   <div class="container" id="navbarContainer">
     <a class="navbar-brand" href="{{ url('/home') }}">
-    <img class = "arbelLogo" src="{{ asset('/img/darkLogo.svg')}}">
+    <img class = "arbelLogo" src="{{ asset('/img/newLogo.png')}}">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
     <span class="navbar-toggler-icon"></span>

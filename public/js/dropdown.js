@@ -23,19 +23,6 @@ jQuery(document).ready(function ()
               $('select[name="subject"]').empty();
            }
         });
-});
 
-// // Get the container element
-// var btnContainer = document.getElementsByClassName("rowDay");
-//
-// // Get all buttons with class="btn" inside the container
-// var btns = btnContainer.getElementsByClassName("linkDay");
-//
-// // Loop through the buttons and add the active class to the current/clicked button
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("activeDay");
-//     current[0].className = current[0].className.replace(" activeDay", "");
-//     this.className += " activeDay";
-//   });
-// }
+        if ( $('#dateInput')[0].type != 'date' ) $('#dateInput').datepicker();
+});

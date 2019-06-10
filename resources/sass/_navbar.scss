@@ -28,11 +28,19 @@
 }
 
 
+// .arbelLogo {
+//   width: 70% !important;
+//   margin-left: 5% !important;
+//   margin-top: 2% !important;
+// }
+
 .arbelLogo {
-  width: 70% !important;
+  width: 70px !important;
   margin-left: 5% !important;
   margin-top: 2% !important;
 }
+
+
 
 .logoutButton{
   background-color: $redArbel !important;
@@ -43,7 +51,8 @@
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-top: 5px;
-  padding-bottom: 5px;
+  vertical-align: middle;
+  padding-bottom: 4px;
   padding-right: 30px !important;
   &:hover {
     transition: all 0.3s;
