@@ -1,3 +1,42 @@
+.argomentoBox{
+  transition: all .3s ease-in-out;
+  font-family: $titleFont;
+  font-size: 14px;
+  color: $black !important;
+  font-weight: normal !important;
+  border: 0.7px solid #ECEAEA;
+  border-radius: 6px !important;
+  background-color: $white !important;
+  &:hover {
+    transition: all 0.2s !important;
+    transform: scale(1.07);
+    // background-color: $redArbel;
+    background-color: $redArbel;
+  }
+}
+.nav-pills .nav-link.active{
+  transition: all 0.2s !important;
+  transform: scale(1.07);
+  background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
+  color: $white !important;
+}
+.list-group-item.active{
+  transition: all 0.2s !important;
+  transform: scale(1.07);
+  background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
+  color: $white !important;
+}
+
+.editIcon{
+  opacity: 0.5 !important;
+}
+
+.linkStudent {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+
 .studentContainer{
     // background-color: $white;
     margin: auto !important;
@@ -74,18 +113,9 @@
   }
 }
 
-.nav-pills .nav-link.active{
-  transition: all 0.2s !important;
-  transform: scale(1.07);
-  background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
-  color: $white !important;
-}
-
-.linkStudent {
-  font-size: 14px !important;
-  font-weight: normal !important;
-}
-
-.editIcon{
-  opacity: 0.5 !important;
+.title{
+  font-family: $titleFont !important;
+  margin-left: none !important;
+  font-size: 20px !important;
+  margin-bottom:5%;
 }

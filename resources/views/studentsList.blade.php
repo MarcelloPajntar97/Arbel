@@ -13,7 +13,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link activityBox" id="activity-tab-just" data-toggle="tab" href="#activity-just" role="tab" aria-controls="activity-just"
-    aria-selected="false">Activity</a>
+    aria-selected="false">Attività</a>
   </li>
 </ul>
 
@@ -30,70 +30,115 @@
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-primary" type="button"><img src="{{ asset('/img/exsport.svg')}}"> Export</button>
 
-      </div>
+        </div>
 
-      <div class="row-centered studentContainer">
-        <div class="row ">
-          <div class = "col-md-1">
-            {{-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled> --}}
+        <div class="row-centered studentContainer">
+          <div class="row ">
+            <div class = "col-md-1">
+              {{-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled> --}}
+            </div>
+            <div class = "col-md-2 text-left">
+              Nome Cognome
+            </div>
+            <div class = "col-md-1 text-centered">
+              Media
+            </div>
+            <div class = "col-md-1 text-centered">
+              Assenze
+            </div>
+            <div class = "col-md-6  text-left">
+              Note
+            </div>
+            {{-- <div class = "col-md-1">
+              <button class="btn" id="" type="submit"><img class = "editIcon" src="{{ asset('/img/studenti.svg')}}"></button>
+            </a>
           </div>
-          <div class = "col-md-2 text-left">
-            Nome Cognome
-          </div>
-          <div class = "col-md-1 text-centered">
-            Media
-          </div>
-          <div class = "col-md-1 text-centered">
-            Assenze
-          </div>
-          <div class = "col-md-6  text-left">
-            Note
-          </div>
-          {{-- <div class = "col-md-1">
-            <button class="btn" id="" type="submit"><img class = "editIcon" src="{{ asset('/img/studenti.svg')}}"></button>
+        </div> --}}
+
+      </div>
+    </div>
+
+    @foreach ($students as $studentdata)
+    <div class="row-centered classContainer">
+      <div class="row ">
+        <div class = "col-md-1" id="bo">
+          <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
+        </div>
+        <div class = "col-md-2 text-left">
+          {{ $studentdata->name }}  {{ $studentdata->surname }}
+        </div>
+        <div class = "col-md-1 text-centered">
+          27.5
+        </div>
+        <div class = "col-md-1 text-centered">
+          5%
+        </div>
+        <div class = "col-md-6 text-left">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Olè continua?
+        </div>
+        <div class = "col-md-1">
+          <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
+            <div class="more"><img class = "editIcon" src="{{ asset('/img/More.svg')}}"></div>
           </a>
         </div>
-      </div> --}}
-
-    </div>
-  </div>
-
-  @foreach ($students as $studentdata)
-  <div class="row-centered classContainer">
-    <div class="row ">
-      <div class = "col-md-1" id="bo">
-        <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
-      </div>
-      <div class = "col-md-2 text-left">
-        {{ $studentdata->name }}  {{ $studentdata->surname }}
-      </div>
-      <div class = "col-md-1 text-centered">
-        27.5
-      </div>
-      <div class = "col-md-1 text-centered">
-        5%
-      </div>
-      <div class = "col-md-6 text-left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Olè continua?
-      </div>
-      <div class = "col-md-1">
-        <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
-          <div class="more"><img class = "editIcon" src="{{ asset('/img/More.svg')}}"></div>
-        </a>
       </div>
     </div>
-  </div>
-  @endforeach
-  <div class="row form-group">
-  <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button>
-</div>
+    @endforeach
+    <div class="row form-group">
+      <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button>
+    </div>
   </form>
 </div>
 
 </div>
 <div class="tab-pane fade" id="test-just" role="tabpanel" aria-labelledby="test-tab-just">
 
-  DA MODIFICARE
+  <div class = "container">
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item disabled">Seleziona un quesito</a>
+          <a class="list-group-item ">  <input class="form-control" type="text" placeholder="Search" aria-label="Search"></a>
+          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">Argomento</a>
+          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
+          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
+          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-argomento" role="tabpanel" aria-labelledby="list-home-list">
+            <div class="container">
+              <h3 class="title">{{ __('Crea il tuo Test') }}</h3>
+              <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Prima Domanda : </label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Seconda Domanda :</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput3">Terza Domanda :</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput3">Quarta Domanda :</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput4">Quinta Domanda :</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
+                </div>
+              </form>
+              <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('INVIA') }}</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 <div class="tab-pane fade" id="activity-just" role="tabpanel" aria-labelledby="activity-tab-just">
@@ -142,17 +187,17 @@
 </div>
 </div>
 <!-- <script type="text/javascript">
-    $(function () {
-        $("#btnClick").click(function () {
-            var selected = new Array();
+$(function () {
+$("#btnClick").click(function () {
+var selected = new Array();
 
-            $("#bo input[type=checkbox]:checked").each(function () {
-                selected.push(this.value);
-            });
+$("#bo input[type=checkbox]:checked").each(function () {
+selected.push(this.value);
+});
 
-            if (selected.length > 0) {
-                alert("Selected values: " + selected.join(","));
-            }
-        });
-    });
+if (selected.length > 0) {
+alert("Selected values: " + selected.join(","));
+}
+});
+});
 </script> -->
