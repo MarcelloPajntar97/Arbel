@@ -75,12 +75,11 @@
         </div>
         <div class = "col-md-6 text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Olè continua?
-        </div>
-        <div class = "col-md-1">
-          <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
-            <div class="more"><img class = "editIcon" src="{{ asset('/img/More.svg')}}"></div>
-          </a>
-        </div>
+      </div>
+      <div class = "col-md-1">
+        <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
+          <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
+        </a>
       </div>
     </div>
     @endforeach

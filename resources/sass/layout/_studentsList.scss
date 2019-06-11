@@ -113,9 +113,22 @@
   }
 }
 
-.title{
-  font-family: $titleFont !important;
-  margin-left: none !important;
-  font-size: 20px !important;
-  margin-bottom:5%;
+.nav-pills .nav-link.active{
+  transition: all 0.2s !important;
+  transform: scale(1.07);
+  background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
+  color: $white !important;
+}
+
+.linkStudent {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.moreIcon{
+  opacity: 0.5 !important;
+  width: auto;
+  height: 15px;
+  margin-top: 4% !important;
+  vertical-align: middle !important;
 }

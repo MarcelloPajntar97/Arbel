@@ -3,7 +3,7 @@
 @section('content')
 
 <div class = "container">
-  <div class="titleUsers">{{ __('UTENTI REGISTRATI') }}</div>
+  <h2 class="nameTeacher"> UTENTI REGISTRATI </h2>
 
 
 
@@ -15,14 +15,14 @@
 
 
 
-      <div class = "col-md-3">
+      <div class = "col-md-3 itemTeacher">
     {{ $teacher->name }}  {{ $teacher->surname }}
       </div>
-        <div class = "col-md-3">
+        <div class = "col-md-3 itemTeacher">
       {{ $teacher->created_at }}
         </div>
 
-          <div class = "col-md-3">
+          <div class = "col-md-3 itemTeacher">
         {{ $teacher->email }}
           </div>
             <div class = "col-md-1 text-center">

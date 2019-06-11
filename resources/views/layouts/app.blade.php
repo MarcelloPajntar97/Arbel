@@ -17,6 +17,7 @@
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/dropdown.js') }}"></script>
   <script src="{{ asset('js/studentList.js')}}"></script>
+  <script src="{{ asset('js/editTab.js')}}"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="{{ asset('js/chartArea.js') }}"></script>
