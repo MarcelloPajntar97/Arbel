@@ -40,12 +40,6 @@
 <div class="tab-content" id="tabContainer">
   <div class="tab-pane fade show active" id="subject-just" role="tabpanel" aria-labelledby="subject-tab-just">
 
-
-
-
-
-
-
     <div class="row">
 
       <div class = "col-md-5">
@@ -111,7 +105,8 @@
         <form method="post" action = "{{action('SecretaryController@store', $id)}}">
 
           @csrf
-
+          <!-- <input name="_method" type="hidden" value="PATCH"/> -->
+          <input name="_method" type="hidden" value="POST"/>
           <div class="row form-group">
             <div class = "col">
               <h2 class = "titleDrop">Seleziona la materia</h2>
@@ -129,7 +124,7 @@
             </div>
           </div>
           <div class = "row form-group">
-            <input name="_method" type="hidden" value="POST"/>
+
             <input name="docente" type="hidden" value="{{ $teacher->id }}"/>
             <div class = "col-md-7">
               <h2 class = "titleDrop">Seleziona il giorno</h2>
@@ -185,11 +180,9 @@
       <div class = "col-md-6 hourCol">
         <h2 class = "titleView">Orari assegnati</h2>
       </div>
-      {{-- <div class = "col-md-6">
-      @foreach ($events as $event)
-      {{$event->subject}}
-    @endforeach
-  </div> --}}
+     <div class = "col-md-6">
+      
+  </div>
 
 </div>
 </div>

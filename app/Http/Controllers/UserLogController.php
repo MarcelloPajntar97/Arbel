@@ -9,6 +9,7 @@ use Validator;
 use App\Subject;
 use App\ClassModel;
 use App\Student;
+use Illuminate\Support\Facades\DB;
 // use App\Student;
 
 class UserLogController extends Controller
@@ -66,6 +67,27 @@ class UserLogController extends Controller
     $prova = ['students' => $final];
     $res = response()->json($prova, 200);
     return $res;
+  }
+
+  public function studentsRegister() {
+    $data = auth()->user()->subjects()->get();
+    $registerContainer = array();
+    foreach ($data as $student) {
+      foreach ($student->class()->get() as $course) {
+        $students = Student::where('class_id', $course->id)->get();
+        foreach ($students as $value) {
+          $details = DB::table('students_subjects')->where('stud_id', $value->id)->get();
+          array_push($registerContainer, $details);
+        }
+      }
+    }
+    // foreach ($data as $value) {
+    //   //$details = DB::table('students_subjects')->where('sub_id', $value->id)->get();
+    //   array_push($registerContainer, DB::table('students_subjects')->where('sub_id', $value->id)->get());
+    // }
+    $dataStud = ['student_detail' => $registerContainer];
+    return response()->json($dataStud, 200);
+    //return $res;
   }
 
   public function postReminder(Request $request) {

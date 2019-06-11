@@ -45,6 +45,7 @@ class SecretaryController extends Controller
      */
     public function store(Request $request)
     {
+
       $this->validate($request, [
         'activity' => 'required',
          // 'user_id' => 'required',
@@ -65,10 +66,16 @@ class SecretaryController extends Controller
       $events->start_hour = $request->input('start_hour');
       $events->end_hour = $request->input('end_hour');
       $events->user_id = (int)$request->get('docente');
+      $id = $events->user_id;
       $events->save();
+      $teacher = \App\User::find($events->user_id);
+      $event = Events::where('user_id', $events->user_id)->first();
+      $courses = \App\ClassModel::all();
+      $subjects = \App\Subject::where('user_id', $teacher->id)->get();
 
-      // return redirect('editUser')->with('success', 'Evento aggiunto correttamente!');
-      return view('editUser', compact('teacher', 'events', 'request'));
+      //return redirect('editUser')->with('success', ['events'=>$events, 'teacher'=>$teacher, ]);
+      return view('editUser', compact('teacher', 'event', 'request', 'id', 'courses', 'subjects'));
+      //return back();
 
 
     }
@@ -94,9 +101,11 @@ class SecretaryController extends Controller
       $events->end_date = $request->input('end_date');
       $events->user_id = (int)$request->get('docente');
       $events->save();
+      $teacher = \App\User::find($events->user_id);
 
+      $event = Events::where('user_id', $events->user_id);
       // return redirect('editUser')->with('success', 'Evento aggiunto correttamente!');
-      return view('editUser', compact('teacher', 'events', 'request'));
+      return view('editUser', compact('teacher', 'event', 'request', 'id'));
 
 
     }
@@ -122,10 +131,12 @@ class SecretaryController extends Controller
     public function edit($id)
     {
       $teacher = \App\User::find($id);
-      $this->getTeacher = $teacher;
+      //$this->getTeacher = $teacher;
       $subjects = \App\Subject::where('user_id', $teacher->id)->get();
       // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
       $courses = \App\ClassModel::all();
+      //$event = Events::where('user_id', $id)->get();
+      //dd($event);
       return view('editUser', compact('teacher', 'id', 'courses', 'subjects'));
     }
 
@@ -147,7 +158,8 @@ class SecretaryController extends Controller
           $teacher = \App\User::find($id);
           $subjects = \App\Subject::where('user_id', $teacher->id)->get();
           $courses = \App\ClassModel::all();
-        return view('editUser', compact('teacher', 'id', 'courses', 'subjects'));
+          $event = Events::where('user_id', $id)->first();
+        return view('editUser', compact('teacher', 'id', 'courses', 'subjects', 'event'));
     }
 
 
