@@ -125,7 +125,7 @@ class StudentListController extends Controller
                 ->where('stud_id', $dataStudent[$i])
                 ->where('sub_id', (int)$valuesSub)
                 ->update([
-                  'absence_hours' => DB::raw('absence_hours+6')
+                  'absence_hours' => DB::raw('absence_hours+3')
                 ]);
           }
         }

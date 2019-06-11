@@ -72,22 +72,18 @@ class UserLogController extends Controller
   public function studentsRegister() {
     $data = auth()->user()->subjects()->get();
     $registerContainer = array();
-    foreach ($data as $student) {
-      foreach ($student->class()->get() as $course) {
-        $students = Student::where('class_id', $course->id)->get();
-        foreach ($students as $value) {
-          $details = DB::table('students_subjects')->where('stud_id', $value->id)->get();
-          array_push($registerContainer, $details);
-        }
+    $registerStudent = array();
+    foreach ($data as $value) {
+      $details = DB::table('students_subjects')->where('sub_id', $value->id)->get();
+      array_push($registerContainer, $details);
+    }
+    for ($i=0; $i<count($registerContainer); $i++) {
+      for ($k=0; $k<count($registerContainer[$i]); $k++) {
+        array_push($registerStudent, $registerContainer[$i][$k]);
       }
     }
-    // foreach ($data as $value) {
-    //   //$details = DB::table('students_subjects')->where('sub_id', $value->id)->get();
-    //   array_push($registerContainer, DB::table('students_subjects')->where('sub_id', $value->id)->get());
-    // }
-    $dataStud = ['student_detail' => $registerContainer];
-    return response()->json($dataStud, 200);
-    //return $res;
+    $final = ['student_detail' => $registerStudent];
+    return response()->json($final, 200);
   }
 
   public function postReminder(Request $request) {
