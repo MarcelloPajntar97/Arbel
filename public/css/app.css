@@ -11800,6 +11800,49 @@ a:hover {
   margin-bottom: 30%;
 }
 
+.argomentoBox {
+  transition: all 0.3s ease-in-out;
+  font-family: "futura", sans-serif;
+  font-size: 14px;
+  color: #000000 !important;
+  font-weight: normal !important;
+  border: 0.7px solid #ECEAEA;
+  border-radius: 6px !important;
+  background-color: #FFFFFF !important;
+}
+
+.argomentoBox:hover {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  background-color: #F2001E;
+}
+
+.nav-pills .nav-link.active {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
+  color: #FFFFFF !important;
+}
+
+.list-group-item.active {
+  transition: all 0.2s !important;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
+  color: #FFFFFF !important;
+}
+
+.editIcon {
+  opacity: 0.5 !important;
+}
+
+.linkStudent {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
 .studentContainer {
   margin: auto !important;
   margin-top: 0.4% !important;
