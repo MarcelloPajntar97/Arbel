@@ -75,11 +75,12 @@
         </div>
         <div class = "col-md-6 text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Olè continua?
-      </div>
-      <div class = "col-md-1">
-        <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
-          <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
-        </a>
+        </div>
+        <div class = "col-md-1">
+          <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
+            <div class="more"><img class = "editIcon" src="{{ asset('/img/More.svg')}}"></div>
+          </a>
+        </div>
       </div>
     </div>
     @endforeach
@@ -97,7 +98,7 @@
       <div class="col-4">
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item disabled">Seleziona un quesito</a>
-          <a class="list-group-item ">  <input class="form-control" type="text" placeholder="Search" aria-label="Search"></a>
+          <a class="list-group-item title">  <input class="form-control" type="text" placeholder="Search" aria-label="Search"></a>
           <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">Argomento</a>
           <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
           <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
