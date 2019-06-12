@@ -23,6 +23,4 @@ jQuery(document).ready(function ()
               $('select[name="subject"]').empty();
            }
         });
-
-        if ( $('#dateInput')[0].type != 'date' ) $('#dateInput').datepicker();
 });

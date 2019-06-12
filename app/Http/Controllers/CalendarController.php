@@ -18,7 +18,7 @@ class CalendarController extends Controller
 
   public function __construct()
   {
-      $this->middleware('auth');
+    $this->middleware('auth');
   }
 
 
@@ -27,29 +27,33 @@ class CalendarController extends Controller
     $event = [];
     // $teacher = $request->get('subHour');
     $events= Events::where('user_id', Auth::user()->id)->get();
-      foreach ($events as $row) {
-        $enddate = $row->end_date."24:00:00";
-        $event[] = \Calendar::event(
-          $row->activity,
-          true,
-          new \DateTime($row->day),
-          new \DateTime($row->day),
-          $row->id,
+    foreach ($events as $row) {
+      $enddate = $row->end_date."24:00:00";
+      $event[] = \Calendar::event(
+        $row->activity,
+        true,
+        new \DateTime($row->day),
+        new \DateTime($row->day),
+        $row->id,
 
-          // Add color and link on event
-          [
-            'color' => 'rgba(2,117,216,0.2)',
-            // 'url' => 'pass here url and any route',
-          ]
+        // Add color and link on event
+        [
+          'color' => 'rgba(2,117,216,0.2)',
+          // 'url' => 'pass here url and any route',
+        ]
 
-        );
-      }
+      );
+    }
 
     $calendar = \Calendar::addEvents($event)
     ->setCallbacks([
-            'eventClick' => 'function(event) { alert(event.title)}',
-            'dayClick' => 'function(event) { alert("prova")}',
-        ]);
+      'eventClick' => 'function(event) { alert(event.title)}',
+      'dayClick' => 'function(event) { alert("prova")}',
+    ])
+    ->setOptions([ //set fullcalendar options
+      'contentHeight' => 10,
+
+    ]);
     return view('calendar', compact('events','calendar'));
   }
 

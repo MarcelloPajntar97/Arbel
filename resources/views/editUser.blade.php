@@ -116,7 +116,7 @@
                   @foreach ($subjects as $subject)
                     @foreach ($subject->class()->get() as $course)
                       {{-- <div class = "teacherDate"> {{ $subject->subjectName}} </div></br> --}}
-                      <option value="{{ $course->year }} {{ $course->course }}, {{ $subject->subjectName}}">{{ $course->year }} {{ $course->course }} ({{ $course->section}}) - {{ $subject->subjectName}} </option>
+                      <option value="{{ $course->year }}° {{ $course->course }}, {{ $subject->subjectName}}">{{ $course->year }} {{ $course->course }} ({{ $course->section}}) - {{ $subject->subjectName}} </option>
                     @endforeach
                   @endforeach
                 </select>

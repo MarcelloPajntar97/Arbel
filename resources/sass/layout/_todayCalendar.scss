@@ -1,5 +1,4 @@
 
-
 .todayContainer{
   margin-bottom: 1% !important;
   padding-bottom: 1.5%;
@@ -17,7 +16,7 @@
 .linkCalendar {
  color: $deselectedItem !important;
  float: right !important;
- margin-top: 3% !important;
+ margin-top: 1% !important;
   &:hover{
     transition: all 0.5s;
     color: $redArbel !important;
@@ -124,9 +123,12 @@
 }
 
 .allHour {
-  margin-top: 3% !important;
-  margin-left: 3%;
+  margin-left: 0;
+  // vertical-align: middle !important;
+  margin-top: 8%;
 }
+
+
 
 .activity {
   font-weight: normal;
@@ -148,6 +150,8 @@ margin-right: -5%;
 
 .rowHour{
   margin-bottom: 1.5%;
+
+
 }
 
 #primaFascia, #secondaFascia, #terzaFascia, #quartaFascia, #corsi{
@@ -160,3 +164,8 @@ margin-right: -5%;
 .colDay{
   margin-bottom: 30%;
 }
+
+// .hourPart{
+//   border-right: 1px solid lightGrey !important;
+//   height:auto;
+// }

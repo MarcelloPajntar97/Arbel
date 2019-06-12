@@ -48,18 +48,19 @@
   }
 }
 
-.sectionText {
-  padding-left: 7%;
-  font-size: 18px;
-  font-weight: bold;
-}
+// .sectionText {
+//   padding-left: 7%;
+//   font-size: 18px;
+//   font-weight: bold;
+// }
 
-.sectionTextp {
+.sectionText {
   margin-top: 30%;
   padding-left: 7%;
   font-size: 18px;
   color: $redArbel;
   font-family: $titleFont;
+  font-weight: 500 !important;
 }
 
 .descriptionText {
@@ -75,6 +76,7 @@
   font-size: 22px;
   margin-top: 29% !important;
   font-family: $titleFont;
+
 }
 
 .horizontalLine {
@@ -142,6 +144,7 @@ a:hover {
 
 .yearNumber {
   font-family: $titleFont;
+  font-weight: 500 !important;
   font-size: 12px !important;
   text-align: center !important;
   color: $redArbel;

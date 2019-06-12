@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <img class = "lineLogin" src="{{asset('/img/lineLogin1.svg')}}" alt="Responsive image" id="footer">
+    <img class = "lineLogin" src="{{asset('/img/lineLogin.svg')}}" alt="Responsive image" id="footer">
   </div>
 </div>
 <div class="row allElelement">
@@ -20,14 +20,14 @@
           <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div class="loginText">{{ __('Benvenuto,') }}</div><br>
+            <h2 class="loginText">{{ __('Benvenuto,') }}</h2><br>
               <div class="arbelText">{{ __('per proseguire inserisci i tuoi dati') }}</div>
 
             <div class="form-group row">
               <label for="email" class="col-md-6 col-form-label"></label>
 
               <div class="col-md-6 offset-md-4">
-                <input id="email" placeholder="E-mail" type="email" class="mailForm form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" placeholder="E-mail" type="email" class=" customForm mailForm form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                 @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
               <label for="password" class="col-md-4 col-form-label text-md-right"></label>
 
               <div class="col-md-6">
-                <input id="password" placeholder="Password" type="password" class="passwordForm form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                <input id="password" placeholder="Password" type="password" class="customForm passwordForm form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                 @if ($errors->has('password'))
                 <span class="invalid-feedback" role="alert">
@@ -68,6 +68,7 @@
                 <button  type="submit" class="btn loginButton" id="login">
                   {{ __('ACCEDI') }}
                 </button>
+
                 <div class="col-md-8 offset-md-4 ">
                 @if (Route::has('password.request'))
                 <a class="btn btn-link text-dark passwordHelp" href="{{ route('password.request') }}">

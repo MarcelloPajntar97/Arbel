@@ -27,9 +27,6 @@
   color: $white !important;
 }
 
-.editIcon{
-  opacity: 0.5 !important;
-}
 
 .linkStudent {
   font-size: 14px !important;
@@ -131,4 +128,61 @@
   height: 15px;
   margin-top: 4% !important;
   vertical-align: middle !important;
+}
+
+.exportBtn{
+  float: right !important;
+  border-radius: 25px !important;
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+  &:hover {
+    transition: all 0.4s !important;
+    background-color: rgba(2,117,216,0.2) !important;
+    color: #4B74FF !important;
+  }
+}
+
+.searchBtn{
+  transition: all .3s ease-in-out;
+  border-radius: 25px !important;
+  border: 1px solid #4B74FF !important;
+  // border: none;
+  width: 120px;
+  height: 35px;
+  // padding-left: 2% !important;
+  // padding-right: 2% !important;
+  background-image: url('/img/searchIcon.svg');
+  background-position: 14px 8px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  &::placeholder {
+  color: #4B74FF !important;
+  opacity: 1;
+}
+  &:hover {
+    transition: all 0.4s !important;
+    background-color: rgba(2,117,216,0.2) !important;
+  }
+  &:focus {
+    width: 300px !important;
+
+  }
+}
+
+.toolBar{
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+.optionTab{
+  margin-right: 1.5% !important;
+}
+
+.colSearch{
+  margin: none !important;
+  padding: none !important;
+}
+
+.moreIcon{
+  opacity: 0.5;
 }

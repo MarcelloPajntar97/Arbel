@@ -1,6 +1,8 @@
 @extends('layouts.app')
-@include('elements.nav')
 @section('content')
+
+@include('elements.nav')
+
 
 <div class="container">
   <h3 class="detailTitle">{{ __('DETTAGLIO STUDENTE:') }}</h3>

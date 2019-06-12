@@ -11195,7 +11195,7 @@ body {
 
 .customForm {
   background-color: #f5f5f5 !important;
-  border: none !important;
+  border: 1px solid #edebeb !important;
   border-radius: 3px !important;
 }
 
@@ -11218,7 +11218,7 @@ body {
   text-decoration: none !important;
   background: transparent !important;
   padding: 0 !important;
-  margin-top: 7% !important;
+  margin-top: 3% !important;
   font-size: inherit !important;
   font-family: inherit !important;
 }
@@ -11300,33 +11300,22 @@ body {
   color: #F2001E !important;
 }
 
-.allContainer {
-  margin-top: -10% !important;
-  margin-left: 7% !important;
-  align-items: center;
-  align-content: center;
-  position: absolute;
-  margin: 0 auto;
-}
-
 .sendContainer {
   background-color: #FFFFFF;
   padding-top: 2%;
   padding-left: 2% !important;
-  padding-bottom: none;
+  padding-bottom: 2%;
   border-radius: 10px !important;
-  bottom: 0 !important;
   box-shadow: 0px 1px 4px darkGrey !important;
-  z-index: 10 !important;
 }
 
 .newColorBg {
   background: linear-gradient(to top, #F2001E 0%, #EF2252 100%) !important;
-  z-index: -1 !important;
-  margin-top: 12%;
-  margin-bottom: -15% !important;
+  z-index: -99 !important;
+  position: absolute;
+  margin-top: -10%;
   width: 100%;
-  height: 43%;
+  height: 40%;
 }
 
 .sendButton {
@@ -11348,16 +11337,16 @@ body {
 .firstPart {
   position: relative;
   float: left;
-  width: 44%;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  padding: 0 !important;
   border-right: 1px solid lightGrey;
-  height: 270px;
+  height: 230px;
 }
 
 .contactTitle {
   font-family: "futura", sans-serif;
-  margin-top: 13% !important;
+  margin-top: 14% !important;
+  margin-bottom: 2%;
   font-size: 16px !important;
 }
 
@@ -11390,6 +11379,18 @@ placeholder {
   margin-bottom: 2%;
 }
 
+.arbelMail {
+  margin-bottom: 0 !important;
+}
+
+.toMail {
+  margin-bottom: 2%;
+}
+
+.secondPart {
+  padding-left: 2.5% !important;
+}
+
 .allCourses {
   margin-bottom: 8%;
   margin-left: 9%;
@@ -11420,17 +11421,12 @@ placeholder {
 }
 
 .sectionText {
-  padding-left: 7%;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.sectionTextp {
   margin-top: 30%;
   padding-left: 7%;
   font-size: 18px;
   color: #F2001E;
   font-family: "futura", sans-serif;
+  font-weight: 500 !important;
 }
 
 .descriptionText {
@@ -11508,6 +11504,7 @@ a:hover {
 
 .yearNumber {
   font-family: "futura", sans-serif;
+  font-weight: 500 !important;
   font-size: 12px !important;
   text-align: center !important;
   color: #F2001E;
@@ -11666,7 +11663,7 @@ a:hover {
 .linkCalendar {
   color: #A4AAB3 !important;
   float: right !important;
-  margin-top: 3% !important;
+  margin-top: 1% !important;
 }
 
 .linkCalendar:hover {
@@ -11761,8 +11758,8 @@ a:hover {
 }
 
 .allHour {
-  margin-top: 3% !important;
-  margin-left: 3%;
+  margin-left: 0;
+  margin-top: 8%;
 }
 
 .activity {
@@ -11832,10 +11829,6 @@ a:hover {
           transform: scale(1.07);
   background: linear-gradient(to right, #F2001E 0%, #EF2252 100%) !important;
   color: #FFFFFF !important;
-}
-
-.editIcon {
-  opacity: 0.5 !important;
 }
 
 .linkStudent {
@@ -11940,6 +11933,78 @@ a:hover {
   height: 15px;
   margin-top: 4% !important;
   vertical-align: middle !important;
+}
+
+.exportBtn {
+  float: right !important;
+  border-radius: 25px !important;
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+}
+
+.exportBtn:hover {
+  transition: all 0.4s !important;
+  background-color: rgba(2, 117, 216, 0.2) !important;
+  color: #4B74FF !important;
+}
+
+.searchBtn {
+  transition: all 0.3s ease-in-out;
+  border-radius: 25px !important;
+  border: 1px solid #4B74FF !important;
+  width: 120px;
+  height: 35px;
+  background-image: url("/img/searchIcon.svg");
+  background-position: 14px 8px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+.searchBtn::-webkit-input-placeholder {
+  color: #4B74FF !important;
+  opacity: 1;
+}
+
+.searchBtn:-ms-input-placeholder {
+  color: #4B74FF !important;
+  opacity: 1;
+}
+
+.searchBtn::-ms-input-placeholder {
+  color: #4B74FF !important;
+  opacity: 1;
+}
+
+.searchBtn::placeholder {
+  color: #4B74FF !important;
+  opacity: 1;
+}
+
+.searchBtn:hover {
+  transition: all 0.4s !important;
+  background-color: rgba(2, 117, 216, 0.2) !important;
+}
+
+.searchBtn:focus {
+  width: 300px !important;
+}
+
+.toolBar {
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+.optionTab {
+  margin-right: 1.5% !important;
+}
+
+.colSearch {
+  margin: none !important;
+  padding: none !important;
+}
+
+.moreIcon {
+  opacity: 0.5;
 }
 
 .containernote {
@@ -12127,41 +12192,79 @@ a:hover {
   height: auto;
 }
 
-.fc-widget-header {
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
-  font-family: "futura", sans-serif;
-  font-weight: lighter;
-  color: #A4AAB3;
+#calendar {
+  margin-bottom: 7%;
+  width: 80%;
+  float: right !important;
 }
 
-.fc .fc-toolbar > * > * {
+.fc-toolbar .fc-state-active,
+.fc-toolbar .ui-state-active {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+.fc .fc-button-group > * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.fc-widget-header {
+  padding-top: none !important;
+  padding-bottom: 5px !important;
+  font-weight: 500;
+  color: #A4AAB3;
+  border-bottom: 5px solid red !important;
 }
 
 .fc-toolbar {
   margin-bottom: 3% !important;
 }
 
-.fc th {
+.fc .fc-row {
+  border-bottom: 5px solid red !important;
+}
+
+.fc-unthemed .fc-popover,
+.fc-unthemed .fc-row,
+.fc-unthemed hr,
+.fc-unthemed tbody,
+.fc-unthemed td,
+.fc-unthemed th,
+.fc-unthemed thead {
   border: none !important;
 }
 
 .fc-toolbar h2 {
+  font-family: "futura", sans-serif;
+  font-weight: 500;
   margin-top: 7px !important;
   font-size: 18px !important;
   color: #000000 !important;
 }
 
+.fc-toolbar {
+  padding-bottom: 2% !important;
+  border-bottom: 1px solid lightGrey;
+}
+
 .fc-basic-view td.fc-day-number {
-  padding-top: 20px !important;
-  padding-right: 20px !important;
+  text-align: center !important;
+  font-weight: bold;
 }
 
 .fc-unthemed .fc-today {
-  background-color: #f1f1f2 !important;
+  background-color: transparent !important;
+  color: #F2001E !important;
+}
+
+.calendarSection {
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 9px #e6e4e4 !important;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 /*!
@@ -22808,10 +22911,15 @@ a.text-dark:focus {
 }
 
 body {
-  background: linear-gradient(to bottom, #FFFFFF 0%, #FBFBFB 100%) !important;
+  background-color: #FBFBFB !important;
   line-height: none !important;
   margin: none !important;
   padding: none !important;
+}
+
+.py-4 {
+  margin: 0 auto !important;
+  padding: 0 !important;
 }
 
 .row {
@@ -22822,6 +22930,13 @@ body {
   margin-left: none !important;
   margin-right: none !important;
   padding: none !important;
+}
+
+.infoForm {
+  font-family: "futura", sans-serif;
+  color: lightGrey;
+  font-size: 14px;
+  margin-bottom: 2% !important;
 }
 
 a {
@@ -22855,7 +22970,7 @@ a:hover {
 
 .myPhone {
   width: 69% !important;
-  margin-top: -5%;
+  margin-top: -2%;
   padding-left: 19% !important;
 }
 
@@ -22872,7 +22987,7 @@ a:hover {
 
 .loginText {
   font-family: "futura", sans-serif;
-  font-weight: bold;
+  font-weight: 500 !important;
   font-size: 26px;
   margin-bottom: -3% !important;
 }
@@ -22902,22 +23017,21 @@ a:hover {
 }
 
 .footerLogin {
-  bottom: 0 !important;
+  bottom: 3% !important;
   float: right !important;
-  margin-right: 4%;
-  margin-top: 2% !important;
-  margin-bottom: 1%;
+  right: 3%;
+  position: absolute;
   color: #626262 !important;
-  right: 0;
 }
 
 .footerHome {
-  bottom: 0 !important;
+  bottom: 1% !important;
   float: right !important;
-  margin-right: 2%;
-  margin-top: 13%;
+  position: absolute;
+  margin: none !important;
   color: #FFFFFF !important;
-  right: 0;
+  right: 3%;
+  padding: none !important;
 }
 
 .downloadBadge {

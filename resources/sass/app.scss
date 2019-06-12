@@ -28,11 +28,16 @@
 
 
 body {
-  // background-color: $body-bg !important;
-  background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
+  background-color: $body-bg !important;
+  // background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
   line-height: none !important;
   margin: none !important;
   padding: none !important;
+}
+
+.py-4 {
+  margin: 0 auto !important;
+  padding: 0 !important;
 }
 
 .row {
@@ -43,6 +48,14 @@ body {
   margin-left: none !important;
   margin-right: none !important;
   padding: none !important;
+}
+
+.infoForm{
+  font-family: $titleFont;
+  color: lightGrey;
+  font-size: 14px;
+  // margin-top: 7%;
+  margin-bottom: 2% !important;
 }
 
 a {
@@ -76,7 +89,7 @@ a {
 
 .myPhone {
   width: 69% !important;
-  margin-top: -5%;
+  margin-top: -2%;
   padding-left: 19% !important;
 }
 
@@ -93,7 +106,7 @@ a {
 .loginText
 {
   font-family: $titleFont;
-  font-weight: bold;
+  font-weight: 500 !important;
   font-size: 26px;
   // font-weight:;
   margin-bottom: -3% !important;
@@ -124,22 +137,25 @@ a {
 }
 
 .footerLogin{
-  bottom: 0 !important;
+  bottom: 3% !important;
   float: right !important;
-  margin-right: 4%;
-  margin-top: 2% !important;
-  margin-bottom: 1%;
+  right: 3%;
+  position: absolute;
+  // margin-top: 2% !important;
+  // margin-bottom: 1%;
   color: #626262 !important;
-  right: 0;
 }
 
 .footerHome{
-  bottom: 0 !important;
+  bottom: 1% !important;
   float: right !important;
-  margin-right: 2%;
-  margin-top: 13%;
+  position: absolute;
+  // margin-right: 2%;
+  // margin-top: -3%;
+  margin: none !important;
   color: $white !important;
-  right: 0;
+  right: 3%;
+  padding: none !important;
 }
 
 .downloadBadge {
