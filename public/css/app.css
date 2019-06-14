@@ -10951,6 +10951,12 @@ body {
   margin-bottom: 2.5%;
 }
 
+@media (max-width: 1280px) {
+  .titleDrop {
+    width: 150% !important;
+  }
+}
+
 .titleView {
   font-family: "futura", sans-serif;
   color: lightGrey;
@@ -11171,10 +11177,16 @@ body {
   margin-right: 40px !important;
 }
 
+@media (max-width: 1280px) {
+  .firstItem {
+    margin-right: 60px !important;
+  }
+}
+
 .itemTeacher {
   vertical-align: middle !important;
   margin-left: 2%;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 #tabContainer {
@@ -11345,9 +11357,11 @@ body {
 
 .contactTitle {
   font-family: "futura", sans-serif;
-  margin-top: 14% !important;
+  color: #4A4A4A;
+  margin-left: none;
+  font-size: 16px;
   margin-bottom: 2%;
-  font-size: 16px !important;
+  margin-top: 14% !important;
 }
 
 .coursesList {
@@ -11470,9 +11484,11 @@ a:hover {
 }
 
 .coursesTitle {
-  font-family: "futura", sans-serif !important;
-  margin-left: none !important;
-  font-size: 16px !important;
+  font-family: "futura", sans-serif;
+  color: #4A4A4A;
+  margin-left: none;
+  font-size: 16px;
+  margin-bottom: 2%;
   margin-top: 8%;
 }
 
@@ -11500,6 +11516,12 @@ a:hover {
 #spero {
   margin-right: -6.5% !important;
   padding-right: none !important;
+}
+
+@media (max-width: 1280px) {
+  #spero {
+    margin-right: -2.5% !important;
+  }
 }
 
 .yearNumber {
@@ -11541,11 +11563,11 @@ a:hover {
 .imageSubmitButton {
   font-family: "futura", sans-serif;
   background-color: #F2001E !important;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   border: none !important;
   border-radius: 25px !important;
-  margin-top: 60% !important;
-  margin-left: -45% !important;
+  margin-top: 55% !important;
+  margin-left: -45%;
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
@@ -11556,11 +11578,33 @@ a:hover {
   color: #FFFFFF !important;
 }
 
+@media (max-width: 576px) {
+  .imageSubmitButton {
+    margin-top: 3% !important;
+    margin-left: 24%;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageSubmitButton {
+    margin-top: 90% !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .imageSubmitButton {
+    margin-top: -5% !important;
+    margin-left: 25%;
+  }
+}
+
 .profileTitle {
-  font-family: "futura", sans-serif !important;
-  margin-left: -1% !important;
-  font-size: 16px !important;
-  padding-top: 5%;
+  font-family: "futura", sans-serif;
+  color: #4A4A4A;
+  margin-left: none;
+  font-size: 16px;
+  margin-bottom: 2%;
+  margin-top: 5%;
 }
 
 .allProfile {
@@ -11598,8 +11642,15 @@ a:hover {
   border: none;
   background-color: transparent;
   padding-left: 30% !important;
-  padding-top: 25% !important;
+  padding-top: 18% !important;
   cursor: pointer !important;
+}
+
+@media (max-width: 1280px) {
+  .btnUpload {
+    padding-left: 30% !important;
+    padding-top: 18% !important;
+  }
 }
 
 .upload-btn-wrapper input[type=file] {
@@ -11637,6 +11688,7 @@ a:hover {
   background-color: #F2001E;
   width: 40px;
   height: 40px;
+  z-index: 1;
   border-radius: 50%;
   position: absolute;
 }
@@ -11644,6 +11696,13 @@ a:hover {
 .uploadShape:hover {
   transition: all 0.3s;
   background-color: #e2001c;
+}
+
+@media (max-width: 1280px) {
+  .uploadShape {
+    margin-top: 2% !important;
+    margin-left: 56%;
+  }
 }
 
 .todayContainer {
@@ -11749,12 +11808,10 @@ a:hover {
 }
 
 .daySelected {
-  color: #FFFFFF;
   font-family: "futura", sans-serif;
-  font-weight: bold;
-  margin-left: -1px !important;
-  font-size: 16px;
-  text-align: center !important;
+  font-size: 14px !important;
+  color: lightGrey !important;
+  margin-bottom: 4% !important;
 }
 
 .allHour {
@@ -11863,11 +11920,12 @@ a:hover {
 }
 
 .studentTitle {
-  font-family: "futura", sans-serif !important;
-  margin-left: none !important;
-  font-size: 16px !important;
-  margin-top: 4%;
+  font-family: "futura", sans-serif;
+  color: #4A4A4A;
+  margin-left: none;
+  font-size: 16px;
   margin-bottom: 2%;
+  margin-top: 4%;
 }
 
 .studentSubmitButton {

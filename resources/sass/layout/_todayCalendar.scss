@@ -114,12 +114,11 @@
 }
 
 .daySelected {
-  color: $white;
   font-family: $titleFont;
-  font-weight: bold;
-  margin-left: -1px !important;
-  font-size: 16px;
-  text-align: center !important;
+  // text-transform: uppercase;
+  font-size: 14px !important;
+  color: lightGrey !important;
+  margin-bottom: 4% !important;
 }
 
 .allHour {

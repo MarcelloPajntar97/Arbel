@@ -56,10 +56,8 @@
 
 
 .contactTitle {
-  font-family: $titleFont;
+  @include title;
   margin-top: 14% !important;
-  margin-bottom: 2%;
-  font-size: 16px !important;
 }
 
 .coursesList {

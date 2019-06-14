@@ -126,11 +126,11 @@
           <div class = "row form-group">
 
             <input name="docente" type="hidden" value="{{ $teacher->id }}"/>
-            <div class = "col-md-7">
+            <div class = "col-md-6">
               <h2 class = "titleDrop">Seleziona il giorno</h2>
               <input type = "date" id="dateInput" class = "form-control dayInput " name= "day" class = "date"/>
             </div>
-            <div class = "col-md-5">
+            <div class = "col-md-6">
               <h2 class = "titleDrop">Seleziona la fascia oraria</h2>
 
               <span class="custom-dropdown" id ="calendar-dropdown">
@@ -181,7 +181,7 @@
         <h2 class = "titleView">Orari assegnati</h2>
       </div>
      <div class = "col-md-6">
-      
+
   </div>
 
 </div>

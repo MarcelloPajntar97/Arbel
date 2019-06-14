@@ -9,6 +9,7 @@ use Validator;
 use App\Subject;
 use App\ClassModel;
 use App\Student;
+use App\Events;
 use Illuminate\Support\Facades\DB;
 // use App\Student;
 
@@ -25,6 +26,7 @@ class UserLogController extends Controller
       $user = Auth::user();
       $subjects = auth()->user()->subjects()->get();
       $dataReminder = auth()->user()->memories()->get();
+      $events = auth()->user()->event()->get();
       // $students = auth()->class()->students()->get();
       $courses = array();
       foreach ($subjects as $subject) {
@@ -40,6 +42,7 @@ class UserLogController extends Controller
       $success['email'] =  $user->email;
       $success['subjects'] =  $subjects;
       $success['memories'] = $dataReminder;
+      $success['events'] = $events;
       // $success['students'] =  $students;
       $success['courses'] =  $courses;
       return response()->json(['success' => $success], $this->successStatus);

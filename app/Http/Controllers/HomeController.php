@@ -49,7 +49,6 @@ class HomeController extends Controller
           // Add color and link on event
           [
             'color' => 'rgba(2,117,216,0.2)',
-            // 'url' => 'pass here url and any route',
           ]
 
         );
@@ -58,10 +57,7 @@ class HomeController extends Controller
       $calendar = \Calendar::addEvents($event)
       ->setCallbacks([
         // 'eventClick' => 'function(event) { alert(event.title)}',
-        'dayClick' => 'function(date, jsEvent, view) { $("dayClick").click(function(){
-  $("#fabrizio").hide();
-})
- + console.log(date.format()) }',
+        'dayClick' => 'function(date, jsEvent, view) {console.log(date.format()) }',
          // $('#calendar').fullCalendar('gotoDate', date);
       ])
       ->setOptions([ //set fullcalendar options

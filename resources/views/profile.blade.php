@@ -4,7 +4,7 @@
 @include('elements.nav')
 
 
-<div class = "container"><h3 class = "coursesTitle">{{ __('IL MIO PROFILO') }}</h3></div>
+<div class = "container"><h3 class = "profileTitle">{{ __('IL MIO PROFILO') }}</h3></div>
 <div class="container allProfile">
 
   <div class="row">
@@ -36,18 +36,13 @@
         @csrf
 
         <div class="form-group">
-          <!-- <div class="upload-btn-wrapper">
 
-            <input type="file" name="myfile" /><button class="btnUpload"><img class = "loadImage" src="{{asset('/img/editImage.svg')}}"></button></input>
-          </div> -->
-
-          <!-- <input type="file" id='my_file' class="" name="avatar"></input> -->
 
 
           <div style="height:0px;overflow:hidden">
            <input type="file" id="fileInput" name="avatar" />
           </div>
-          <div class = "uploadShape">
+          <div class = "uploadShape float-righ">
           <button type="button" class="btnUpload" onclick="chooseFile();"><img src="{{asset('/img/editImage.svg')}}"></button>
         </div>
 

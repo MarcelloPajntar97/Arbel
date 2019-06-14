@@ -100,7 +100,15 @@
       </div>
     @endforeach
     <div class="row form-group">
-      <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button>
+
+      <button type= "submit" class="learn-more" id = "btnSubmit">
+        <div class="circle">
+          <span class="btnIcon btnArrow"></span>
+        </div>
+        <p class="submitText">SALVA</p>
+      </button>
+
+      {{-- <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button> --}}
     </div>
   </form>
 </div>
@@ -147,7 +155,16 @@
                   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
                 </div>
               </form>
-              <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('INVIA') }}</button>
+
+              <button type= "submit" class="learn-more" id = "btnSubmit">
+                <div class="circle">
+                  <span class="btnIcon btnArrow"></span>
+                </div>
+                <p class="submitText">INVIA</p>
+              </button>
+
+
+              {{-- <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('INVIA') }}</button> --}}
             </div>
           </div>
         </div>

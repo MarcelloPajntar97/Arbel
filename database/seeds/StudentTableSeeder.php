@@ -30,6 +30,7 @@ class StudentTableSeeder extends Seeder
           'birthday'=> $faker->date($format = 'Y-m-d', $max = 'now'),
           'userPicture' => $faker->imageUrl(400,300),
           'sex' => $gender,
+          'details' => $faker->realText(180),
           'email' => strtolower($uniqueFakeEmail),
           'created_at'=> \Carbon\Carbon::now(),
           'updated_at'=> \Carbon\Carbon::now()
