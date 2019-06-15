@@ -74,6 +74,12 @@
     </div>
 
     @foreach ($students as $studentdata)
+    <?php $detailStudent = DB::table('students_subjects')
+                    ->where('stud_id', $studentdata->id)
+                    ->where('sub_id', $sub_id)->exists();
+          $detailStud = DB::table('students_subjects')
+                            ->where('stud_id', $studentdata->id)
+                            ->where('sub_id', $sub_id)->get(); ?>
       <div class="row-centered classContainer">
         <div class="row ">
           <div class = "col-md-1" id="bo">
@@ -82,14 +88,25 @@
           <div class = "col-md-2 text-left">
             {{ $studentdata->name }}  {{ $studentdata->surname }}
           </div>
+          @if ($detailStudent == true)
+            @foreach ($detailStud as $detail)
+              <div class = "col-md-1 text-centered">
+                --
+              </div>
+              <div class = "col-md-1 text-centered">
+                {{ $detail->absence_hours }} %
+              </div>
+            @endforeach
+          @else
           <div class = "col-md-1 text-centered">
-            27.5
+            --
           </div>
           <div class = "col-md-1 text-centered">
-            5%
+            --
           </div>
+          @endif
           <div class = "col-md-6 text-left">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Olè continua?
+            {{ $studentdata->details }}
           </div>
           <div class = "col-md-1">
             <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">

@@ -78,7 +78,6 @@ class StudentListController extends Controller
 
      $students = \App\Student::where('class_id', $classroom->id)->get();
 
-
       // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
       return view('studentsList', compact('students', 'id', 'sub_id'));
     }
@@ -94,6 +93,7 @@ class StudentListController extends Controller
     {
         $values = $request->input('students');
         $valuesSub = $request->input('subjects');
+        $subSelect = \App\Subject::where('id', (int)$valuesSub)->first();
         $dataStudent = array();
         foreach ($values as $studKey => $studValue) {
           array_push($dataStudent, (int)$studValue);
@@ -108,7 +108,7 @@ class StudentListController extends Controller
                 ->updateOrInsert([
                   'stud_id' => $dataStudent[$i],
                   'sub_id' => (int)$valuesSub,
-                  'absence_hours' => 3
+                  'absence_hours' => 300/$subSelect->totHours
                 ]);
           }
           elseif ($currentStudent == true && $currentSubject == false) {
@@ -117,33 +117,31 @@ class StudentListController extends Controller
                 ->updateOrInsert([
                   'stud_id' => $dataStudent[$i],
                   'sub_id' => (int)$valuesSub,
-                  'absence_hours' => 3
+                  'absence_hours' => 300/$subSelect->totHours
                 ]);
           }
           elseif ($currentStudent == true && $currentSubject == true) {
             DB::table('students_subjects')
                 ->where('stud_id', $dataStudent[$i])
                 ->where('sub_id', (int)$valuesSub)
-                ->update([
-                  'absence_hours' => DB::raw('absence_hours+3')
-                ]);
+                ->increment('absence_hours', 300/(float)$subSelect->totHours);
           }
         }
         //controllo assenze
-        $subSelect = \App\Subject::where('id', (int)$valuesSub)->first();
+
         $absPerc = $subSelect->totHours * (20/100);
         $subStudent = DB::table('students_subjects')
                           ->where('sub_id', (int)$valuesSub)->get();
         $studAbs = array();
         foreach ($subStudent as $student) {
-          if ((float)$student->absence_hours > (float)$absPerc) {
+          if ((float)$student->absence_hours > 20.0) {
             //dd("entratoooo");
             $studName = \App\Student::where('id', $student->stud_id)->first();
             array_push($studAbs, $studName->name);
           }
         }
 
-        // dd($studAbs);
+         //dd($studAbs);
         return redirect('/home');
     }
 
