@@ -18,6 +18,7 @@ class StudentTableSeeder extends Seeder
       $faker = Faker::create('it_IT');
       for ($i=0; $i < 700; $i++) {
         $gender = $faker->randomElement(['Male', 'Female'])[0];
+        $bursary = $faker->randomElement([15, 25, 50, 75, 100]);
         $name = $faker->firstName($gender);
         $surname = $faker->lastname;
         $domain = 'ied.edu';
@@ -25,6 +26,7 @@ class StudentTableSeeder extends Seeder
         DB::table('students')->insert([
           'class_id' => $faker->numberBetween($min = 1, $max = 36),
           'badgeNumber' => $faker->numberBetween($min = 100000, $max = 999999),
+          'bursary' => $bursary,
           'name' => $name,
           'surname' => $surname,
           'birthday'=> $faker->date($format = 'Y-m-d', $max = 'now'),

@@ -18,6 +18,7 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('class_id')->nullable();;
             $table->foreign('class_id')->references('id')->on('classes');
             $table->integer('badgeNumber');
+            $table->integer('bursary')->nullable();
             $table->string('userPicture')->nullable();
             $table->string('name');
             $table->string('surname');

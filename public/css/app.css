@@ -10820,6 +10820,7 @@ a.text-dark:focus {
 
 .userName {
   margin-right: 7% !important;
+  font-weight: 500;
 }
 
 .dropdown-toggle {
@@ -11562,6 +11563,7 @@ a:hover {
 
 .imageSubmitButton {
   font-family: "futura", sans-serif;
+  font-weight: 500 !important;
   background-color: #F2001E !important;
   color: #FFFFFF;
   border: none !important;
@@ -11809,6 +11811,7 @@ a:hover {
 
 .daySelected {
   font-family: "futura", sans-serif;
+  font-weight: 500;
   font-size: 14px !important;
   color: lightGrey !important;
   margin-bottom: 4% !important;
@@ -11903,6 +11906,7 @@ a:hover {
   padding-bottom: 1.3%;
   margin-bottom: 1% !important;
   font-family: "futura", sans-serif;
+  font-weight: 500;
   color: #A4AAB3;
 }
 
@@ -11950,7 +11954,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
   font-family: "futura", sans-serif;
   font-size: 14px;
-  font-weight: normal !important;
+  font-weight: 500 !important;
   justify-content: center;
   align-items: center;
   padding-top: 10px;
@@ -12088,18 +12092,21 @@ a:hover {
 }
 
 .detailTitle {
-  font-family: "futura", sans-serif !important;
-  margin-left: none !important;
-  font-size: 16px !important;
-  margin-top: 8%;
+  font-family: "futura", sans-serif;
+  color: #4A4A4A;
+  margin-left: none;
+  font-size: 16px;
+  margin-bottom: 2%;
+  margin-top: 6%;
 }
 
 .studentprofile {
   background-color: #FFFFFF;
-  margin-top: 2% !important;
-  padding-top: 2%;
+  margin-top: 3% !important;
+  padding-top: 4%;
   padding-left: 2% !important;
-  padding-bottom: 2.5% !important;
+  padding-bottom: 4% !important;
+  margin-bottom: 4%;
   border-radius: 10px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 4px lightGrey !important;
@@ -12128,6 +12135,15 @@ a:hover {
   -webkit-transform: scale(1.07);
           transform: scale(1.07);
   color: #F2001E;
+}
+
+.activeNote {
+  margin-top: 5%;
+  margin-bottom: 6%;
+}
+
+.infoText {
+  color: #A4AAB3;
 }
 
 .switchContainer {

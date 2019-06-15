@@ -35,6 +35,7 @@ class HomeController extends Controller
       // $teacher = $request->get('subHour');
       $dt = new \DateTime();
       $today= $dt->format('Y-m-d');
+
       //dd($today);
       $events= Events::where('user_id', Auth::user()->id)->get();
       foreach ($events as $row) {
@@ -67,16 +68,12 @@ class HomeController extends Controller
         'height' => 'auto',
         'eventLimit' => 1,
         'selectable' => true,
-        // 'locale' => 'it',
-        // 'columnHeader' => false,
         'aspectRatio' => 1,
-        // 'allDayDefault'=> false,
         'header' => [
           'left' => 'title',
           'center' =>'',
           'right' =>'prev,next'],
         ]);
-        // return view('calendar', compact('events','calendar'));
 
         return view('home', compact('subjects', 'events', 'calendar', 'today'));
       }

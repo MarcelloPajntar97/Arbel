@@ -21,19 +21,18 @@
 }
 
 .detailTitle{
-  font-family: $titleFont !important;
-  margin-left: none !important;
-  font-size: 16px !important;
-  margin-top: 8%;
+  @include title;
+  margin-top: 6%;
 }
 
 
 .studentprofile{
   background-color: $white;
-  margin-top: 2% !important;
-  padding-top: 2%;
+  margin-top: 3% !important;
+  padding-top: 4%;
   padding-left: 2% !important;
-  padding-bottom: 2.5% !important;
+  padding-bottom: 4% !important;
+  margin-bottom: 4%;
   border-radius: 10px !important;
   bottom: 0 !important;
   box-shadow: 0px 1px 4px lightGrey !important;
@@ -61,4 +60,13 @@
     color: $redArbel;
 
   }
+}
+
+.activeNote{
+  margin-top: 5%;
+  margin-bottom: 6%;
+}
+
+.infoText{
+  color: $deselectedItem;
 }

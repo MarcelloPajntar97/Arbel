@@ -69,7 +69,7 @@
         <div class = "row">
           <div class = "col">
             <div class = "daySelected">
-            {{-- {{$today}} --}}
+            {{-- {{ $todayFormatted }} --}}
             00 mese, giorno
             </div>
           </div>
