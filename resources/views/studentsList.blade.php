@@ -79,7 +79,20 @@
                     ->where('sub_id', $sub_id)->exists();
           $detailStud = DB::table('students_subjects')
                             ->where('stud_id', $studentdata->id)
-                            ->where('sub_id', $sub_id)->get(); ?>
+                            ->where('sub_id', $sub_id)->get();
+
+          $average = DB::table('students_subjects')->where('stud_id', $studentdata->id)->get();
+          if (DB::table('students_subjects')->where('stud_id', $studentdata->id)->exists()==true) {
+          $tot = 0;
+          $credit = 0;
+          foreach ($average as $studAverage) {
+            $subject = \App\Subject::find($studAverage->sub_id)->first();
+            $tot += $studAverage->mark * $subject->credits;
+            $credit += $subject->credits;
+          }
+          $media = $tot/$credit;
+          }
+          ?>
       <div class="row-centered classContainer">
         <div class="row ">
           <div class = "col-md-1" id="bo">
@@ -90,12 +103,21 @@
           </div>
           @if ($detailStudent == true)
             @foreach ($detailStud as $detail)
+            @if ($detail->absence_hours > 20.0)
               <div class = "col-md-1 text-centered">
-                --
+                {{ $media }}
               </div>
               <div class = "col-md-1 text-centered">
-                {{ $detail->absence_hours }} %
+                NON IDONEO
               </div>
+            @else
+            <div class = "col-md-1 text-centered">
+              {{ $media }}
+            </div>
+            <div class = "col-md-1 text-centered">
+              {{ $detail->absence_hours }} %
+            </div>
+            @endif
             @endforeach
           @else
           <div class = "col-md-1 text-centered">
@@ -109,7 +131,7 @@
             {{ $studentdata->details }}
           </div>
           <div class = "col-md-1">
-            <a  href="{{ action('StudentDetailController@edit', $studentdata->id) }}" alt = "option">
+            <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt = "option">
               <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
             </a>
           </div>

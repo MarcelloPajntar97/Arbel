@@ -37,7 +37,7 @@
       <div class="col">
         <h4 class="nameUser">{{ $students->name }} {{ $students->surname }}</h4> <br>
         <h6 class="mailUser" >{{ $students->email }}</h6>
-        {{-- <form> --}}
+
         <h3 class="detailTitle">Media: 27</h3>
         <div class="form-row">
           <div class="col-md-4">
@@ -60,8 +60,12 @@
               <option>Test</option>
             </select> --}}
           </div>
+          <form class="form-inline" method="post" action="{{action('StudentDetailController@update', $id)}}">
+            @csrf
+            <input name="_method" type="hidden" value="PATCH"/>
+            <input name="subjects" type="hidden" value="{{ $sub_id }}"/>
           <div class="col-md-4">
-            <input type="number" class="form-control customForm" placeholder="Valutazione" id="inputValutazione">
+            <input type="number" name="mark" class="form-control customForm" placeholder="Valutazione" id="inputValutazione">
           </div>
         </div>
         <div class="row">
@@ -85,7 +89,7 @@
           </div>
         </div>
 
-        {{-- </form> --}}
+
 
         <h3 class="detailTitle">Assenze: 00%</h3>
         @foreach ($students as $studentsdetail)

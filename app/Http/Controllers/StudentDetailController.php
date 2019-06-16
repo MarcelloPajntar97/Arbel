@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentDetailController extends Controller
 {
@@ -60,12 +61,18 @@ class StudentDetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    // public function edit($id)
+    // {
+    //     $students = \App\Student::find($id);
+    //     return view('studentDetail', compact('students', 'id'));
+    // }
+
+
+    public function editDetail($id, $sub_id)
     {
         $students = \App\Student::find($id);
-        return view('studentDetail', compact('students', 'id'));
+        return view('studentDetail', compact('students', 'id', 'sub_id'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -75,7 +82,32 @@ class StudentDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $subMark = $request->input('subjects');
+        $mark = $request->get('mark');
+        $studMark = DB::table('students_subjects')
+                    ->where('stud_id', $id)
+                    ->where('sub_id', $subMark)->exists();
+        if ($studMark == true) {
+          //dd('qui');
+          DB::table('students_subjects')
+              ->where('stud_id', $id)
+              ->where('sub_id', $subMark)
+              ->update([
+                'mark' => (int)$mark
+              ]);
+        }
+        else {
+          //dd('quiii');
+          DB::table('students_subjects')
+              ->where('id', '[0-9]+')
+              ->updateOrInsert([
+                'stud_id' => $id,
+                'sub_id' => (int)$subMark,
+                'absence_hours' => 0,
+                'mark' => (int)$mark
+              ]);
+        }
+        return redirect('/home');
     }
 
     /**

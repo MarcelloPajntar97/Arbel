@@ -77,7 +77,7 @@ class StudentListController extends Controller
      $classroom = \App\ClassModel::find($id);
 
      $students = \App\Student::where('class_id', $classroom->id)->get();
-
+     
       // $subjects = \App\Subject::where('user_id', $teacher->id)->get();
       return view('studentsList', compact('students', 'id', 'sub_id'));
     }
@@ -124,7 +124,7 @@ class StudentListController extends Controller
             DB::table('students_subjects')
                 ->where('stud_id', $dataStudent[$i])
                 ->where('sub_id', (int)$valuesSub)
-                ->increment('absence_hours', 300/(float)$subSelect->totHours);
+                ->increment('absence_hours', 200/(float)$subSelect->totHours);
           }
         }
         //controllo assenze

@@ -19,8 +19,9 @@ class StudentsSubjects extends Migration
       $table->unsignedBigInteger('stud_id')->nullable();
       $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade');
       $table->foreign('stud_id')->references('id')->on('students')->onDelete('cascade');
-      $table->float('mark')->default(0);
+      $table->integer('mark')->default(0);
       $table->float('absence_hours')->default(0);
+      $table->timestamps();
 });
     }
 

@@ -26,6 +26,7 @@ Route::get('subjects/get/{id}', 'SecretaryEditData@getSubjects');
 Route::resource('/studentslist', 'StudentListController');
 Route::post('/home/send', "HomeController@send");
 Route::get('/studentslist/{id}/edit/{sub_id}', 'StudentListController@editCustom');
+Route::get('/studentDetail/{id}/course/{sub_id}', 'StudentDetailController@editDetail');
 Route::resource('/calendar', 'CalendarController');
 // Route::get('/editUser', 'SecretaryController@put');
 //Route::resource('/editUser', 'CalendarController');
