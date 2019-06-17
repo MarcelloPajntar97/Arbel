@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Test extends Model
 {
-  public function subject()
+  public function arguments()
   {
-      return $this->belongsTo('App\Subject');
+      return $this->hasMany('App\Arguments');
   }
 }

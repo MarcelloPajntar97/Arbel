@@ -22,9 +22,9 @@ class Subject extends Model
       return $this->belongsToMany('App\Student');
   }
 
-  public function tests()
+  public function arguments()
   {
-      return $this->hasMany('App\Test');
+      return $this->hasMany('App\Arguments');
   }
 
 

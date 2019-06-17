@@ -32,25 +32,22 @@
 
               <input type="search " class = "inputSearch searchBtn" type="text" placeholder="Cerca">
             </form>
-            {{-- <input class="form-control btn-outline-primary searchBtn" type="text" placeholder="Search" aria-label="Search"> --}}
+
           </div>
           <div class = "col-md-5">
             <button class="btn btn-outline-primary exportBtn pull-right" type="button"><img src="{{ asset('/img/exsport.svg')}}">  Esporta</button>
           </div>
 
-          <form class="form-inline" method="post" action="{{action('StudentListController@update', $id)}}">
+          <form id="absence" class="form-inline" method="post" action="{{action('StudentListController@update', $id)}}">
             @csrf
             <input name="_method" type="hidden" value="PATCH"/>
             <input name="subjects" type="hidden" value="{{ $sub_id }}"/>
-
-
-
           </div>
 
           <div class="row-centered studentContainer">
             <div class="row ">
-              <div class = "col-md-1">
-                {{-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled> --}}
+              <div class = "col-md-1 text-center">
+                A
               </div>
               <div class = "col-md-2 text-left">
                 Nome Cognome
@@ -64,11 +61,6 @@
               <div class = "col-md-6  text-left">
                 Note
               </div>
-              {{-- <div class = "col-md-1">
-              <button class="btn" id="" type="submit"><img class = "editIcon" src="{{ asset('/img/studenti.svg')}}"></button>
-            </a>
-          </div>
-        </div> --}}
 
       </div>
     </div>
@@ -140,19 +132,40 @@
     @endforeach
     <div class="row form-group">
 
-      <button type= "submit" class="learn-more" id = "btnSubmit">
+      <button class="learn-more" type = "button" id ="btnSubmit" data-toggle="modal" data-target = "#topic">
         <div class="circle">
           <span class="btnIcon btnArrow"></span>
         </div>
         <p class="submitText">SALVA</p>
       </button>
 
-      {{-- <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('SALVA') }}</button> --}}
     </div>
-  </form>
+
+</div>
+
+<div class="modal fade" id="topic" tabindex="-1" role="dialog" aria-labelledby="myModalLAbel">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+          <h2 class = "infoForm">Inserisci l'argomento odierno</h2>
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="text" name ="dayArgument" class="form-control validate">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+        <button id="send" type="submit" class="btn btn-primary">Invia</button>
+      </div>
+    </form>
+    </div>
+  </div>
 </div>
 
 </div>
+
 <div class="tab-pane fade" id="test-just" role="tabpanel" aria-labelledby="test-tab-just">
 
   <div class = "container">
@@ -202,8 +215,6 @@
                 <p class="submitText">INVIA</p>
               </button>
 
-
-              {{-- <button type="submit" id="btnClick" class="btn  btn-primary  studentSubmitButton">{{ __('INVIA') }}</button> --}}
             </div>
           </div>
         </div>
@@ -217,7 +228,7 @@
     <div class = "row">
       <div class = "col-md-9">
         <div class = "chartArea">
-          <canvas id = "myAreaChart" width="100%" height="30"></canvas>
+          <canvas id = "myAreaChart" width="100%" height="100%"></canvas>
         </div>
       </div>
 
@@ -257,18 +268,5 @@
   </div>
 </div>
 </div>
-<!-- <script type="text/javascript">
-$(function () {
-$("#btnClick").click(function () {
-var selected = new Array();
 
-$("#bo input[type=checkbox]:checked").each(function () {
-selected.push(this.value);
-});
-
-if (selected.length > 0) {
-alert("Selected values: " + selected.join(","));
-}
-});
-});
-</script> -->
+@endsection

@@ -80,35 +80,35 @@ class SecretaryController extends Controller
 
     }
 
-    public function put(Request $request, $id)
-    {
-      $this->validate($request, [
-        'activity' => 'required',
-         // 'user_id' => 'required',
-        'start_date' => 'required',
-        'end_date' => 'required',
-      ]);
-
-      $events = new Events;
-
-      // $calendar = \App\Subject::find($id);
-      // $subHour = \App\Calendar::where('sub_id', $calendar->id)->get();
-      // $this->edit();
-      // $teacher = $request->input('docente');
-      // $teacher = $this->getTeacher;
-      $events->activity = $request->get('activity');
-      $events->start_date = $request->input('start_date');
-      $events->end_date = $request->input('end_date');
-      $events->user_id = (int)$request->get('docente');
-      $events->save();
-      $teacher = \App\User::find($events->user_id);
-
-      $event = Events::where('user_id', $events->user_id);
-      // return redirect('editUser')->with('success', 'Evento aggiunto correttamente!');
-      return view('editUser', compact('teacher', 'event', 'request', 'id'));
-
-
-    }
+    // public function put(Request $request, $id)
+    // {
+    //   $this->validate($request, [
+    //     'activity' => 'required',
+    //      // 'user_id' => 'required',
+    //     'start_date' => 'required',
+    //     'end_date' => 'required',
+    //   ]);
+    //
+    //   $events = new Events;
+    //
+    //   // $calendar = \App\Subject::find($id);
+    //   // $subHour = \App\Calendar::where('sub_id', $calendar->id)->get();
+    //   // $this->edit();
+    //   // $teacher = $request->input('docente');
+    //   // $teacher = $this->getTeacher;
+    //   $events->activity = $request->get('activity');
+    //   $events->start_date = $request->input('start_date');
+    //   $events->end_date = $request->input('end_date');
+    //   $events->user_id = (int)$request->get('docente');
+    //   $events->save();
+    //   $teacher = \App\User::find($events->user_id);
+    //
+    //   $event = Events::where('user_id', $events->user_id);
+    //   // return redirect('editUser')->with('success', 'Evento aggiunto correttamente!');
+    //   return view('editUser', compact('teacher', 'event', 'request', 'id'));
+    //
+    //
+    // }
 
     /**
      * Display the specified resource.

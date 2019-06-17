@@ -12069,6 +12069,18 @@ a:hover {
   opacity: 0.5;
 }
 
+#bo {
+  padding-left: 3% !important;
+}
+
+.modal-body {
+  padding-top: 5% !important;
+}
+
+#student-just {
+  padding-bottom: 4%;
+}
+
 .containernote {
   transition: all 0.3s ease-in-out;
   margin: auto !important;
