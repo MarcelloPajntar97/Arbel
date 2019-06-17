@@ -71,7 +71,29 @@ class StudentDetailController extends Controller
     public function editDetail($id, $sub_id)
     {
         $students = \App\Student::find($id);
-        return view('studentDetail', compact('students', 'id', 'sub_id'));
+        $average = DB::table('students_subjects')->where('stud_id', $id)->get();
+        $absence = DB::table('students_subjects')->where('stud_id', $id)->where('sub_id', $sub_id)->first();
+        $absenceStud = 0.0;
+        $subject = \App\Subject::find($sub_id);
+        $credit = 0;
+        $tot = 0;
+        if (DB::table('students_subjects')->where('stud_id', $id)->exists()==true) {
+        foreach ($average as $detail) {
+          $tot += $detail->mark * $subject->credits;
+          $credit += $subject->credits;
+        }
+        $media = $tot/$credit;
+      }
+      else {
+        $media = 0;
+      }
+      if (DB::table('students_subjects')->where('stud_id', $id)->where('sub_id', $sub_id)->exists()==true) {
+        $absenceStud += $absence->absence_hours;
+      }
+      else {
+        $absenceStud += 0.0;
+      }
+        return view('studentDetail', compact('students', 'id', 'sub_id', 'media', 'absenceStud'));
     }
     /**
      * Update the specified resource in storage.

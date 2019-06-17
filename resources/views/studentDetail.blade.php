@@ -9,8 +9,7 @@
         <div class="profileImg">
           <div class="card mb-4">
 
-            {{-- <img class="imgstudent" src="{{ $students->userPicture }}"/> --}}
-            <img class="imgstudent" src="{{asset('/img/userDefault.jpg')}}"/>
+             <img class="imgstudent" src="{{ $students->userPicture }}"/> 
             <div class="card-body">
               <div class="card-test">
                 <h6 class="studentdati">Data di nascita: {{ $students->birthday }}</h6>
@@ -38,7 +37,7 @@
         <h4 class="nameUser">{{ $students->name }} {{ $students->surname }}</h4> <br>
         <h6 class="mailUser" >{{ $students->email }}</h6>
 
-        <h3 class="detailTitle">Media: 27</h3>
+        <h3 class="detailTitle">Media: {{ $media }}</h3>
         <div class="form-row">
           <div class="col-md-4">
             <input type="date" class="form-control customForm" placeholder="Inserisci la data" id="inputData">
@@ -91,7 +90,7 @@
 
 
 
-        <h3 class="detailTitle">Assenze: 00%</h3>
+        <h3 class="detailTitle">Assenze: {{ $absenceStud }}%</h3>
         @foreach ($students as $studentsdetail)
           <div class="row">
             <div class = "col">
