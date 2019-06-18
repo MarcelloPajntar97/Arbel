@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Argument;
+use App\Test;
 
 class StudentListController extends Controller
 {
@@ -21,7 +22,7 @@ class StudentListController extends Controller
 
   public function index()
   {
-    
+
   }
 
   /**
@@ -42,6 +43,31 @@ class StudentListController extends Controller
   */
   public function store(Request $request)
   {
+
+
+
+    $this->validate($request, [
+      'question' => 'required'
+    ]);
+    //dd($request->input('question'));
+    $question = $request->input('question');
+    $dataQuestion = array();
+    foreach ($question as $questionKey => $questionValue) {
+      array_push($dataQuestion, $questionValue);
+    }
+    for ($i=0; $i < count($dataQuestion); $i++) {
+      $questions = new Test([
+        'topic_id' => $request->input('topicID'),
+        'questions' => $dataQuestion[$i]
+
+        ]);
+
+        $id = $request->input('topicID');
+      $questions->save();
+    }
+
+
+    return view('studentsList', compact('id'));
   }
 
   /**
@@ -52,7 +78,7 @@ class StudentListController extends Controller
   */
   public function show($id)
   {
-    //
+
   }
 
   /**
@@ -145,6 +171,8 @@ class StudentListController extends Controller
       'sub_id' => $request->get('subjects')
     ]);
     $arguments->save();
+
+    // $argumentData = Argument::where('sub_id', $request->get('subjects'))->get();
     return redirect('/home');
   }
 

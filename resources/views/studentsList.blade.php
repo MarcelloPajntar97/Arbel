@@ -62,211 +62,279 @@
                 Note
               </div>
 
-      </div>
-    </div>
-
-    @foreach ($students as $studentdata)
-    <?php $detailStudent = DB::table('students_subjects')
-                    ->where('stud_id', $studentdata->id)
-                    ->where('sub_id', $sub_id)->exists();
-          $detailStud = DB::table('students_subjects')
-                            ->where('stud_id', $studentdata->id)
-                            ->where('sub_id', $sub_id)->get();
-
-          $average = DB::table('students_subjects')->where('stud_id', $studentdata->id)->get();
-          if (DB::table('students_subjects')->where('stud_id', $studentdata->id)->exists()==true) {
-          $tot = 0;
-          $credit = 0;
-          foreach ($average as $studAverage) {
-            $subject = \App\Subject::find($studAverage->sub_id)->first();
-            $tot += $studAverage->mark * $subject->credits;
-            $credit += $subject->credits;
-          }
-          $media = $tot/$credit;
-          }
-          ?>
-      <div class="row-centered classContainer">
-        <div class="row ">
-          <div class = "col-md-1" id="bo">
-            <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
+            </div>
           </div>
-          <div class = "col-md-2 text-left">
-            {{ $studentdata->name }}  {{ $studentdata->surname }}
-          </div>
-          @if ($detailStudent == true)
-            @foreach ($detailStud as $detail)
-            @if ($detail->absence_hours > 20.0)
-              <div class = "col-md-1 text-centered">
-                {{ $media }}
+
+          @foreach ($students as $studentdata)
+            @php $detailStudent = DB::table('students_subjects')
+            ->where('stud_id', $studentdata->id)
+            ->where('sub_id', $sub_id)->exists();
+            $detailStud = DB::table('students_subjects')
+            ->where('stud_id', $studentdata->id)
+            ->where('sub_id', $sub_id)->get();
+
+            $average = DB::table('students_subjects')->where('stud_id', $studentdata->id)->get();
+            if (DB::table('students_subjects')->where('stud_id', $studentdata->id)->exists()==true) {
+              $tot = 0;
+              $credit = 0;
+              foreach ($average as $studAverage) {
+                $subject = \App\Subject::find($studAverage->sub_id)->first();
+                $tot += $studAverage->mark * $subject->credits;
+                $credit += $subject->credits;
+              }
+              $media = $tot/$credit;
+            }
+            @endphp
+            <div class="row-centered classContainer">
+              <div class="row ">
+                <div class = "col-md-1" id="bo">
+                  <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
+                </div>
+                <div class = "col-md-2 text-left">
+                  {{ $studentdata->name }}  {{ $studentdata->surname }}
+                </div>
+                @if ($detailStudent == true)
+                  @foreach ($detailStud as $detail)
+                    @if ($detail->absence_hours > 20.0)
+                      <div class = "col-md-1 text-centered">
+                        {{ $media }}
+                      </div>
+                      <div class = "col-md-1 text-centered">
+                        NON IDONEO
+                      </div>
+                    @else
+                      <div class = "col-md-1 text-centered">
+                        {{ $media }}
+                      </div>
+                      <div class = "col-md-1 text-centered">
+                        {{ $detail->absence_hours }} %
+                      </div>
+                    @endif
+                  @endforeach
+                @else
+                  <div class = "col-md-1 text-centered">
+                    --
+                  </div>
+                  <div class = "col-md-1 text-centered">
+                    --
+                  </div>
+                @endif
+                <div class = "col-md-6 text-left">
+                  {{ $studentdata->details }}
+                </div>
+                <div class = "col-md-1">
+                  <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt = "option">
+                    <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
+                  </a>
+                </div>
               </div>
-              <div class = "col-md-1 text-centered">
-                NON IDONEO
+            </div>
+          @endforeach
+          <div class="row form-group">
+
+            <button class="learn-more" type = "button" id ="btnSubmit" data-toggle="modal" data-target = "#topic">
+              <div class="circle">
+                <span class="btnIcon btnArrow"></span>
               </div>
-            @else
-            <div class = "col-md-1 text-centered">
-              {{ $media }}
-            </div>
-            <div class = "col-md-1 text-centered">
-              {{ $detail->absence_hours }} %
-            </div>
-            @endif
-            @endforeach
-          @else
-          <div class = "col-md-1 text-centered">
-            --
+              <p class="submitText">SALVA</p>
+            </button>
+
           </div>
-          <div class = "col-md-1 text-centered">
-            --
-          </div>
-          @endif
-          <div class = "col-md-6 text-left">
-            {{ $studentdata->details }}
-          </div>
-          <div class = "col-md-1">
-            <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt = "option">
-              <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
-            </a>
-          </div>
+
         </div>
-      </div>
-    @endforeach
-    <div class="row form-group">
 
-      <button class="learn-more" type = "button" id ="btnSubmit" data-toggle="modal" data-target = "#topic">
-        <div class="circle">
-          <span class="btnIcon btnArrow"></span>
-        </div>
-        <p class="submitText">SALVA</p>
-      </button>
+        <div class="modal fade" id="topic" tabindex="-1" role="dialog" aria-labelledby="myModalLAbel">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
 
-    </div>
+              <div class="modal-body">
 
-</div>
-
-<div class="modal fade" id="topic" tabindex="-1" role="dialog" aria-labelledby="myModalLAbel">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-
-      <div class="modal-body">
-
-          <h2 class = "infoForm">Inserisci l'argomento odierno</h2>
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="text" name ="dayArgument" class="form-control validate">
+                <h2 class = "infoForm">Inserisci l'argomento odierno</h2>
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="text" name ="dayArgument" class="form-control validate">
 
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-        <button id="send" type="submit" class="btn btn-primary">Invia</button>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="tab-pane fade" id="test-just" role="tabpanel" aria-labelledby="test-tab-just">
-
-  <div class = "container">
-    <div class="row">
-      <div class="col-4">
-        <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item disabled">Seleziona un quesito</a>
-          <a class="list-group-item title">  <input class="form-control" type="text" placeholder="Search" aria-label="Search"></a>
-          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">Argomento</a>
-          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
-          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
-          <a class="list-group-item argomentoBox" id="list-argomento-list" data-toggle="list" href="#list-argomento" role="tab" aria-controls="argomento">argomento</a>
-        </div>
-      </div>
-      <div class="col-8">
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="list-argomento" role="tabpanel" aria-labelledby="list-home-list">
-            <div class="container">
-              <h3 class="title">{{ __('Crea il tuo Test') }}</h3>
-              <form>
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Prima Domanda : </label>
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupExampleInput2">Seconda Domanda :</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupExampleInput3">Terza Domanda :</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupExampleInput3">Quarta Domanda :</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
-                </div>
-                <div class="form-group">
-                  <label for="formGroupExampleInput4">Quinta Domanda :</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci qui la Domanda">
-                </div>
-              </form>
-
-              <button type= "submit" class="learn-more" id = "btnSubmit">
-                <div class="circle">
-                  <span class="btnIcon btnArrow"></span>
-                </div>
-                <p class="submitText">INVIA</p>
-              </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                <button id="send" type="submit" class="btn btn-primary">Invia</button>
+              </div>
 
             </div>
           </div>
         </div>
-      </div>
+      </form>
+    </div>
+    {{-- TEST TAB --}}
+
+    <div class="tab-pane fade" id="test-just" role="tabpanel" aria-labelledby="test-tab-just">
+
+      <div class = "container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item disabled">Seleziona un quesito</a>
+              <a class="list-group-item title">  <input class="form-control" type="text" placeholder="Search" aria-label="Search"></a>
+
+            </div>
+
+            @php
+            $argumentData = \App\Argument::where('sub_id', $sub_id)->get();
+            @endphp
+
+            <ul class="nav nav-pills">
+              <li class="active"><a data-toggle="pill" href="#home">Default </a></li><br>
+              @foreach ($argumentData as $argument)
+                <li><a data-toggle="pill" href="#{{ $argument->topic}}"> {{ $argument->topic}} </a></li>
+              @endforeach
+            </ul>
+
+
+          </div>
+          <div class = "col-md-8">
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              @foreach ($argumentData as $argument)
+
+                <div id="{{ $argument->topic}}" class="tab-pane fade">
+
+                  <form id="questions" class="form-inline" method="post" action="{{action('StudentListController@store', $id)}}">
+                    @csrf
+                    <input name="topicID" type="hidden" value="{{ $argument->id }}"/>
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Prima Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Seconda Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Terza Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Quarta Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Quinta Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Sesta Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Settima Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Ottava Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Nona Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <div class="row form-group">
+                      <label for="formGroupExampleInput">Decima Domanda : </label>
+                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                    </div>
+
+                    <button type= "submit" class="learn-more" id = "btnSubmit">
+                      <div class="circle">
+                        <span class="btnIcon btnArrow"></span>
+                      </div>
+                      <p class="submitText">INVIA</p>
+                    </button>
+                  </form>
+                </div>
+              @endforeach
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 
-</div>
-<div class="tab-pane fade" id="activity-just" role="tabpanel" aria-labelledby="activity-tab-just">
-  <div class = "container chartContainer">
-    <div class = "row">
-      <div class = "col-md-9">
-        <div class = "chartArea">
-          <canvas id = "myAreaChart" width="100%" height="100%"></canvas>
-        </div>
-      </div>
+  {{-- </div> --}}
 
-      <div class = "col-md-3 argumentCol">
-        <div class = "row argumentRow">
-          <div class = "col">
-            <div class = "argumentTitle">MAGGIO 2019</div>
+
+
+
+
+
+
+  <div class="tab-pane fade" id="activity-just" role="tabpanel" aria-labelledby="activity-tab-just">
+    <div class = "container chartContainer">
+      <div class = "row">
+        <div class = "col-md-9">
+          <div class = "chartArea">
+            <canvas id = "myAreaChart" width="100%" height="100%"></canvas>
           </div>
         </div>
 
-        <div class = "row argumentRow">
-          <div class = "col">
-            <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
+        <div class = "col-md-3 argumentCol">
+          <div class = "row argumentRow">
+            <div class = "col">
+              <div class = "argumentTitle">MAGGIO 2019</div>
+            </div>
           </div>
-        </div>
-        <div class = "row argumentRow">
-          <div class = "col">
-            <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
+
+          <div class = "row argumentRow">
+            <div class = "col">
+              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
+            </div>
           </div>
-        </div>
-        <div class = "row argumentRow">
-          <div class = "col">
-            <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
+          <div class = "row argumentRow">
+            <div class = "col">
+              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
+            </div>
+          </div>
+          <div class = "row argumentRow">
+            <div class = "col">
+              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class = "container infoContainer">
-    <div class = "row">
-      <div class = "col">
-        <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}" alt="Responsive image" id="footer">
-        <span class = "infoText">Il grafico soprastante si basa su un calcolo della media dell'intera classe, suddiviso in mesi.<br><span class = "infoText2">Per avere maggiori dettagli, basterà cliccare sull'indicatore del mese desiderato e sarà possibile visualizzare gli argomenti trattati con la relativa data.</span></span>
+    <div class = "container infoContainer">
+      <div class = "row">
+        <div class = "col">
+          <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}" alt="Responsive image" id="footer">
+          <span class = "infoText">Il grafico soprastante si basa su un calcolo della media dell'intera classe, suddiviso in mesi.<br><span class = "infoText2">Per avere maggiori dettagli, basterà cliccare sull'indicatore del mese desiderato e sarà possibile visualizzare gli argomenti trattati con la relativa data.</span></span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 @endsection

@@ -17,7 +17,7 @@ class CreateTestsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('topic_id')->nullable();
             $table->foreign('topic_id')->references('id')->on('arguments');
-            $table->longText('questions');
+            $table->longText('questions')->nullable();
             $table->timestamps();
         });
     }
