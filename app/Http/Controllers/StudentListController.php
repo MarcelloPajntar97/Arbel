@@ -154,6 +154,7 @@ class StudentListController extends Controller
     $classroom = \App\ClassModel::find($id);
     $students = \App\Student::where('class_id', $classroom->id)->get();
     $classMedia = DB::table('students_marks')->where('sub_id', $sub_id)->get();
+    $present = array();
     $classMark = 0;
     $total = 0;
     foreach ($classMedia as $classes) {
@@ -166,14 +167,36 @@ class StudentListController extends Controller
       $total = 0;
     }
     if ($total > 0) {
+      //dd('soo');
+      foreach ($students as $pres) {
+        array_push($present, DB::table('students_marks')->where('stud_id', $pres->id)->exists());
+      }
+      if (!in_array(false, $present)) {
+      if (DB::table('class_avereage')->where('sub_id', $sub_id)->exists()==false) {
       DB::table('class_avereage')->where('id', '[0-9]+')->updateOrInsert([
         'sub_id' => $sub_id,
         'avereage' => $total,
         'date' => Carbon::now()->format('Y-m-d')
       ]);
-
-      $timestamp = Carbon::now()->format('Y-m-d');
     }
+    else {
+      $current = DB::table('class_avereage')->where('sub_id', $sub_id)->get();
+      foreach ($current as $detail) {
+        $month = Carbon::parse($detail->date)->format('m');
+        //dd($month);
+        if (Carbon::now()->format('m') != $month) {
+          DB::table('class_avereage')->where('id', '[0-9]+')->updateOrInsert([
+            'sub_id' => $sub_id,
+            'avereage' => $total,
+            'date' => Carbon::now()->format('Y-m-d')
+          ]);
+        }
+      }
+    }
+    }
+
+    }
+    $timestamp = Carbon::now()->format('Y-m-d');
     //$classMedia = $request->input('class_average');
     // $monthly_post_count_array = array();
 		$month_array = $this->getAllMonths();
