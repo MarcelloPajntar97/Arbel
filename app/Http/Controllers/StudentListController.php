@@ -153,7 +153,19 @@ class StudentListController extends Controller
   {
     $classroom = \App\ClassModel::find($id);
     $students = \App\Student::where('class_id', $classroom->id)->get();
-
+    $classMedia = DB::table('students_marks')->where('sub_id', $sub_id)->get();
+    $classMark = 0;
+    $total = 0;
+    foreach ($classMedia as $classes) {
+      $classMark += $classes->mark;
+    }
+    $total = $classMark/count($classMedia);
+    if ($total > 0) {
+      DB::table('classes')->where('id', $sub_id)->update([
+        'avereage' => $total
+      ]);
+    }
+    //$classMedia = $request->input('class_average');
     // $monthly_post_count_array = array();
 		$month_array = $this->getAllMonths();
 		$month_name_array = array();

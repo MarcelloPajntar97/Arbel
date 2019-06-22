@@ -82,7 +82,6 @@
 
             $media = 0;
             if ($detailStudent==true) {
-
               if (count($detailStud)>1) {
                 $tot = 0;
                 foreach ($detailStud as $stud) {
@@ -93,16 +92,13 @@
               else {
                 foreach ($detailStud as $stud) {
                   $media = $stud->mark;
-
                 }
               }
             }
             else {
               $media = 0;
             }
-
             @endphp
-
             <div class="row-centered classContainer">
               <div class="row ">
                 <div class = "col-md-1" id="bo">
@@ -116,6 +112,7 @@
                   {{ $media }}
                 </div>
                 @if ($detailAbsence == true)
+                  <input name="class_average" type="hidden" value="{{ $media }}"/>
                   @foreach ($detailAbs as $det)
                     @if ($det->absence_hours > 20.0)
                     <div class = "col-md-1 text-centered">
@@ -299,21 +296,25 @@
             </div>
           </div>
 
+          @foreach ($argumentData as $argument)
           <div class = "row argumentRow">
+            <div class = "col">
+              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">{{$argument->topic}}</div>
+            </div>
+          </div>
+
+        @endforeach
+
+          {{-- <div class = "row argumentRow">
             <div class = "col">
               <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
             </div>
-          </div>
-          <div class = "row argumentRow">
+          </div> --}}
+          {{-- <div class = "row argumentRow">
             <div class = "col">
               <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
             </div>
-          </div>
-          <div class = "row argumentRow">
-            <div class = "col">
-              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
-            </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>

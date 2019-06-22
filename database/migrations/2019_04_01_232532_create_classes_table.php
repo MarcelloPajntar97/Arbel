@@ -18,6 +18,7 @@ class CreateClassesTable extends Migration
             $table->string('course');
             $table->integer('year');
             $table->string('section')->default('A');
+            $table->integer('avereage')->default(0);
             $table->timestamps();
         });
     }
