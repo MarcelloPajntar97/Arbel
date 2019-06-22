@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassesTable extends Migration
+class CreateAvereageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateClassesTable extends Migration
      */
     public function up()
     {
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('class_avereage', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('course');
-            $table->integer('year');
-            $table->string('section')->default('A');
-            $table->timestamps();
+            $table->unsignedBigInteger('sub_id')->nullable();
+            $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->float('avereage');
+            $table->date('date');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateClassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('class_avereage');
     }
 }

@@ -159,10 +159,17 @@ class StudentListController extends Controller
     foreach ($classMedia as $classes) {
       $classMark += $classes->mark;
     }
-    $total = $classMark/count($classMedia);
+    if (count($classMedia)>0) {
+      $total = $classMark/count($classMedia);
+    }
+    else {
+      $total = 0;
+    }
     if ($total > 0) {
-      DB::table('classes')->where('id', $sub_id)->update([
-        'avereage' => $total
+      DB::table('class_avereage')->where('id', '[0-9]+')->updateOrInsert([
+        'sub_id' => $sub_id,
+        'avereage' => $total,
+        'date' => Carbon::now()->format('Y-m-d')
       ]);
     }
     //$classMedia = $request->input('class_average');
