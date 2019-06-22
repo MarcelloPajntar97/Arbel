@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Argument extends Model
 {
-  protected $fillable = ['topic', 'sub_id'];
+  protected $fillable = ['topic', 'sub_id', 'created_at'];
 
   public function test()
   {

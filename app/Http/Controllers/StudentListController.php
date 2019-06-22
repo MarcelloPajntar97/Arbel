@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Argument;
 use App\Test;
+use Carbon\Carbon;
 
 class StudentListController extends Controller
 {
@@ -81,6 +82,59 @@ class StudentListController extends Controller
 
   }
 
+  function getAllMonths(){
+		$month_array = array();
+		$posts_dates = Argument::all();
+    // dd($posts_dates);
+		$posts_dates = json_decode( $posts_dates );
+
+  if (! empty($posts_dates)) {
+    foreach ($posts_dates as $topicTime) {
+      $month_name = Carbon::parse($topicTime->created_at)->format('M');
+      // $month_no = Carbon::parse($topicTime->created_at)->format('m');
+
+        // foreach ($posts_dates as $unformatted_date) {
+          // $date = new \DateTime( $unformatted_date->created_at );
+          // $date = $unformatted_date->created_at;
+          //$month_array[ $month_no ] = $month_name;
+          array_push($month_array, $month_name);
+          // array_push($month_array, $month_no);
+          // $month_no = $date->format('m');
+          // $month_name = $date->format('M');
+          // $month_array[ $date ] = $date;
+        // }
+      }
+      return $month_array;
+    }
+
+	}
+	function getMonthlyPostCount( $month ) {
+		$monthly_post_count = Argument::whereMonth( 'created_at', $month )->get()->count();
+		return $monthly_post_count;
+	}
+
+	// function getMonthlyPostData() {
+	// 	$monthly_post_count_array = array();
+	// 	$month_array = $this->getAllMonths();
+	// 	$month_name_array = array();
+	// 	if ( ! empty( $month_array ) ) {
+	// 		foreach ( $month_array as $month_no => $month_name ){
+	// 			$monthly_post_count = $this->getMonthlyPostCount( $month_no );
+	// 			array_push( $monthly_post_count_array, $monthly_post_count );
+	// 			array_push( $month_name_array, $month_name );
+	// 		}
+	// 	}
+	// 	$max_no = max( $monthly_post_count_array );
+	// 	$max = round(( $max_no + 10/2 ) / 10 ) * 10;
+	// 	$monthly_post_data_array = array(
+	// 		'months' => $month_name_array,
+	// 		'post_count_data' => $monthly_post_count_array,
+	// 		'max' => $max,
+	// 	);
+  //   //dd($monthly_post_data_array);
+	// 	//return response()->json($monthly_post_data_array);
+  //   }
+
   /**
   * Show the form for editing the specified resource.
   *
@@ -100,7 +154,30 @@ class StudentListController extends Controller
     $classroom = \App\ClassModel::find($id);
     $students = \App\Student::where('class_id', $classroom->id)->get();
 
-    return view('studentsList', compact('students', 'id', 'sub_id'));
+    // $monthly_post_count_array = array();
+		$month_array = $this->getAllMonths();
+		$month_name_array = array();
+		if ( ! empty( $month_array ) ) {
+			foreach ( $month_array as $month_no => $month_name ){
+				// $monthly_post_count = $this->getMonthlyPostCount( $month_no );
+				// array_push( $monthly_post_count_array, $monthly_post_count );
+				array_push( $month_name_array, $month_name );
+			}
+      // dd($month_name_array);
+      // $pizza = explode(" ", $month_name_array);
+      // dd($piza);
+		}
+		// $max_no = max( $monthly_post_count_array );
+		// $max = round(( $max_no + 10/2 ) / 10 ) * 10;
+		$monthly_post_data_array = array(
+			'months' => $month_name_array,
+			// 'post_count_data' => $monthly_post_count_array,
+			// 'max' => $max,
+		);
+
+    $pizza = implode(",", $month_name_array);
+
+    return view('studentsList', compact('students', 'id', 'sub_id', 'pizza'));
   }
 
   /**
@@ -149,6 +226,13 @@ class StudentListController extends Controller
         ->increment('absence_hours', 200/(float)$subSelect->totHours);
       }
     }
+    //media classe
+    // DB::table('students_subjects')
+    // ->where('id', '[0-9]+')
+    // ->updateOrInsert([
+    //   'sub_id' => (int)$valuesSub,
+    //   'avereage' => (int)$request->input('class_avereage')
+    // ]);
     //controllo assenze
 
     $absPerc = $subSelect->totHours * (20/100);

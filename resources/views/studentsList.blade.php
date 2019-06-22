@@ -83,17 +83,26 @@
                 $credit += $subject->credits;
               }
               $media = $tot/$credit;
+              $totClass = 0;
+              $averageClass = DB::table('students_subjects')->where('sub_id', $sub_id)->get();
+              foreach ($averageClass as $classAverage) {
+                $totClass += $classAverage->mark;
+              }
+              $mediaClass = $totClass/count($averageClass);
             }
             @endphp
+
             <div class="row-centered classContainer">
               <div class="row ">
                 <div class = "col-md-1" id="bo">
                   <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
                 </div>
+
                 <div class = "col-md-2 text-left">
                   {{ $studentdata->name }}  {{ $studentdata->surname }}
                 </div>
                 @if ($detailStudent == true)
+                  <input name="class_avereage" type="hidden" value="{{ $mediaClass }}"/>
                   @foreach ($detailStud as $detail)
                     @if ($detail->absence_hours > 20.0)
                       <div class = "col-md-1 text-centered">
@@ -254,7 +263,7 @@
                       <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
                     </div>
 
-                    <button type= "submit" class="learn-more" id = "btnSubmit">
+                    <button type= "submit" class="learn-more" id = "btnSubmit" method="post" action="{{action('HomeController@send', $id)}}">
                       <div class="circle">
                         <span class="btnIcon btnArrow"></span>
                       </div>
@@ -296,7 +305,7 @@
       <div class = "row">
         <div class = "col-md-9">
           <div class = "chartArea">
-            <canvas id = "myAreaChart" width="100%" height="100%"></canvas>
+            <canvas id = "myAreaChart" width="100%" height="30"></canvas>
           </div>
         </div>
 
@@ -336,5 +345,105 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">( function ( $ ) {
 
+	var charts = {
+		init: function () {
+			// -- Set new default font family and font color to mimic Bootstrap's default styling
+			Chart.defaults.global.defaultFontColor = '#292b2c';
+
+			// this.createCompletedJobsChart();
+      this.ajaxGetTopicMonthlyData();
+		},
+
+    ajaxGetTopicMonthlyData: function() {
+
+
+
+
+      var studID = parseInt({!! json_decode($id) !!});
+      console.log(studID);
+      var subID = parseInt({!! json_decode($sub_id) !!});
+      console.log(subID);
+      var stud = studID.toString();
+      console.log(stud);
+      var sub = subID.toString();
+      console.log(sub);
+      var urlPath = 'http://' + window.location.hostname + '/studentslist' + '/' + stud + '/' + 'edit' + '/' + sub;
+      var request = $.ajax({
+        method: 'GET',
+        url: urlPath
+      });
+
+      request.done( function (response) {
+        // console.log('here' + response);
+        charts.createCompletedJobsChart(response);
+      });
+    },
+
+		/**
+		 * Created the Completed Jobs Chart
+		 */
+		createCompletedJobsChart: function (response) {
+      var prova = @json($pizza);
+      var split = prova.split(",");
+
+      console.log('mesi ' + split);
+
+			var ctx = document.getElementById("myAreaChart");
+			var myLineChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: split, // mesi su asse x
+					datasets: [{
+						label: "Media",
+						lineTension: 0.5,
+            backgroundColor: "rgba(2,117,216,0.2)",
+            borderColor: "rgba(2,117,216,1)",
+            pointRadius: 5,
+            pointBackgroundColor: "rgba(2,117,216,1)",
+            pointBorderColor: "rgba(255,255,255,0.8)",
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(2,117,216,1)",
+            pointHitRadius: 50,
+            pointBorderWidth: 2,
+						data: [0, 10, 20, 30] // media su asse y
+					}],
+				},
+				options: {
+					scales: {
+						xAxes: [{
+							time: {
+								unit: 'date'
+							},
+							gridLines: {
+								display: false
+							},
+							ticks: {
+								maxTicksLimit: 5
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								min: 0,
+								max: 30, // The response got from the ajax request containing max limit for y axis
+								maxTicksLimit:15,
+							},
+							gridLines: {
+								color: "rgba(0, 0, 0, .05)",
+							}
+						}],
+					},
+					legend: {
+						display: false
+					}
+				}
+			});
+		}
+	};
+
+	charts.init();
+
+} )( jQuery );
+</script>
 @endsection

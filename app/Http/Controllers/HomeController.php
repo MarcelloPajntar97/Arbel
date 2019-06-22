@@ -85,17 +85,20 @@ class HomeController extends Controller
 
     function send(Request $request) {
       $this->validate($request, [
-        'email' => 'required|email',
+        'email' => 'required',
         'subject' => 'required',
         'message' => 'required'
       ]);
+      $multiple = explode(", ", $request->email);
+      for ($i=0; $i<count($multiple); $i++) {
       $data = array(
-        'email' => $request->email,
+        'email' => $multiple[$i],
         'subject' => $request->subject,
         'message' => $request->message
       );
 
       Mail::to($data['email'])->send(new SendMail($data));
+      }
       return back()->with('success', 'Mail inviata correttamente!');
     }
   }
