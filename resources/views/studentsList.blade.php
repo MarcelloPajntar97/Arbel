@@ -66,30 +66,41 @@
           </div>
 
           @foreach ($students as $studentdata)
-            @php $detailStudent = DB::table('students_subjects')
+            @php
+            $detailAbsence = DB::table('students_subjects')
             ->where('stud_id', $studentdata->id)
             ->where('sub_id', $sub_id)->exists();
-            $detailStud = DB::table('students_subjects')
+            $detailAbs = DB::table('students_subjects')
+            ->where('stud_id', $studentdata->id)
+            ->where('sub_id', $sub_id)->get();
+            $detailStudent = DB::table('students_marks')
+            ->where('stud_id', $studentdata->id)
+            ->where('sub_id', $sub_id)->exists();
+            $detailStud = DB::table('students_marks')
             ->where('stud_id', $studentdata->id)
             ->where('sub_id', $sub_id)->get();
 
-            $average = DB::table('students_subjects')->where('stud_id', $studentdata->id)->get();
-            if (DB::table('students_subjects')->where('stud_id', $studentdata->id)->exists()==true) {
-              $tot = 0;
-              $credit = 0;
-              foreach ($average as $studAverage) {
-                $subject = \App\Subject::find($studAverage->sub_id)->first();
-                $tot += $studAverage->mark * $subject->credits;
-                $credit += $subject->credits;
+            $media = 0;
+            if ($detailStudent==true) {
+
+              if (count($detailStud)>1) {
+                $tot = 0;
+                foreach ($detailStud as $stud) {
+                  $tot += $stud->mark;
+                }
+                $media = $tot/count($detailStud);
               }
-              $media = $tot/$credit;
-              $totClass = 0;
-              $averageClass = DB::table('students_subjects')->where('sub_id', $sub_id)->get();
-              foreach ($averageClass as $classAverage) {
-                $totClass += $classAverage->mark;
+              else {
+                foreach ($detailStud as $stud) {
+                  $media = $stud->mark;
+
+                }
               }
-              $mediaClass = $totClass/count($averageClass);
             }
+            else {
+              $media = 0;
+            }
+
             @endphp
 
             <div class="row-centered classContainer">
@@ -101,36 +112,29 @@
                 <div class = "col-md-2 text-left">
                   {{ $studentdata->name }}  {{ $studentdata->surname }}
                 </div>
-                @if ($detailStudent == true)
-                  <input name="class_avereage" type="hidden" value="{{ $mediaClass }}"/>
-                  @foreach ($detailStud as $detail)
-                    @if ($detail->absence_hours > 20.0)
-                      <div class = "col-md-1 text-centered">
-                        {{ $media }}
-                      </div>
-                      <div class = "col-md-1 text-centered">
-                        NON IDONEO
-                      </div>
+                <div class = "col-md-1 text-centered">
+                  {{ $media }}
+                </div>
+                @if ($detailAbsence == true)
+                  @foreach ($detailAbs as $det)
+                    @if ($det->absence_hours > 20.0)
+                    <div class = "col-md-1 text-centered">
+                      NON IDONEO
+                    </div>
                     @else
-                      <div class = "col-md-1 text-centered">
-                        {{ $media }}
-                      </div>
-                      <div class = "col-md-1 text-centered">
-                        {{ $detail->absence_hours }} %
-                      </div>
+                    <div class = "col-md-1 text-centered">
+                      {{ $det->absence_hours }}%
+                    </div>
                     @endif
                   @endforeach
                 @else
                   <div class = "col-md-1 text-centered">
-                    --
-                  </div>
-                  <div class = "col-md-1 text-centered">
-                    --
+                    0%
                   </div>
                 @endif
-                <div class = "col-md-6 text-left">
-                  {{ $studentdata->details }}
-                </div>
+                    <div class = "col-md-6 text-left">
+                      {{ $studentdata->details }}
+                    </div>
                 <div class = "col-md-1">
                   <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt = "option">
                     <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
@@ -276,29 +280,8 @@
 
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </div>
-
-  {{-- </div> --}}
-
-
-
-
-
-
 
   <div class="tab-pane fade" id="activity-just" role="tabpanel" aria-labelledby="activity-tab-just">
     <div class = "container chartContainer">

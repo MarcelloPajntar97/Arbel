@@ -9,7 +9,7 @@
         <div class="profileImg">
           <div class="card mb-4">
 
-             <img class="imgstudent" src="{{ $students->userPicture }}"/> 
+             <img class="imgstudent" src="{{ $students->userPicture }}"/>
             <div class="card-body">
               <div class="card-test">
                 <h6 class="studentdati">Data di nascita: {{ $students->birthday }}</h6>
@@ -39,18 +39,8 @@
 
         <h3 class="detailTitle">Media: {{ $media }}</h3>
         <div class="form-row">
-          <div class="col-md-4">
-            <input type="date" class="form-control customForm" placeholder="Inserisci la data" id="inputData">
-          </div>
           <div class="form-group col-md-4">
-            <span class="custom-dropdown">
-              <select name="type">
-                <option selected = "" disabled= "" class = "placeholder">Tipologia</option>
-                <option>Orale</option>
-                <option>Scritto</option>
-                <option>Test</option>
-              </select>
-            </span>
+
 
             {{-- <select class="form-control custom-dropdown">
               <option selected = "" disabled= "" class = "placeholder">Tipologia</option>
@@ -66,28 +56,22 @@
           <div class="col-md-4">
             <input type="number" name="mark" class="form-control customForm" placeholder="Valutazione" id="inputValutazione">
           </div>
+          <span class="custom-dropdown">
+            <select name="type_work">
+              <option selected = "" disabled= "" class = "placeholder">Tipologia</option>
+              <option value="Orale">Orale</option>
+              <option value="Scritto">Scritto</option>
+              <option value="Test">Test</option>
+            </select>
+          </span>
         </div>
+        @foreach ($average as $test)
         <div class="row">
           <div class = "col">
-            <div class="text-left">Tipologia (00.00.00): Voto</div>
+            <div class="text-left">{{ $test->tipology}} ({{ $test->date }}): {{ $test->mark }}</div>
           </div>
         </div>
-        <div class="row">
-          <div class = "col">
-            <div class="text-left">Tipologia (00.00.00): Voto</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class = "col">
-            <div class="text-left">Tipologia (00.00.00): Voto</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class = "col">
-            <div class="text-left">Tipologia (00.00.00): Voto</div>
-          </div>
-        </div>
-
+        @endforeach
 
 
         <h3 class="detailTitle">Assenze: {{ $absenceStud }}%</h3>

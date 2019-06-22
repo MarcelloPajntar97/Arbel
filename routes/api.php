@@ -28,5 +28,6 @@ Route::post('details', 'UserLogController@details');
 Route::get('user', 'UserLogController@studentsList');
 Route::post('postReminder', 'UserLogController@postReminder');
 Route::get('getReminder', 'UserLogController@getReminder');
-Route::get('studentsRegister', 'UserLogController@studentsRegister');
+Route::get('studentsAbsence', 'UserLogController@studentsAbsence');
+Route::get('studentsMark', 'UserLogController@studentsMark');
 });

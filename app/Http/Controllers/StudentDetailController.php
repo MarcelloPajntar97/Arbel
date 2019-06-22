@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class StudentDetailController extends Controller
 {
@@ -71,18 +72,17 @@ class StudentDetailController extends Controller
     public function editDetail($id, $sub_id)
     {
         $students = \App\Student::find($id);
-        $average = DB::table('students_subjects')->where('stud_id', $id)->get();
+        $average = DB::table('students_marks')->where('stud_id', $id)->where('sub_id', $sub_id)->get();
         $absence = DB::table('students_subjects')->where('stud_id', $id)->where('sub_id', $sub_id)->first();
         $absenceStud = 0.0;
         $subject = \App\Subject::find($sub_id);
         $credit = 0;
         $tot = 0;
-        if (DB::table('students_subjects')->where('stud_id', $id)->exists()==true) {
+        if (DB::table('students_marks')->where('stud_id', $id)->where('sub_id', $sub_id)->exists()==true) {
         foreach ($average as $detail) {
-          $tot += $detail->mark * $subject->credits;
-          $credit += $subject->credits;
+          $tot += $detail->mark;
         }
-        $media = $tot/$credit;
+        $media = $tot/count($average);
       }
       else {
         $media = 0;
@@ -93,7 +93,7 @@ class StudentDetailController extends Controller
       else {
         $absenceStud += 0.0;
       }
-        return view('studentDetail', compact('students', 'id', 'sub_id', 'media', 'absenceStud'));
+        return view('studentDetail', compact('students', 'id', 'sub_id', 'media', 'absenceStud', 'average'));
     }
     /**
      * Update the specified resource in storage.
@@ -104,29 +104,34 @@ class StudentDetailController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $tipology = $request->input('type_work');
         $subMark = $request->input('subjects');
         $mark = $request->get('mark');
-        $studMark = DB::table('students_subjects')
+        $studMark = DB::table('students_marks')
                     ->where('stud_id', $id)
-                    ->where('sub_id', $subMark)->exists();
+                    ->where('sub_id', $subMark)
+                    ->where('tipology', $tipology)->exists();
         if ($studMark == true) {
           //dd('qui');
-          DB::table('students_subjects')
+          DB::table('students_marks')
               ->where('stud_id', $id)
               ->where('sub_id', $subMark)
+              ->where('tipology', $tipology)
               ->update([
-                'mark' => (int)$mark
+                'mark' => (int)$mark,
+                'date' => Carbon::now()->format('Y-m-d')
               ]);
         }
         else {
           //dd('quiii');
-          DB::table('students_subjects')
+          DB::table('students_marks')
               ->where('id', '[0-9]+')
               ->updateOrInsert([
                 'stud_id' => $id,
                 'sub_id' => (int)$subMark,
-                'absence_hours' => 0,
-                'mark' => (int)$mark
+                'tipology' => $tipology,
+                'mark' => (int)$mark,
+                'date' => Carbon::now()->format('Y-m-d')
               ]);
         }
         return redirect('/home');

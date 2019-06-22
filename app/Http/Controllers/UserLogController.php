@@ -72,7 +72,7 @@ class UserLogController extends Controller
     return $res;
   }
 
-  public function studentsRegister() {
+  public function studentsAbsence() {
     $data = auth()->user()->subjects()->get();
     $registerContainer = array();
     $registerStudent = array();
@@ -85,7 +85,24 @@ class UserLogController extends Controller
         array_push($registerStudent, $registerContainer[$i][$k]);
       }
     }
-    $final = ['student_detail' => $registerStudent];
+    $final = ['student_absence' => $registerStudent];
+    return response()->json($final, 200);
+  }
+
+  public function studentsMark() {
+    $data = auth()->user()->subjects()->get();
+    $registerContainer = array();
+    $registerStudent = array();
+    foreach ($data as $value) {
+      $details = DB::table('students_marks')->where('sub_id', $value->id)->get();
+      array_push($registerContainer, $details);
+    }
+    for ($i=0; $i<count($registerContainer); $i++) {
+      for ($k=0; $k<count($registerContainer[$i]); $k++) {
+        array_push($registerStudent, $registerContainer[$i][$k]);
+      }
+    }
+    $final = ['student_marks' => $registerStudent];
     return response()->json($final, 200);
   }
 

@@ -207,7 +207,8 @@ class StudentListController extends Controller
         ->updateOrInsert([
           'stud_id' => $dataStudent[$i],
           'sub_id' => (int)$valuesSub,
-          'absence_hours' => 300/$subSelect->totHours
+          'absence_hours' => 300/$subSelect->totHours,
+          'date' => Carbon::now()->format('Y-m-d')
         ]);
       }
       elseif ($currentStudent == true && $currentSubject == false) {
@@ -216,7 +217,8 @@ class StudentListController extends Controller
         ->updateOrInsert([
           'stud_id' => $dataStudent[$i],
           'sub_id' => (int)$valuesSub,
-          'absence_hours' => 300/$subSelect->totHours
+          'absence_hours' => 300/$subSelect->totHours,
+          'date' => Carbon::now()->format('Y-m-d')
         ]);
       }
       elseif ($currentStudent == true && $currentSubject == true) {
