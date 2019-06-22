@@ -299,7 +299,7 @@
           @foreach ($argumentData as $argument)
           <div class = "row argumentRow">
             <div class = "col">
-              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">{{$argument->topic}}</div>
+              <div class = "argumentDate">Lezione {{$argument->created_at}}:</div><div class = "argumentName">{{$argument->topic}}</div>
             </div>
           </div>
 
@@ -372,7 +372,12 @@
       var prova = @json($pizza);
       var split = prova.split(",");
 
-      console.log('mesi ' + split);
+      var averageData = @json($total);
+
+      var time = @json($timestamp);
+
+
+      console.log('media ' + time);
 
 			var ctx = document.getElementById("myAreaChart");
 			var myLineChart = new Chart(ctx, {
@@ -391,7 +396,7 @@
             pointHoverBackgroundColor: "rgba(2,117,216,1)",
             pointHitRadius: 50,
             pointBorderWidth: 2,
-						data: [0, 10, 20, 30] // media su asse y
+						data: [3, 20] // media su asse y
 					}],
 				},
 				options: {

@@ -171,6 +171,8 @@ class StudentListController extends Controller
         'avereage' => $total,
         'date' => Carbon::now()->format('Y-m-d')
       ]);
+
+      $timestamp = Carbon::now()->format('Y-m-d');
     }
     //$classMedia = $request->input('class_average');
     // $monthly_post_count_array = array();
@@ -196,7 +198,7 @@ class StudentListController extends Controller
 
     $pizza = implode(",", $month_name_array);
 
-    return view('studentsList', compact('students', 'id', 'sub_id', 'pizza'));
+    return view('studentsList', compact('students', 'id', 'sub_id', 'pizza', 'total', 'timestamp'));
   }
 
   /**
