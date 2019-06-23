@@ -10,6 +10,8 @@ use App\Subject;
 use App\ClassModel;
 use App\Student;
 use App\Events;
+use App\Argument;
+use App\Test;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -181,6 +183,20 @@ class UserLogController extends Controller
       'arguments' => 'argomento salvato'
     ], 201);
 
+  }
+
+  public function getTest() {
+    $data = auth()->user()->subjects()->get();
+    $finalTest = array();
+    foreach ($data as $value) {
+      foreach ($value->arguments()->get() as $argument) {
+        foreach ($argument->test()->get() as $test) {
+          array_push($finalTest, $test);
+        }
+      }
+    }
+    $final = ['test' => $finalTest];
+    return response()->json($final, 200);
   }
 
   public function getReminder() {

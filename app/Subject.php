@@ -24,7 +24,7 @@ class Subject extends Model
 
   public function arguments()
   {
-      return $this->hasMany('App\Arguments');
+      return $this->hasMany('App\Argument');
   }
 
 

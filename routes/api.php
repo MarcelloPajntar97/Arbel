@@ -32,4 +32,5 @@ Route::get('studentsAbsence', 'UserLogController@studentsAbsence');
 Route::get('studentsMark', 'UserLogController@studentsMark');
 Route::post('postAbsence', 'UserLogController@postAbsence');
 Route::post('postArgument', 'UserLogController@postArgument');
+Route::get('test', 'UserLogController@getTest');
 });
