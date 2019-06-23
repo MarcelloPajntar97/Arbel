@@ -11,6 +11,7 @@ use App\ClassModel;
 use App\Student;
 use App\Events;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 // use App\Student;
 
 class UserLogController extends Controller
@@ -122,6 +123,76 @@ class UserLogController extends Controller
 
     return response()->json([
       'memories' => $reminder
+    ], 201);
+
+  }
+
+  public function postAbsence(Request $request) {
+
+    $request->validate([
+      'sub_id' => 'required|integer',
+      'stud_id' => 'required|integer',
+      'absence_hours' => 'required|integer',
+    ]);
+
+    $absenceSub = DB::table('students_subjects')
+              ->where('sub_id', $request->sub_id)->exists();
+    $absenceStud = DB::table('students_subjects')
+                  ->where('stud_id', $request->stud_id)->exists();
+    if ($absenceStud == false) {
+      $absence = DB::table('students_subjects')
+      ->where('id', '[0-9]+')
+      ->updateOrInsert([
+        'stud_id' => $request->stud_id,
+        'sub_id' => $request->sub_id,
+        'absence_hours' => $request->absence_hours,
+        'date' => Carbon::now()->format('Y-m-d')
+      ]);
+
+    }
+    elseif ($absenceStud == true && $absenceSub == false) {
+      $absence = DB::table('students_subjects')
+      ->where('id', '[0-9]+')
+      ->updateOrInsert([
+        'stud_id' => $request->stud_id,
+        'sub_id' => $request->sub_id,
+        'absence_hours' => $request->absence_hours,
+        'date' => Carbon::now()->format('Y-m-d')
+      ]);
+
+    }
+
+    elseif ($absenceStud == true && $absenceSub == true) {
+      $absence = DB::table('students_subjects')
+      ->where('stud_id', $request->stud_id)
+      ->where('sub_id', $request->sub_id)
+      ->increment('absence_hours', $request->absence_hours);
+
+    }
+
+    return response()->json([
+      'absence' => 'assenza salvata'
+    ], 201);
+
+  }
+
+  public function postArgument(Request $request) {
+
+    $request->validate([
+      'topic' => 'required|string',
+      'sub_id' => 'required|integer'
+
+    ]);
+
+    $argument = new \App\Argument([
+      'topic' => $request->topic,
+      'sub_id' => $request->sub_id
+    ]);
+
+    $argument->save();
+
+    return response()->json([
+      'arguments' => 'argoemnto salvato'
     ], 201);
 
   }
