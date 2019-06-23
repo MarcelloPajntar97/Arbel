@@ -1,4 +1,3 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Heebo');
@@ -22,15 +21,11 @@
 @import 'layout/activity';
 @import 'layout/calendar';
 
-// @import '/fonts/futura medium bt.ttf';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
 body {
   background-color: $body-bg !important;
-  // background: linear-gradient(to bottom, $white 0%, $body-bg 100%) !important;
   line-height: none !important;
   margin: none !important;
   padding: none !important;
@@ -51,16 +46,15 @@ body {
   padding: none !important;
 }
 
-.infoForm{
+.infoForm {
   font-family: $titleFont;
   color: lightGrey;
   font-size: 14px;
-  // margin-top: 7%;
   margin-bottom: 2% !important;
 }
 
 a {
- color: $deselectedItem !important;
+  color: $deselectedItem !important;
   &:hover{
     transition: all 0.3s,
     color $redArbel !important;
@@ -75,12 +69,12 @@ a {
 .loginButton {
   font-family: $titleFont;
   background-color: $redArbel !important;
-  // font-weight: futuraMedium !important;
   color: $white !important;
   border-radius: 25px !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
   margin-top: 5%;
+
   &:hover {
     transition: all 0.3s;
     background-color: $redSelected !important;
@@ -92,67 +86,103 @@ a {
   width: 69% !important;
   margin-top: -2%;
   padding-left: 19% !important;
+
+  @media (max-width: $small) {
+    display: none;
+  }
+
+  @media (max-width: $medium) {
+    width: 100% !important;
+    margin-top: 30%;
+  }
 }
 
 .containerForm {
   width: 100% !important;
   margin-top: 15%;
   margin-left: -40% !important;
+
+  @media (max-width: $small) {
+    margin: 0 auto !important;
+    margin-top: 50% !important;
+    padding: none;
+    width: 80% !important;
+  }
 }
 
-.loginText, .arbelText{
+.loginText, .arbelText {
   margin-left: 33.5%
 }
 
-.loginText
-{
+.loginText {
   font-family: $titleFont;
   font-weight: 500 !important;
   font-size: 26px;
-  // font-weight:;
   margin-bottom: -3% !important;
+
+  @media (max-width: $small) {
+    margin: 0 auto !important;
+    padding: none !important;
+  }
 }
 
 .arbelText {
   font-size: 16px;
   margin-bottom: 2%;
+
+  @media (max-width: $small) {
+    margin: 0 auto !important;
+    padding: none;
+  }
 }
 
-.passwordHelp{
+.passwordHelp {
   font-size: 12px;
   margin-top: 2%;
   margin-left: 4%;
+
+  @media (max-width: $small) {
+    margin-left: -8% !important;
+  }
 }
 
-.allElelement{
+.allElelement {
   margin-top: 10%;
 }
 
-.lineLogin{
+.lineLogin {
   position: fixed;
   top: 0;
   left: -0.5% !important;
   min-width: 100%;
   min-height: auto !important;
   margin-top: -1.5% !important;
+
+  @media (max-width: $small) {
+    width: 200% !important;
+  }
 }
 
-.footerLogin{
+.footerLogin {
   bottom: 3% !important;
   float: right !important;
   right: 3%;
   position: absolute;
-  // margin-top: 2% !important;
-  // margin-bottom: 1%;
   color: #626262 !important;
+
+  @media (max-width: $small) {
+    bottom: 0 !important;
+  }
+
+  @media (min-width: $medium) {
+    bottom: 0 !important;
+  }
 }
 
-.footerHome{
+.footerHome {
   bottom: 1% !important;
   float: right !important;
   position: absolute;
-  // margin-right: 2%;
-  // margin-top: -3%;
   margin: none !important;
   color: $white !important;
   right: 3%;
@@ -161,18 +191,31 @@ a {
 
 .downloadBadge {
   margin-top: 1% !important;
+
+  @media (max-width: $small) {
+    display: none;
+  }
+
+  @media (max-width: $medium) {
+    margin-top: 3% !important;
+    margin-left: 5%;
+  }
 }
 
-.AppStore, .GoogleStore{
+.AppStore, .GoogleStore {
   width: 50% !important;
+
+  @media (max-width: $medium) {
+    width: 80% !important;
+  }
 }
 
-.AppStore{
+.AppStore {
   float: right !important;
   margin-right: 7% !important;
 }
 
-.GoogleStore{
+.GoogleStore {
   float: left !important;
   margin-left: -12% !important;
 }

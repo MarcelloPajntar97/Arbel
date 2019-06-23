@@ -35,6 +35,7 @@ class HomeController extends Controller
       // $teacher = $request->get('subHour');
       $dt = new \DateTime();
       $today= $dt->format('Y-m-d');
+      $todayFormatted = $dt-> format('d F, l');
 
       //dd($today);
       $events= Events::where('user_id', Auth::user()->id)->get();
@@ -75,7 +76,7 @@ class HomeController extends Controller
           'right' =>'prev,next'],
         ]);
 
-        return view('home', compact('subjects', 'events', 'calendar', 'today'));
+        return view('home', compact('subjects', 'events', 'calendar', 'today', 'todayFormatted'));
       }
       elseif (auth()->user()->isAdmin == 1) {
         $teachers = \App\User::where('isAdmin', 0)->get();

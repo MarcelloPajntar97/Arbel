@@ -3,29 +3,6 @@
   margin-left: 9%;
 }
 
-// .mediaContainer, .videoContainer, .soundContainer, .photoContainer, .comunicationContainer, .graphicContainer {
-//   padding-top: 6%;
-//   padding-left: 2% !important;
-//   padding-bottom: 2%;
-//   margin-top: 15% !important;
-//   margin-bottom: 15%;
-//   margin-left: none !important;
-//   border-radius: 5px !important;
-//   bottom: 0 !important;
-//   box-shadow: 0px 1px 20px #efefef !important;
-//   background-color: $white;
-//   height: 350px;
-//   width: 240px !important;
-//   color: #343434 !important;
-//   transition: all .2s ease-in-out;
-//   &:hover {
-//     transition: all 0.2s !important;
-//     background-color: $redArbel !important;
-//     transform: scale(1.06);
-//     color: $white !important;
-//   }
-// }
-
 .provaContainer {
   padding-top: 6%;
   margin-left: 2% !important;
@@ -47,14 +24,10 @@
     transform: scale(1.05);
   }
 
-
+  @media (max-width: $small) {
+    width: 230px !important;
+  }
 }
-
-// .sectionText {
-//   padding-left: 7%;
-//   font-size: 18px;
-//   font-weight: bold;
-// }
 
 .sectionText {
   margin-top: 30%;
@@ -78,7 +51,6 @@
   font-size: 22px;
   margin-top: 29% !important;
   font-family: $titleFont;
-
 }
 
 .horizontalLine {
@@ -102,15 +74,11 @@
   display: none;
 }
 
-// .mediaContainer {
-//   // background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
-//   background-image: url("/img/mediaCard.svg");
-// }
 a:hover {
   text-decoration: none !important;
 }
 
-.coursesTitle{
+.coursesTitle {
   @include title;
   margin-top: 8%;
 }
@@ -123,8 +91,8 @@ a:hover {
 }
 
 .card-block {
-    min-height: 220px;
-    display: inline-block;
+  min-height: 220px;
+  display: inline-block;
 }
 
 .idk::-webkit-scrollbar {
@@ -134,7 +102,6 @@ a:hover {
 .idk {
   overflow-x: scroll;
   overflow-y: hidden;
-  // white-space: nowrap;
 }
 
 #spero {
@@ -167,18 +134,17 @@ a:hover {
   border-radius: 50% !important;
 }
 
-.badgeSection{
+.badgeSection {
   font-size: 2px !important;
 
 }
 
-.rowSelectTitile{
+.rowSelectTitile {
   margin-top: -17.5% !important;
   margin-bottom: 5%;
 }
 
-.defaultCourses{
+.defaultCourses {
   color: $deselectedItem !important;
   margin-top: 15%;
-  // width: 50% !important;
 }

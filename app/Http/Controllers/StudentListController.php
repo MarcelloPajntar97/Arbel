@@ -160,6 +160,8 @@ class StudentListController extends Controller
     foreach ($classMedia as $classes) {
       $classMark += $classes->mark;
     }
+
+
     if (count($classMedia)>0) {
       $total = $classMark/count($classMedia);
     }
@@ -171,6 +173,7 @@ class StudentListController extends Controller
       foreach ($students as $pres) {
         array_push($present, DB::table('students_marks')->where('stud_id', $pres->id)->exists());
       }
+
       if (!in_array(false, $present)) {
       if (DB::table('class_avereage')->where('sub_id', $sub_id)->exists()==false) {
       DB::table('class_avereage')->where('id', '[0-9]+')->updateOrInsert([
@@ -190,6 +193,7 @@ class StudentListController extends Controller
             'avereage' => $total,
             'date' => Carbon::now()->format('Y-m-d')
           ]);
+          // dd($total);
         }
       }
     }
@@ -198,13 +202,13 @@ class StudentListController extends Controller
     }
     $timestamp = Carbon::now()->format('Y-m-d');
     //$classMedia = $request->input('class_average');
-    // $monthly_post_count_array = array();
+    $monthly_avg_count_array = array();
 		$month_array = $this->getAllMonths();
 		$month_name_array = array();
 		if ( ! empty( $month_array ) ) {
 			foreach ( $month_array as $month_no => $month_name ){
 				// $monthly_post_count = $this->getMonthlyPostCount( $month_no );
-				// array_push( $monthly_post_count_array, $monthly_post_count );
+				array_push( $monthly_avg_count_array, $total );
 				array_push( $month_name_array, $month_name );
 			}
       // dd($month_name_array);
@@ -215,13 +219,14 @@ class StudentListController extends Controller
 		// $max = round(( $max_no + 10/2 ) / 10 ) * 10;
 		$monthly_post_data_array = array(
 			'months' => $month_name_array,
+      'avgData' => $monthly_avg_count_array,
 			// 'post_count_data' => $monthly_post_count_array,
 			// 'max' => $max,
 		);
-
     $pizza = implode(",", $month_name_array);
+    $thisMonth = Carbon::now()->format('F Y');
 
-    return view('studentsList', compact('students', 'id', 'sub_id', 'pizza', 'total', 'timestamp'));
+    return view('studentsList', compact('students', 'id', 'sub_id', 'pizza', 'total', 'monthly_avg_count_array', 'thisMonth'));
   }
 
   /**

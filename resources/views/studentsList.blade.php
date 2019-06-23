@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
   @include('elements.nav')
-
 
   <ul class="nav nav-pills container switchContainer row row-centered  justify-content-center" id="myTabJust" role="tablist">
     <li class="nav-item optionTab">
@@ -19,25 +17,24 @@
     </li>
   </ul>
 
-
   <div class="tab-content card pt-5" id="myTabContentJust">
+
+    {{-- LISTA STUDENTI TAB --}}
     <div class="tab-pane fade show active" id="student-just" role="tabpanel" aria-labelledby="studenti-tab-just">
-      <div class = "container">
+      <div class="container">
+
         <div class="row toolBar">
-          <div class = "col-md-2">
+          <div class="col-md-2">
             <div class="studentTitle">{{ __('ELENCO STUDENTI') }}</div>
           </div>
-          <div class = "col-md-5 colSearch">
+          <div class="col-md-5 colSearch">
             <form>
-
-              <input type="search " class = "inputSearch searchBtn" type="text" placeholder="Cerca">
+              <input type="search " class="inputSearch searchBtn" type="text" placeholder="Cerca">
             </form>
-
           </div>
-          <div class = "col-md-5">
+          <div class="col-md-5">
             <button class="btn btn-outline-primary exportBtn pull-right" type="button"><img src="{{ asset('/img/exsport.svg')}}">  Esporta</button>
           </div>
-
           <form id="absence" class="form-inline" method="post" action="{{action('StudentListController@update', $id)}}">
             @csrf
             <input name="_method" type="hidden" value="PATCH"/>
@@ -46,22 +43,21 @@
 
           <div class="row-centered studentContainer">
             <div class="row ">
-              <div class = "col-md-1 text-center">
+              <div class="col-md-1 text-center">
                 A
               </div>
-              <div class = "col-md-2 text-left">
+              <div class="col-md-2 text-left">
                 Nome Cognome
               </div>
-              <div class = "col-md-1 text-centered">
+              <div class="col-md-1 text-centered">
                 Media
               </div>
-              <div class = "col-md-1 text-centered">
+              <div class="col-md-1 text-centered">
                 Assenze
               </div>
-              <div class = "col-md-6  text-left">
+              <div class="col-md-6  text-left">
                 Note
               </div>
-
             </div>
           </div>
 
@@ -101,91 +97,83 @@
             @endphp
             <div class="row-centered classContainer">
               <div class="row ">
-                <div class = "col-md-1" id="bo">
+                <div class="col-md-1" id="bo">
                   <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
                 </div>
-
-                <div class = "col-md-2 text-left">
+                <div class="col-md-2 text-left">
                   {{ $studentdata->name }}  {{ $studentdata->surname }}
                 </div>
-                <div class = "col-md-1 text-centered">
+                <div class="col-md-1 text-centered">
                   {{ $media }}
                 </div>
                 @if ($detailAbsence == true)
                   <input name="class_average" type="hidden" value="{{ $media }}"/>
                   @foreach ($detailAbs as $det)
                     @if ($det->absence_hours > 20.0)
-                    <div class = "col-md-1 text-centered">
-                      NON IDONEO
-                    </div>
+                      <div class="col-md-1 text-centered">
+                        NON IDONEO
+                      </div>
                     @else
-                    <div class = "col-md-1 text-centered">
-                      {{ $det->absence_hours }}%
-                    </div>
+                      <div class="col-md-1 text-centered">
+                        {{ $det->absence_hours }}%
+                      </div>
                     @endif
                   @endforeach
                 @else
-                  <div class = "col-md-1 text-centered">
+                  <div class="col-md-1 text-centered">
                     0%
                   </div>
                 @endif
-                    <div class = "col-md-6 text-left">
-                      {{ $studentdata->details }}
-                    </div>
-                <div class = "col-md-1">
-                  <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt = "option">
-                    <div class="more"><img class = "moreIcon" src="{{ asset('/img/More.svg')}}"></div>
+                <div class="col-md-6 text-left">
+                  {{ $studentdata->details }}
+                </div>
+                <div class="col-md-1">
+                  <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt="option">
+                    <div class="more"><img class="moreIcon" src="{{ asset('/img/More.svg')}}"></div>
                   </a>
                 </div>
               </div>
             </div>
           @endforeach
-          <div class="row form-group">
 
-            <button class="learn-more" type = "button" id ="btnSubmit" data-toggle="modal" data-target = "#topic">
+          <div class="row form-group">
+            <button class="learn-more" type="button" id="btnSubmit" data-toggle="modal" data-target = "#topic">
               <div class="circle">
                 <span class="btnIcon btnArrow"></span>
               </div>
               <p class="submitText">SALVA</p>
             </button>
-
           </div>
-
         </div>
 
         <div class="modal fade" id="topic" tabindex="-1" role="dialog" aria-labelledby="myModalLAbel">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-
               <div class="modal-body">
-
-                <h2 class = "infoForm">Inserisci l'argomento odierno</h2>
+                <h2 class="infoForm">Inserisci l'argomento odierno</h2>
                 <i class="fas fa-envelope prefix grey-text"></i>
-                <input type="text" name ="dayArgument" class="form-control validate">
-
-
+                <input type="text" name="dayArgument" class="form-control validate">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
                 <button id="send" type="submit" class="btn btn-primary">Invia</button>
               </div>
-
             </div>
           </div>
         </div>
       </form>
     </div>
-    {{-- TEST TAB --}}
 
+
+    {{-- TEST TAB --}}
     <div class="tab-pane fade" id="test-just" role="tabpanel" aria-labelledby="test-tab-just">
 
-      <div class = "container">
+      <div class="container">
         <div class="row">
           <div class="col-md-4">
             <div class="list-group" id="list-tab" role="tablist">
               <a class="list-group-item disabled">Seleziona un quesito</a>
               <a class="list-group-item title">  <input class="form-control" type="text" placeholder="Search" aria-label="Search"></a>
-
             </div>
 
             @php
@@ -201,7 +189,7 @@
 
 
           </div>
-          <div class = "col-md-8">
+          <div class="col-md-8">
             <div class="tab-content">
               <div id="home" class="tab-pane fade in active">
                 <h3>HOME</h3>
@@ -216,7 +204,7 @@
                     <input name="topicID" type="hidden" value="{{ $argument->id }}"/>
                     <div class="row form-group">
                       <label for="formGroupExampleInput">Prima Domanda : </label>
-                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                      <input type="text" name="question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
                     </div>
 
                     <div class="row form-group">
@@ -231,7 +219,7 @@
 
                     <div class="row form-group">
                       <label for="formGroupExampleInput">Quarta Domanda : </label>
-                      <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
+                      <input type="text" name="question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
                     </div>
 
                     <div class="row form-group">
@@ -264,7 +252,7 @@
                       <input type="text" name = "question[]" class="form-control" id="formGroupExampleInput" placeholder="Inserisci qui la Domanda">
                     </div>
 
-                    <button type= "submit" class="learn-more" id = "btnSubmit" method="post" action="{{action('HomeController@send', $id)}}">
+                    <button type="submit" class="learn-more" id="btnSubmit" method="post" action="{{action('HomeController@send', $id)}}">
                       <div class="circle">
                         <span class="btnIcon btnArrow"></span>
                       </div>
@@ -274,52 +262,41 @@
                 </div>
               @endforeach
             </div>
-
           </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="tab-pane fade" id="activity-just" role="tabpanel" aria-labelledby="activity-tab-just">
-    <div class = "container chartContainer">
-      <div class = "row">
-        <div class = "col-md-9">
-          <div class = "chartArea">
-            <canvas id = "myAreaChart" width="100%" height="30"></canvas>
-          </div>
-        </div>
-
-        <div class = "col-md-3 argumentCol">
-          <div class = "row argumentRow">
-            <div class = "col">
-              <div class = "argumentTitle">MAGGIO 2019</div>
-            </div>
-          </div>
-
-          @foreach ($argumentData as $argument)
-          <div class = "row argumentRow">
-            <div class = "col">
-              <div class = "argumentDate">Lezione {{$argument->created_at}}:</div><div class = "argumentName">{{$argument->topic}}</div>
-            </div>
-          </div>
-
-        @endforeach
-
-          {{-- <div class = "row argumentRow">
-            <div class = "col">
-              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
-            </div>
-          </div> --}}
-          {{-- <div class = "row argumentRow">
-            <div class = "col">
-              <div class = "argumentDate">Lezione 27.04.2018:</div><div class = "argumentName">Nome argomento</div>
-            </div>
-          </div> --}}
         </div>
       </div>
     </div>
 
+
+    {{-- ATTIVITA' TAB --}}
+    <div class="tab-pane fade" id="activity-just" role="tabpanel" aria-labelledby="activity-tab-just">
+      <div class="container chartContainer">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="chartArea">
+              <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            </div>
+          </div>
+          <div class="col-md-3 argumentCol">
+
+            <div class="row argumentRow">
+              <div class="col">
+                <div class="argumentTitle">{{$thisMonth}}</div>
+              </div>
+            </div>
+
+            @foreach ($argumentData as $argument)
+              <div class="row argumentRow">
+                <div class="col">
+                  <div class="argumentDate">Lezione {{$argument->created_at}}:</div><div class="argumentName">{{$argument->topic}}</div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
     <div class = "container infoContainer">
+
       <div class = "row">
         <div class = "col">
           <img class = "infoIcon" src="{{asset('/img/infoIcon.svg')}}" alt="Responsive image" id="footer">
@@ -329,30 +306,20 @@
     </div>
   </div>
 </div>
+
 <script type="text/javascript">( function ( $ ) {
 
-	var charts = {
-		init: function () {
-			// -- Set new default font family and font color to mimic Bootstrap's default styling
-			Chart.defaults.global.defaultFontColor = '#292b2c';
-
-			// this.createCompletedJobsChart();
+  var charts = {
+    init: function () {
+      Chart.defaults.global.defaultFontColor = '#292b2c';
       this.ajaxGetTopicMonthlyData();
-		},
+    },
 
     ajaxGetTopicMonthlyData: function() {
-
-
-
-
       var studID = parseInt({!! json_decode($id) !!});
-      console.log(studID);
       var subID = parseInt({!! json_decode($sub_id) !!});
-      console.log(subID);
       var stud = studID.toString();
-      console.log(stud);
       var sub = subID.toString();
-      console.log(sub);
       var urlPath = 'http://' + window.location.hostname + '/studentslist' + '/' + stud + '/' + 'edit' + '/' + sub;
       var request = $.ajax({
         method: 'GET',
@@ -360,33 +327,27 @@
       });
 
       request.done( function (response) {
-        // console.log('here' + response);
         charts.createCompletedJobsChart(response);
       });
     },
 
-		/**
-		 * Created the Completed Jobs Chart
-		 */
-		createCompletedJobsChart: function (response) {
-      var prova = @json($pizza);
-      var split = prova.split(",");
+    /**
+    * Created the Completed Jobs Chart
+    */
+    createCompletedJobsChart: function (response) {
+      var implodedMonths = @json($pizza);
+      var months = implodedMonths .split(",");
 
-      var averageData = @json($total);
+      console.log('mesi ' + months );
 
-      var time = @json($timestamp);
-
-
-      console.log('media ' + time);
-
-			var ctx = document.getElementById("myAreaChart");
-			var myLineChart = new Chart(ctx, {
-				type: 'line',
-				data: {
-					labels: split, // mesi su asse x
-					datasets: [{
-						label: "Media",
-						lineTension: 0.5,
+      var ctx = document.getElementById("myAreaChart");
+      var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: months, // mesi su asse x
+          datasets: [{
+            label: "Media",
+            lineTension: 0.5,
             backgroundColor: "rgba(2,117,216,0.2)",
             borderColor: "rgba(2,117,216,1)",
             pointRadius: 5,
@@ -396,43 +357,41 @@
             pointHoverBackgroundColor: "rgba(2,117,216,1)",
             pointHitRadius: 50,
             pointBorderWidth: 2,
-						data: [3, 20] // media su asse y
-					}],
-				},
-				options: {
-					scales: {
-						xAxes: [{
-							time: {
-								unit: 'date'
-							},
-							gridLines: {
-								display: false
-							},
-							ticks: {
-								maxTicksLimit: 5
-							}
-						}],
-						yAxes: [{
-							ticks: {
-								min: 0,
-								max: 30, // The response got from the ajax request containing max limit for y axis
-								maxTicksLimit:15,
-							},
-							gridLines: {
-								color: "rgba(0, 0, 0, .05)",
-							}
-						}],
-					},
-					legend: {
-						display: false
-					}
-				}
-			});
-		}
-	};
-
-	charts.init();
-
+            data: [0, 0] // media su asse y
+          }],
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              time: {
+                unit: 'date'
+              },
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                maxTicksLimit: 5
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                min: 0,
+                max: 30, // The response got from the ajax request containing max limit for y axis
+                maxTicksLimit:15,
+              },
+              gridLines: {
+                color: "rgba(0, 0, 0, .05)",
+              }
+            }],
+          },
+          legend: {
+            display: false
+          }
+        }
+      });
+    }
+  };
+  charts.init();
 } )( jQuery );
 </script>
 @endsection
