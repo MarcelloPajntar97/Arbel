@@ -199,6 +199,18 @@ class UserLogController extends Controller
     return response()->json($final, 200);
   }
 
+  public function getArgument() {
+    $data = auth()->user()->subjects()->get();
+    $finalTest = array();
+    foreach ($data as $value) {
+      foreach ($value->arguments()->get() as $argument) {
+          array_push($finalTest, $argument);
+      }
+    }
+    $final = ['argument_lesson' => $finalTest];
+    return response()->json($final, 200);
+  }
+
   public function getReminder() {
     $dataReminder = auth()->user()->memories()->get();
     return response()->json(['memo' => $dataReminder], 200);
