@@ -1,4 +1,10 @@
-.argomentoBox{
+#blankCheckbox {
+  @media (max-width: $medium) {
+    margin-left: 10%;
+  }
+}
+
+.argomentoBox {
   transition: all .3s ease-in-out;
   font-family: $titleFont;
   font-size: 14px;
@@ -10,17 +16,18 @@
   &:hover {
     transition: all 0.2s !important;
     transform: scale(1.07);
-    // background-color: $redArbel;
     background-color: $redArbel;
   }
 }
-.nav-pills .nav-link.active{
+
+.nav-pills .nav-link.active {
   transition: all 0.2s !important;
   transform: scale(1.07);
   background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
   color: $white !important;
 }
-.list-group-item.active{
+
+.list-group-item.active {
   transition: all 0.2s !important;
   transform: scale(1.07);
   background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
@@ -34,32 +41,35 @@
 }
 
 
-.studentContainer{
-    // background-color: $white;
-    margin: auto !important;
-    margin-top: 0.4% !important;
-    border-radius: 5px !important;
-    border-width: 0px !important;
-    box-shadow: 0px 1px 3px lightGrey !important;
-    padding-top: 1.3%;
-    padding-bottom: 1.3%;
-    margin-bottom: 1% !important;
-    font-family: $titleFont;
-    font-weight: 500;
-    color: $deselectedItem;
+.studentContainer {
+  margin: auto !important;
+  margin-top: 0.4% !important;
+  border-radius: 5px !important;
+  border-width: 0px !important;
+  box-shadow: 0px 1px 3px lightGrey !important;
+  padding-top: 1.3%;
+  padding-bottom: 1.3%;
+  margin-bottom: 1% !important;
+  font-family: $titleFont;
+  font-weight: 500;
+  color: $deselectedItem;
 
 }
-.classContainer{
+
+.classContainer {
   transition: all .3s ease-in-out;
   margin: auto !important;
-  // margin-top: 0.4% !important;
   box-shadow: 0px 1px 0px lightGrey !important;
   padding-top: 1.7%;
   padding-bottom: 1.5%;
-  &:hover{
+  &:hover {
     transition: all 0.2s !important;
     background-color: rgba(2,117,216,0.1);
+  }
 
+  @media (max-width: $small) {
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
   }
 }
 
@@ -70,7 +80,6 @@
 
 .studentSubmitButton {
   font-family: $titleFont;
-  // background-color: $redArbel !important;
   margin-top: 5%;
   background-color: $redArbel !important;
   color: $white !important;
@@ -102,13 +111,16 @@
   &:hover {
     transition: all 0.2s !important;
     transform: scale(1.07);
-    // background-color: $redArbel;
     color: $redArbel;
+  }
 
+  @media (max-width: $small) {
+    width: 80px !important;
+    margin-bottom: -5%;
   }
 }
 
-.nav-pills .nav-link.active{
+.nav-pills .nav-link.active {
   transition: all 0.2s !important;
   transform: scale(1.07);
   background: linear-gradient(to right, $redArbel 0%, #EF2252 100%) !important;
@@ -120,7 +132,7 @@
   font-weight: normal !important;
 }
 
-.moreIcon{
+.moreIcon {
   opacity: 0.5 !important;
   width: auto;
   height: 15px;
@@ -128,7 +140,7 @@
   vertical-align: middle !important;
 }
 
-.exportBtn{
+.exportBtn {
   float: right !important;
   border-radius: 25px !important;
   padding-left: 4% !important;
@@ -140,48 +152,48 @@
   }
 }
 
-.searchBtn{
+.searchBtn {
   transition: all .3s ease-in-out;
   border-radius: 25px !important;
   border: 1px solid #4B74FF !important;
-  // border: none;
   width: 120px;
   height: 35px;
-  // padding-left: 2% !important;
-  // padding-right: 2% !important;
   background-image: url('/img/searchIcon.svg');
   background-position: 14px 8px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   &::placeholder {
-  color: #4B74FF !important;
-  opacity: 1;
-}
+    color: #4B74FF !important;
+    opacity: 1;
+  }
   &:hover {
     transition: all 0.4s !important;
     background-color: rgba(2,117,216,0.2) !important;
   }
   &:focus {
     width: 300px !important;
+  }
 
+  @media (max-width: $small) {
+    margin-bottom: 8%;
   }
 }
 
-.toolBar{
+.toolBar {
   margin-bottom: 3%;
   margin-top: 1%;
 }
 
-.optionTab{
+.optionTab {
   margin-right: 1.5% !important;
 }
 
-.colSearch{
+.colSearch {
   margin: none !important;
   padding: none !important;
 }
 
-.moreIcon{
+.moreIcon {
   opacity: 0.5;
 }
 
@@ -189,10 +201,66 @@
   padding-left: 3% !important;
 }
 
-.modal-body{
+.modal-body {
   padding-top: 5% !important;
 }
 
 #student-just {
   padding-bottom: 4%;
+}
+
+.colExport {
+  @media (max-width: $small) {
+    display: none !important;
+  }
+}
+
+.colNote {
+  @media (max-width: $small) {
+    display: none !important;
+  }
+}
+
+.colA {
+  @media (max-width: $small) {
+    margin: 0 !important;
+    margin-left: 3% !important;
+    width: 50px !important;
+    float: left !important;
+  }
+
+  @media (max-width: $medium) {
+    margin: 0;
+    margin-left: 3%;
+    width: 50px;
+    float: left;
+  }
+}
+
+.colName {
+  @media (max-width: $small) {
+    margin: 0 !important;
+    width: 150px !important;
+  }
+}
+
+.colMark {
+  @media (max-width: $small) {
+    display: none !important;
+  }
+}
+.colAbsence {
+  @media (max-width: $small) {
+    margin: 0 !important;
+    margin-left: -5% !important;
+    width: 85px !important;
+  }
+}
+
+.colMore {
+  @media (max-width: $small) {
+    margin: none !important;
+    padding: 0 !important;
+    width: 5px !important;
+  }
 }

@@ -1,19 +1,21 @@
+.chartArea {
+  margin-top: -5%;
+}
+
 .switchContainer {
   margin: 0 auto !important;
   margin-top: 3% !important;
 }
 .row-centered {
-    text-align:center !important;
-    // margin-left: 32% !important;
+  text-align:center !important;
 }
+
 .col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right: 3%;
-    text-align: center;
+  display:inline-block;
+  float:none;
+  text-align:left;
+  margin-right: 3%;
+  text-align: center;
 }
 
 .activityBox3 {
@@ -35,7 +37,6 @@
   &:hover {
     transition: all 0.2s !important;
     transform: scale(1.02);
-    // background-color: $redArbel;
   }
 }
 
@@ -56,59 +57,55 @@
   &:hover {
     transition: all 0.2s !important;
     transform: scale(1.07);
-    // background-color: $redArbel;
     color: $redArbel;
-
   }
 }
 
-.chartContainer{
+.chartContainer {
   margin-top: 10%;
 }
 
-.argumentCol{
-  // margin-left: 1px;
-}
-
-.argumentRow{
+.argumentRow {
   margin-bottom: 7%;
   margin-left: 2% !important;
+  margin-top: -7%;
 }
 
 .argumentDate {
   font-family: $titleFont;
   font-size: 14px !important;
-  // font-weight: bold;
+  font-weight: 500;
 }
 
 .argumentName {
   font-size: 14px !important;
 }
 
-.argumentTitle{
+.argumentTitle {
   font-family: $titleFont;
   font-size: 18px !important;
   color: $deselectedItem;
   text-transform: uppercase !important;
-  // font-weight: bold;
+  margin-bottom: 6%;
+  font-weight: 500;
 }
 
-.infoContainer{
+.infoContainer {
   margin-top: 10%;
   color: $deselectedItem;
+  margin-bottom: 5%;
 }
 
-.infoIcon{
+.infoIcon {
   width: 20px;
   height: auto;
-  // margin-bottom: 2%;
   margin-top: -0.2%;
 }
 
-.infoText{
+.infoText {
   margin-left: 1%;
 }
 
-.infoText2{
+.infoText2 {
   margin-left: 2.6%;
 }

@@ -106,7 +106,7 @@
                     <input type="date" id="dateInput" class="form-control dayInput " name="day" class = "date"/>
                   </div>
                   <div class="col-md-6 hourSelect">
-                    <h2 class="titleDrop">Seleziona la fascia oraria</h2>
+                    <h2 class="HourDrop">Seleziona la fascia oraria</h2>
                     <span class="custom-dropdown" id="calendar-dropdown">
                       <select name="start_hour">
                         <option selected="" disabled= "">Dalle</option>

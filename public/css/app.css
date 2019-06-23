@@ -11665,7 +11665,7 @@ body {
   font-family: "futura", sans-serif;
   color: lightGrey;
   font-size: 14px;
-  margin-bottom: -1%;
+  margin-bottom: 3%;
 }
 
 @media (min-width: 1280px) {
@@ -11682,6 +11682,31 @@ body {
 
 @media (max-width: 375px) {
   .titleDrop {
+    width: 100% !important;
+  }
+}
+
+.HourDrop {
+  font-family: "futura", sans-serif;
+  color: lightGrey;
+  font-size: 14px;
+  margin-bottom: -1%;
+}
+
+@media (min-width: 1280px) {
+  .HourDrop {
+    width: 150% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .HourDrop {
+    width: 240%;
+  }
+}
+
+@media (max-width: 375px) {
+  .HourDrop {
     width: 100% !important;
   }
 }
@@ -12567,6 +12592,12 @@ a:hover {
   margin-bottom: 30%;
 }
 
+@media (max-width: 768px) {
+  #blankCheckbox {
+    margin-left: 10%;
+  }
+}
+
 .argomentoBox {
   transition: all 0.3s ease-in-out;
   font-family: "futura", sans-serif;
@@ -12633,6 +12664,13 @@ a:hover {
   background-color: rgba(2, 117, 216, 0.1);
 }
 
+@media (max-width: 375px) {
+  .classContainer {
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+  }
+}
+
 .studentTitle {
   font-family: "futura", sans-serif;
   color: #4A4A4A;
@@ -12686,6 +12724,15 @@ a:hover {
   -webkit-transform: scale(1.07);
           transform: scale(1.07);
   color: #F2001E;
+}
+
+@media (max-width: 375px) {
+  .studentBox,
+  .testBox,
+  .activityBox {
+    width: 80px !important;
+    margin-bottom: -5%;
+  }
 }
 
 .nav-pills .nav-link.active {
@@ -12763,6 +12810,12 @@ a:hover {
   width: 300px !important;
 }
 
+@media (max-width: 375px) {
+  .searchBtn {
+    margin-bottom: 8%;
+  }
+}
+
 .toolBar {
   margin-bottom: 3%;
   margin-top: 1%;
@@ -12791,6 +12844,65 @@ a:hover {
 
 #student-just {
   padding-bottom: 4%;
+}
+
+@media (max-width: 375px) {
+  .colExport {
+    display: none !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .colNote {
+    display: none !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .colA {
+    margin: 0 !important;
+    margin-left: 3% !important;
+    width: 50px !important;
+    float: left !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .colA {
+    margin: 0;
+    margin-left: 3%;
+    width: 50px;
+    float: left;
+  }
+}
+
+@media (max-width: 375px) {
+  .colName {
+    margin: 0 !important;
+    width: 150px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .colMark {
+    display: none !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .colAbsence {
+    margin: 0 !important;
+    margin-left: -5% !important;
+    width: 85px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .colMore {
+    margin: none !important;
+    padding: 0 !important;
+    width: 5px !important;
+  }
 }
 
 #rowValutation {
@@ -12830,6 +12942,12 @@ a:hover {
   font-size: 16px;
   margin-bottom: 2%;
   margin-top: 6%;
+}
+
+@media (max-width: 375px) {
+  .detailTitle {
+    margin-top: 15% !important;
+  }
 }
 
 .studentprofile {
@@ -12884,6 +13002,42 @@ a:hover {
   margin-left: -10%;
 }
 
+@media (max-width: 375px) {
+  .colType {
+    margin-left: 0% !important;
+    margin-top: 6%;
+    margin-bottom: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .colType {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .colPreview {
+    width: 150% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .colStudent {
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 375px) {
+  .rowMark {
+    margin-bottom: 18% !important;
+  }
+}
+
+.chartArea {
+  margin-top: -5%;
+}
+
 .switchContainer {
   margin: 0 auto !important;
   margin-top: 3% !important;
@@ -12896,9 +13050,7 @@ a:hover {
 .col-centered {
   display: inline-block;
   float: none;
-  /* reset the text-align */
   text-align: left;
-  /* inline-block space fix */
   margin-right: 3%;
   text-align: center;
 }
@@ -12963,11 +13115,13 @@ a:hover {
 .argumentRow {
   margin-bottom: 7%;
   margin-left: 2% !important;
+  margin-top: -7%;
 }
 
 .argumentDate {
   font-family: "futura", sans-serif;
   font-size: 14px !important;
+  font-weight: 500;
 }
 
 .argumentName {
@@ -12979,11 +13133,14 @@ a:hover {
   font-size: 18px !important;
   color: #A4AAB3;
   text-transform: uppercase !important;
+  margin-bottom: 6%;
+  font-weight: 500;
 }
 
 .infoContainer {
   margin-top: 10%;
   color: #A4AAB3;
+  margin-bottom: 5%;
 }
 
 .infoIcon {

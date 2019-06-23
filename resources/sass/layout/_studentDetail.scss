@@ -1,23 +1,24 @@
 #rowValutation {
-margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 .colValutation {
   width: 100% !important;
 }
-.containernote{
+
+.containernote {
   transition: all .3s ease-in-out;
   margin: auto !important;
   box-shadow: 0px 1px 0px lightGrey !important;
   padding-top: 1.7%;
   padding-bottom: 1.5%;
-  &:hover{
+  &:hover {
     transition: all 0.2s !important;
     background-color: rgba(2,117,216,0.1);
-
   }
 }
-.imgstudent{
+
+.imgstudent {
   width:170px;
   height:170px;
   float:left;
@@ -26,13 +27,16 @@ margin-bottom: 5%;
   margin-bottom:25px;
 }
 
-.detailTitle{
+.detailTitle {
   @include title;
   margin-top: 6%;
+
+  @media (max-width: $small) {
+    margin-top: 15% !important;
+  }
 }
 
-
-.studentprofile{
+.studentprofile {
   background-color: $white;
   margin-top: 3% !important;
   padding-top: 4%;
@@ -44,7 +48,8 @@ margin-bottom: 5%;
   box-shadow: 0px 1px 4px lightGrey !important;
   z-index: 10 !important;
 }
-.studentBox{
+
+.studentBox {
   transition: all .3s ease-in-out;
   font-family: $titleFont;
   font-size: 14px;
@@ -62,21 +67,47 @@ margin-bottom: 5%;
   &:hover {
     transition: all 0.2s !important;
     transform: scale(1.07);
-    // background-color: $redArbel;
     color: $redArbel;
-
   }
 }
 
-.activeNote{
+.activeNote {
   margin-top: 5%;
   margin-bottom: 6%;
 }
 
-.infoText{
+.infoText {
   color: $deselectedItem;
 }
 
-.colType{
+.colType {
   margin-left: -10%;
+
+  @media (max-width: $small) {
+    margin-left: 0% !important;
+    margin-top: 6%;
+    margin-bottom: 2%;
+  }
+
+  @media (max-width: $medium) {
+    margin-left: 20%;
+  }
+}
+
+.colPreview {
+  @media (max-width: $medium) {
+    width: 150% !important;
+  }
+}
+
+.colStudent {
+  @media (max-width: $medium) {
+    margin-left: 5%;
+  }
+}
+
+.rowMark {
+  @media (max-width: $small) {
+    margin-bottom: 18% !important;
+  }
 }

@@ -32,7 +32,7 @@
               <input type="search " class="inputSearch searchBtn" type="text" placeholder="Cerca">
             </form>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 colExport">
             <button class="btn btn-outline-primary exportBtn pull-right" type="button"><img src="{{ asset('/img/exsport.svg')}}">  Esporta</button>
           </div>
           <form id="absence" class="form-inline" method="post" action="{{action('StudentListController@update', $id)}}">
@@ -43,19 +43,19 @@
 
           <div class="row-centered studentContainer">
             <div class="row ">
-              <div class="col-md-1 text-center">
+              <div class="col-md-1 text-center colA">
                 A
               </div>
-              <div class="col-md-2 text-left">
+              <div class="col-md-2 text-left colName">
                 Nome Cognome
               </div>
-              <div class="col-md-1 text-centered">
+              <div class="col-md-1 text-centered colMark">
                 Media
               </div>
-              <div class="col-md-1 text-centered">
+              <div class="col-md-1 text-centered colAbsence">
                 Assenze
               </div>
-              <div class="col-md-6  text-left">
+              <div class="col-md-6  text-left colNote">
                 Note
               </div>
             </div>
@@ -96,38 +96,38 @@
             }
             @endphp
             <div class="row-centered classContainer">
-              <div class="row ">
-                <div class="col-md-1" id="bo">
+              <div class="row">
+                <div class="col-md-1 colA" id="bo">
                   <input class="form-check-input" type="checkbox" name="students[]" id="blankCheckbox" value="{{ $studentdata->id }}" aria-label="...">
                 </div>
-                <div class="col-md-2 text-left">
+                <div class="col-md-2 text-left colName">
                   {{ $studentdata->name }}  {{ $studentdata->surname }}
                 </div>
-                <div class="col-md-1 text-centered">
+                <div class="col-md-1 text-centered colMark">
                   {{ $media }}
                 </div>
                 @if ($detailAbsence == true)
                   <input name="class_average" type="hidden" value="{{ $media }}"/>
                   @foreach ($detailAbs as $det)
                     @if ($det->absence_hours > 20.0)
-                      <div class="col-md-1 text-centered">
+                      <div class="col-md-1 text-centered colAbsence">
                         NON IDONEO
                       </div>
                     @else
-                      <div class="col-md-1 text-centered">
+                      <div class="col-md-1 text-centered colAbsence">
                         {{ $det->absence_hours }}%
                       </div>
                     @endif
                   @endforeach
                 @else
-                  <div class="col-md-1 text-centered">
+                  <div class="col-md-1 text-centered colAbsence">
                     0%
                   </div>
                 @endif
-                <div class="col-md-6 text-left">
+                <div class="col-md-6 text-left colNote">
                   {{ $studentdata->details }}
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 colMore">
                   <a  href="/studentDetail/{{ $studentdata->id }}/course/{{ $sub_id }}" alt="option">
                     <div class="more"><img class="moreIcon" src="{{ asset('/img/More.svg')}}"></div>
                   </a>
@@ -274,7 +274,7 @@
         <div class="row">
           <div class="col-md-9">
             <div class="chartArea">
-              <canvas id="myAreaChart" width="100%" height="30"></canvas>
+              <canvas id="myAreaChart" width="100%" height="35"></canvas>
             </div>
           </div>
           <div class="col-md-3 argumentCol">
@@ -288,7 +288,7 @@
             @foreach ($argumentData as $argument)
               <div class="row argumentRow">
                 <div class="col">
-                  <div class="argumentDate">Lezione {{$argument->created_at}}:</div><div class="argumentName">{{$argument->topic}}</div>
+                  <div class="argumentDate">{{$argument->created_at->format('d F, l')}}:</div><div class="argumentName">{{$argument->topic}}</div>
                 </div>
               </div>
             @endforeach
