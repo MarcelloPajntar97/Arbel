@@ -134,6 +134,8 @@ class StudentDetailController extends Controller
                 'date' => Carbon::now()->format('Y-m-d')
               ]);
         }
+        \App\Student::where('id', $id)
+          ->update(['details' => $request->get('note_detail')]);
         return redirect('/home');
     }
 

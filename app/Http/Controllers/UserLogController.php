@@ -12,7 +12,7 @@ use App\Student;
 use App\Events;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-// use App\Student;
+
 
 class UserLogController extends Controller
 {
@@ -28,7 +28,6 @@ class UserLogController extends Controller
       $subjects = auth()->user()->subjects()->get();
       $dataReminder = auth()->user()->memories()->get();
       $events = auth()->user()->event()->get();
-      // $students = auth()->class()->students()->get();
       $courses = array();
       foreach ($subjects as $subject) {
         foreach ($subject->class()->get() as $course) {
@@ -44,7 +43,6 @@ class UserLogController extends Controller
       $success['subjects'] =  $subjects;
       $success['memories'] = $dataReminder;
       $success['events'] = $events;
-      // $success['students'] =  $students;
       $success['courses'] =  $courses;
       return response()->json(['success' => $success], $this->successStatus);
     }
@@ -108,33 +106,25 @@ class UserLogController extends Controller
   }
 
   public function postReminder(Request $request) {
-
     $request->validate([
       'memoryText' => 'required|string'
-
     ]);
-
     $reminder = new \App\Memory([
       'memoryText' => $request->memoryText,
       'user_id' => auth()->user()->id
     ]);
-
     $reminder->save();
-
     return response()->json([
       'memories' => $reminder
     ], 201);
-
   }
 
   public function postAbsence(Request $request) {
-
     $request->validate([
       'sub_id' => 'required|integer',
       'stud_id' => 'required|integer',
       'absence_hours' => 'required|integer',
     ]);
-
     $absenceSub = DB::table('students_subjects')
               ->where('sub_id', $request->sub_id)->exists();
     $absenceStud = DB::table('students_subjects')
@@ -161,7 +151,6 @@ class UserLogController extends Controller
       ]);
 
     }
-
     elseif ($absenceStud == true && $absenceSub == true) {
       $absence = DB::table('students_subjects')
       ->where('stud_id', $request->stud_id)
@@ -169,7 +158,6 @@ class UserLogController extends Controller
       ->increment('absence_hours', $request->absence_hours);
 
     }
-
     return response()->json([
       'absence' => 'assenza salvata'
     ], 201);
@@ -177,13 +165,11 @@ class UserLogController extends Controller
   }
 
   public function postArgument(Request $request) {
-
     $request->validate([
       'topic' => 'required|string',
       'sub_id' => 'required|integer'
 
     ]);
-
     $argument = new \App\Argument([
       'topic' => $request->topic,
       'sub_id' => $request->sub_id
@@ -192,15 +178,13 @@ class UserLogController extends Controller
     $argument->save();
 
     return response()->json([
-      'arguments' => 'argoemnto salvato'
+      'arguments' => 'argomento salvato'
     ], 201);
 
   }
 
   public function getReminder() {
     $dataReminder = auth()->user()->memories()->get();
-
-
     return response()->json(['memo' => $dataReminder], 200);
 
   }

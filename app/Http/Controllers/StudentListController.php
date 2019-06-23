@@ -85,24 +85,12 @@ class StudentListController extends Controller
   function getAllMonths(){
 		$month_array = array();
 		$posts_dates = Argument::all();
-    // dd($posts_dates);
 		$posts_dates = json_decode( $posts_dates );
 
   if (! empty($posts_dates)) {
     foreach ($posts_dates as $topicTime) {
       $month_name = Carbon::parse($topicTime->created_at)->format('M');
-      // $month_no = Carbon::parse($topicTime->created_at)->format('m');
-
-        // foreach ($posts_dates as $unformatted_date) {
-          // $date = new \DateTime( $unformatted_date->created_at );
-          // $date = $unformatted_date->created_at;
-          //$month_array[ $month_no ] = $month_name;
           array_push($month_array, $month_name);
-          // array_push($month_array, $month_no);
-          // $month_no = $date->format('m');
-          // $month_name = $date->format('M');
-          // $month_array[ $date ] = $date;
-        // }
       }
       return $month_array;
     }
@@ -113,27 +101,7 @@ class StudentListController extends Controller
 		return $monthly_post_count;
 	}
 
-	// function getMonthlyPostData() {
-	// 	$monthly_post_count_array = array();
-	// 	$month_array = $this->getAllMonths();
-	// 	$month_name_array = array();
-	// 	if ( ! empty( $month_array ) ) {
-	// 		foreach ( $month_array as $month_no => $month_name ){
-	// 			$monthly_post_count = $this->getMonthlyPostCount( $month_no );
-	// 			array_push( $monthly_post_count_array, $monthly_post_count );
-	// 			array_push( $month_name_array, $month_name );
-	// 		}
-	// 	}
-	// 	$max_no = max( $monthly_post_count_array );
-	// 	$max = round(( $max_no + 10/2 ) / 10 ) * 10;
-	// 	$monthly_post_data_array = array(
-	// 		'months' => $month_name_array,
-	// 		'post_count_data' => $monthly_post_count_array,
-	// 		'max' => $max,
-	// 	);
-  //   //dd($monthly_post_data_array);
-	// 	//return response()->json($monthly_post_data_array);
-  //   }
+
 
   /**
   * Show the form for editing the specified resource.
@@ -201,7 +169,7 @@ class StudentListController extends Controller
 
     }
     $timestamp = Carbon::now()->format('Y-m-d');
-    //$classMedia = $request->input('class_average');
+
     $monthly_avg_count_array = array();
 		$month_array = $this->getAllMonths();
 		$month_name_array = array();
@@ -211,17 +179,13 @@ class StudentListController extends Controller
 				array_push( $monthly_avg_count_array, $total );
 				array_push( $month_name_array, $month_name );
 			}
-      // dd($month_name_array);
-      // $pizza = explode(" ", $month_name_array);
-      // dd($piza);
+
 		}
-		// $max_no = max( $monthly_post_count_array );
-		// $max = round(( $max_no + 10/2 ) / 10 ) * 10;
+
 		$monthly_post_data_array = array(
 			'months' => $month_name_array,
       'avgData' => $monthly_avg_count_array,
-			// 'post_count_data' => $monthly_post_count_array,
-			// 'max' => $max,
+
 		);
     $pizza = implode(",", $month_name_array);
     $thisMonth = Carbon::now()->format('F Y');
@@ -243,11 +207,19 @@ class StudentListController extends Controller
     $valuesSub = $request->input('subjects');
     $subSelect = \App\Subject::where('id', (int)$valuesSub)->first();
     $dataStudent = array();
+    if (!is_null($values)) {
     foreach ($values as $studKey => $studValue) {
       array_push($dataStudent, (int)$studValue);
 
     }
+  }
+  else {
+    DB::table('students_subjects')
+    ->where('sub_id', (int)$valuesSub)
+    ->increment('absence_hours', 200/(float)$subSelect->totHours);
+  }
     $currentSubject = DB::table('students_subjects')->where('sub_id', (int)$valuesSub)->exists();
+    if (count($dataStudent) > 0) {
     for ($i=0; $i<count($dataStudent); $i++) {
       $currentStudent = DB::table('students_subjects')->where('stud_id', $dataStudent[$i])->exists();
       if ($currentStudent == false) {
@@ -277,14 +249,8 @@ class StudentListController extends Controller
         ->increment('absence_hours', 200/(float)$subSelect->totHours);
       }
     }
-    //media classe
-    // DB::table('students_subjects')
-    // ->where('id', '[0-9]+')
-    // ->updateOrInsert([
-    //   'sub_id' => (int)$valuesSub,
-    //   'avereage' => (int)$request->input('class_avereage')
-    // ]);
-    //controllo assenze
+  }
+
 
     $absPerc = $subSelect->totHours * (20/100);
     $subStudent = DB::table('students_subjects')

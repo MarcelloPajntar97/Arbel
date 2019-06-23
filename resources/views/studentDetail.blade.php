@@ -61,18 +61,12 @@
         @endforeach
 
         <h3 class="detailTitle">Assenze: {{ $absenceStud }}%</h3>
-        @foreach ($students as $studentsdetail)
-          <div class="row">
-            <div class="col">
-              <div class="text-left">02.01.2019</div>
-            </div>
-          </div>
-        @endforeach
+        
 
         <h3 class="detailTitle">{{ __('Note') }}</h3>
           <div class="form-row">
             <div class="form-group col">
-              <textarea class="form-control customForm" id="exampleFormControlTextarea1"></textarea>
+              <textarea name="note_detail" class="form-control customForm" id="exampleFormControlTextarea1"></textarea>
             </div>
           </div>
 
